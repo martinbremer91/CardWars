@@ -2,7 +2,7 @@
 import pygame
 from pygame.locals import *
 
-listen_key_up_events = [pygame.K_ESCAPE, pygame.K_SPACE]
+listen_keys = [pygame.K_ESCAPE, pygame.K_SPACE]
 
 def process_event(event):
     if event.type == pygame.QUIT or (event.type == KEYUP and event.key == pygame.K_ESCAPE):

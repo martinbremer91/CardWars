@@ -1,5 +1,9 @@
 import asyncio
+import sys
 from typing import Callable
+
+import pygame
+
 import configs
 import event_manager
 import graphics
@@ -7,20 +11,26 @@ import client
 
 async def main():
     configs.init()
-    graphics.init()
-    event_manager.init()
     client.init()
+    graphics.init()
 
-    while configs.running:
+    event_manager.register_update()
+    graphics.register_update()
+
+    clock = pygame.time.Clock()
+
+    while True:
+        pg_delta_time = clock.tick(60)/1000
+
         for update in configs.update_methods:
-            update()
-        await asyncio.sleep(configs.timestep)
+            update(pg_delta_time)
 
 def register_update(update: Callable):
     configs.update_methods.append(update)
 
 def quit_app():
-    configs.running = False
+    pygame.quit()
+    sys.exit()
 
 def toggle_paused():
     configs.paused = not configs.paused
