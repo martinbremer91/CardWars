@@ -2,7 +2,8 @@ import socket
 import threading
 import urllib.request
 
-ip = urllib.request.urlopen('https://v4.ident.me/').read().decode('utf8')
+self_ip = urllib.request.urlopen('https://v4.ident.me/').read().decode('utf8')
+peer_ip = input('peer ip: ')
 
 socket_send = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 socket_send.bind(('0.0.0.0', 0))
@@ -11,7 +12,7 @@ print(source_port)
 
 destination_port = int(input('peer port: '))
 
-socket_send.sendto(b'0', (ip, destination_port))
+socket_send.sendto(b'0', (peer_ip, destination_port))
 
 def listen():
     socket_listen = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -29,4 +30,4 @@ socket_send.bind(('0.0.0.0', destination_port))
 
 while True:
     msg = input('> ')
-    socket_send.sendto(msg.encode(), (ip, source_port))
+    socket_send.sendto(msg.encode(), (peer_ip, source_port))
