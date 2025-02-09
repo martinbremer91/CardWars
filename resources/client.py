@@ -2,14 +2,15 @@ import socket
 import threading
 import urllib.request
 
-wi_fi_connect : bool = False
-
 ip = urllib.request.urlopen('https://v4.ident.me/').read().decode('utf8')
-source_port = 50123 if not wi_fi_connect else 50128
-destination_port = 50124 if not wi_fi_connect else 50129
 
 socket_send = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-socket_send.bind(('0.0.0.0', source_port))
+socket_send.bind(('0.0.0.0', 0))
+source_port = socket_send.getsockname()[1]
+print(source_port)
+
+destination_port = int(input('peer port: '))
+
 socket_send.sendto(b'0', (ip, destination_port))
 
 def listen():
