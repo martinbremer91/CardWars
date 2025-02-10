@@ -1,0 +1,117 @@
+SYNTAX:
+- TRIGGER:SEMICOLON-SEPARATED EFFECT(S)
+
+TRIGGERS:
+- START OF TURN (SOT):
+    SOT, SOT(<condition>)
+- WHILE IN PLAY (WIP):
+    WIP, maybe WIP(<condition>)
+- COST (CST):
+    CST([<effect>]) // e.g. FLOOP(SELF), DISCARD(PLAYER, 1)
+- SELF ENTERS PLAY (SEP):
+    SEP, SEP(<condition>)
+- SELF EXITS PLAY (SXP):
+    SXP, SXP(<condition>)
+- END OF TURN (EOT):
+    EOT, maybe EOT(<condition>)
+- WHEN SELF ATTACKS (WSA):
+    WSA, WSA(<target>)
+- COMPOSITE_TRIGGER ... (e.g. floop + discard)
+
+EFFECTS:
+- NO_EFFECT
+- UNTIL_EOT(<effect>)
+- FOREACH([<target>], <effect>]
+- DRAW(<target>, int)
+- SHUFFLE(<target>)
+- SEARCH(<target>)
+- TO_HAND(<target>, <target>, int) // target player, target card
+- DISCARD(<target>, int)
+- DESTROY(<target>)
+- REMOVE_FROM_PLAY(<target>)
+- FIGHT(<target>, <target>)
+- FLOOP(<target>)
+- SET_INVULN(<target>, <bool>)
+- SET_UNTARG(<target>, <bool>)
+- HEAL(<target>, <int>)
+- DEAL_DMG(<target>, <int>)
+- ATTACK(<target>, <target>)
+- MOD_ATK(<target>, <int>)
+- MOD_DEF(<target>, <int>)
+- SELECT([<target>], <range>)
+- CHOOSE([<target>], [<options>])
+- SET_TARGET(<target>)
+- MOVE ...
+- SWAP_LANES ...
+
+OPTIONS:
+- OPTION(<str>, <effect>), OPTION(<str>, <effect>, <bool>) // bool: default
+
+TARGETS:
+- PLAYER
+- OPPONENT
+- ALL_PLAYERS
+- TARGET
+- SELF
+- OWN_DECK
+- FOE_DECK
+- OWN_HAND
+- FOE_HAND
+- OWN_DISCARD
+- FOE_DISCARD
+- ALL_CREATURES
+- OWN_CREATURES
+- FOE_CREATURES
+- ADJ_CREATURES(<target>) // ADJACENT
+- OPP_CREATURE(<target>)  // OPPOSITE
+- ALL_BUILDINGS
+- OWN_BUILDINGS
+- FOE_BUILDINGS
+- ADJ_BUILDINGS(<target>)
+- OPP_BUILDING(<target>)
+- SET_BLDG_CAPPED(<lane>, <bool>)
+- RANDOM([<target>])
+- FILTER([<target>], <type>, <landscape>)
+
+PLAYER PROPERTIES:
+- HP
+- ACTIONS
+
+CREATURE PROPERTIES:
+- BASE_ATK
+- BASE_DEF
+- BASE_COST
+- BASE_ABILITY
+- BASE_LANDTYPE
+- LANE
+- LANDTYPE
+- ATK
+- DEF
+- COST
+- INVULNERABLE
+- UNTARGETABLE
+- ABILITY_OVERRIDE
+
+LANES:
+- CREATURE
+- BUILDING
+- BUILDINGS_CAPPED
+- TOKENS
+
+TYPES:
+- CREATURE
+- BUILDING
+- SPELL
+
+LANDSCAPES:
+- RB
+- NL
+- BP
+- CF
+- US
+- SL
+- IL
+- LL
+
+NOTES:
+- EFFECTS: Have a START, UPDATE, and DESTROY function

@@ -1,0 +1,17 @@
+GAMEPLAY
+
+- ~~player object~~
+- ~~turn structure: main phase, battle phase, pass turn~~
+- ~~basic card object~~
+- ~~deck, discard pile, hand collections~~
+- ~~deck mechanics: shuffle, draw(int), mill(int), discard(int)~~
+- basic triggers / effects (draw per turn, self enters play, ...)
+- lanes, landscapes
+- play card / action points
+- attack phase
+- first pass of UI/UX
+
+NETWORK
+- research / tests
+
+
