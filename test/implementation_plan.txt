@@ -8,7 +8,7 @@ GAMEPLAY
 - ~~basic triggers / effects (draw per turn)~~
 - ~~basic game entity objects (creature, building, spell)~~
 - ~~play card / self enters play trigger~~
-- action points / card cost
+- ~~action points / card cost~~
 - lanes, landscapes
 - attack phase
 - first pass of UI/UX

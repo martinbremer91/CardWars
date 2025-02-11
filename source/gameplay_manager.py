@@ -1,83 +1,22 @@
-from enum import Enum
 import random
-from typing import Callable, overload
-
-class Player:
-    def __init__(self, name: str, hp : int):
-        self.name = name
-        self.hp : int  = hp
-
-class TurnPhase(Enum):
-    P1_Main = 0
-    P1_Battle = 1
-    P2_Main = 2
-    P2_Battle = 3
-
-class Collection(Enum):
-    Deck = 0
-    Hand = 1
-    In_Play = 2
-    Discard = 3
-
-class GameEntity:
-    def __init__(self, name : str):
-        self.name = name
-
-    def on_play(self):
-        pass
-
-class Creature(GameEntity):
-    def on_play(self):
-        super().on_play()
-        print("Type of GameEntity: Creature")
-
-class Spell(GameEntity):
-    def on_play(self):
-        super().on_play()
-        print("Type of GameEntity: Spell")
-
-class Building(GameEntity):
-    def on_play(self):
-        super().on_play()
-        print("Type of GameEntity: Building")
-
-class Card:
-    def __init__(self, owner : Player, game_entity : GameEntity, collection : list):
-        self.owner = owner
-        self.game_entity = game_entity
-        self.collection = collection
-        self.collection.append(self)
-
-class Trigger:
-    def __init__(self):
-        self.subscribers : list[Callable] = list()
-
-    def subscribe(self, subscriber : Callable):
-        self.subscribers.append(subscriber)
-
-    def invoke(self, arg = ...):
-        for subscriber in self.subscribers:
-            subscriber(arg)
+from gameplay_classes import (Player, Card, Trigger, TurnPhase, Collection,
+                              Creature, Spell, Landscape, Lane)
+from typing import overload
 
 active_player : Player
-
 player_one : Player
 player_two : Player
-
 p1_deck : list[Card]
 p2_deck : list[Card]
-
 p1_hand : list[Card]
 p2_hand : list[Card]
-
 p1_cards_in_play : list[Card]
 p2_cards_in_play : list[Card]
-
 p1_discard : list[Card]
 p2_discard : list[Card]
-
-turn_phase : int
-
+p1_lanes : list[Lane]
+p2_lanes : list[Lane]
+turn_phase : TurnPhase
 start_of_turn : Trigger
 end_of_turn : Trigger
 
@@ -93,8 +32,21 @@ def init():
     player_one = Player("Player 1", 25)
     player_two = Player("Player 2", 25)
 
-    turn_phase = TurnPhase.P1_Main.value
-    active_player = player_one
+    init_lanes()
+
+def init_lanes():
+    global p1_lanes
+    global p2_lanes
+    p1_lanes = list()
+    p2_lanes = list()
+
+    # <placeholder>
+    for l in range(4):
+        p1_lanes.append(Lane(l, Landscape.NiceLands))
+        player_one.add_landscape(Landscape.NiceLands)
+        p2_lanes.append(Lane(l + 10, Landscape.NiceLands))
+        player_two.add_landscape(Landscape.NiceLands)
+    # </placeholder>
 
 def init_collections():
     global p1_deck
@@ -118,16 +70,24 @@ def init_collections():
 def init_turn_phase_triggers():
     global start_of_turn
     global end_of_turn
-
     start_of_turn = Trigger()
-    end_of_turn = Trigger()
+    start_of_turn.subscribe(gain_turn_action_points)
     start_of_turn.subscribe(draw_cards)
+    end_of_turn = Trigger()
+    end_of_turn.subscribe(lose_unused_action_points)
+
+def start_play():
+    global turn_phase
+    turn_phase = TurnPhase.P1_Main
+    set_up_decks()
+    draw_first_hands()
+    start_turn()
 
 def set_up_decks():
     # <placeholder>
     for i in range(40):
-        Card(player_one, Creature(f"entity_{i}"), p1_deck)
-        Card(player_two, Spell(f"entity_{i}"), p2_deck)
+        Card(player_one, Creature(f"entity_{i}", Landscape.NiceLands, 1), p1_deck)
+        Card(player_two, Spell(f"entity_{i}", Landscape.NiceLands, 2), p2_deck)
 
     shuffle(p1_deck)
     shuffle(p2_deck)
@@ -137,26 +97,28 @@ def draw_first_hands():
     draw_cards(player_one, 5)
     draw_cards(player_two, 5)
 
-def start_first_turn():
-    start_of_turn.invoke(active_player)
-
-def end_turn_phase():
-    global turn_phase
+def start_turn():
     global active_player
 
-    turn_phase += 1
-    if turn_phase > TurnPhase.P2_Battle.value:
-        turn_phase = TurnPhase.P1_Main.value
-    print(TurnPhase(turn_phase).name)
-
-    if turn_phase is TurnPhase.P1_Main.value:
-        end_of_turn.invoke()
+    if turn_phase is TurnPhase.P1_Main:
         active_player = player_one
         start_of_turn.invoke(active_player)
-    elif turn_phase is TurnPhase.P2_Main.value:
-        end_of_turn.invoke()
+    elif turn_phase is TurnPhase.P2_Main:
         active_player = player_two
         start_of_turn.invoke(active_player)
+
+def advance_turn_phase():
+    global turn_phase
+
+    turn_phase = TurnPhase(turn_phase.value + 1)
+    if turn_phase.value > TurnPhase.P2_Battle.value:
+        turn_phase = TurnPhase.P1_Main
+
+    if turn_phase is TurnPhase.P1_Main or TurnPhase.P2_Main:
+        end_of_turn.invoke(active_player)
+        # <placeholder> todo: call start_turn once (async) end_of_turn.invoke resolves
+        start_turn()
+        # </placeholder>
 
 def shuffle(collection : list[Card]):
     random.shuffle(collection)
@@ -199,10 +161,33 @@ def move_between_collections(player : Player, source : Card | Collection, to_enu
             to_coll.append(card)
             card.collection = to_coll
 
+def gain_turn_action_points(player : Player):
+    player.gain_action_points(2)
+
+def lose_unused_action_points(player : Player):
+    player.action_points = 0
+
 def draw_cards(player : Player, amount : int = 1):
     move_between_collections(player, Collection.Deck, Collection.Hand, amount)
 
-def play_card(player : Player, card : Card):
+def try_play_card(player : Player, card : Card):
+    cost : int = card.game_entity.cost
+    land : Landscape = card.game_entity.land
+
+    card_is_rainbow : bool = land is Landscape.Rainbow
+    cannot_pay_lands : bool = land not in player.landscapes.keys() or player.landscapes[land] < cost
+
+    if not card_is_rainbow and cannot_pay_lands:
+        print(f"{player.name}: not enough {land.name} lands to play "
+              f"{card.game_entity.name} (cost: {cost})")
+    elif player.action_points >= cost:
+        player.spend_action_points(cost)
+        put_card_in_play(player, card)
+    else:
+        print(f"{player.name}: not enough action points ({cost}) "
+              f"to play {card.game_entity.name}")
+
+def put_card_in_play(player : Player, card : Card):
     move_between_collections(player, card, Collection.In_Play)
 
 def mill_cards(player : Player, amount : int = 1):
@@ -224,3 +209,29 @@ def discard_cards(player : Player, amount : int = 1):
         # </placeholder>
         
         discard.append(hand.pop(chosen_index))
+
+
+# test code
+def print_state():
+    print("p2 actions", player_one.action_points)
+    print("p1 hand", len(p1_hand))
+    print("p1 deck", len(p1_deck))
+    print("p1 play", len(p1_cards_in_play))
+    print("p1 discard", len(p1_discard))
+    print("")
+    print("p2 actions", player_two.action_points)
+    print("p2 hand", len(p2_hand))
+    print("p2 deck", len(p2_deck))
+    print("p2 play", len(p2_cards_in_play))
+    print("p2 discard", len(p2_discard))
+    print("---")
+
+init()
+start_play()
+
+print_state()
+try_play_card(player_one, p1_hand[0])
+print_state()
+advance_turn_phase()
+advance_turn_phase()
+print_state()
