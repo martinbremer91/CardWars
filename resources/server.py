@@ -1,15 +1,18 @@
 import socket
 import threading
+import urllib.request
 
 HEADER = 64
-PORT = 5050
+PUBLIC = urllib.request.urlopen('https://v4.ident.me/').read().decode('utf8')
+print(f"[PUBLIC IP] {PUBLIC}")
 SERVER = socket.gethostbyname(socket.gethostname())
-ADDR = (SERVER, PORT)
+ADDR = (SERVER, 0)
 FORMAT = 'utf-8'
 DISCONNECT_MESSAGE = "!DISCONNECT"
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.bind(ADDR)
+print(f"[PORT] {server.getsockname()[1]}")
 
 def handle_client(conn, addr):
     print(f"[NEW CONNECTION] {addr} connected.")
