@@ -5,13 +5,13 @@ GAMEPLAY
 - ~~basic card object~~
 - ~~deck, discard pile, hand collections~~
 - ~~deck mechanics: shuffle, draw(int), mill(int), discard(int)~~
-- basic triggers / effects (draw per turn, self enters play, ...)
+- ~~basic triggers / effects (draw per turn)~~
+- ~~basic game entity objects (creature, building, spell)~~
+- ~~play card / self enters play trigger~~
+- action points / card cost
 - lanes, landscapes
-- play card / action points
 - attack phase
 - first pass of UI/UX
 
 NETWORK
 - research / tests
-
-

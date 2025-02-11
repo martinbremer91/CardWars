@@ -16,7 +16,6 @@ TRIGGERS:
     EOT, maybe EOT(<condition>)
 - WHEN SELF ATTACKS (WSA):
     WSA, WSA(<target>)
-- COMPOSITE_TRIGGER ... (e.g. floop + discard)
 
 EFFECTS:
 - NO_EFFECT
