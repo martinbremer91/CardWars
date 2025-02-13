@@ -13,6 +13,12 @@ class Collection(Enum):
     In_Play = 2
     Discard = 3
 
+class EntityKind(Enum):
+    NULL = 0
+    Creature = 1
+    Spell = 2
+    Building = 3
+
 class Landscape(Enum):
     Rainbow = 0
     BluePlains = 1
@@ -57,6 +63,7 @@ class Player:
 
 class GameEntity:
     def __init__(self, name : str, landscape : Landscape, cost : int):
+        self.kind : EntityKind = EntityKind.NULL
         self.name : str = name
         self.base_land : Landscape = landscape
         self.land = landscape
@@ -67,16 +74,28 @@ class GameEntity:
         pass
 
 class Creature(GameEntity):
+    def __init__(self, name : str, landscape : Landscape, cost : int):
+        super().__init__(name, landscape, cost)
+        self.kind = EntityKind.Creature
+
     def on_play(self):
         super().on_play()
         print("Type of GameEntity: Creature")
 
 class Spell(GameEntity):
+    def __init__(self, name : str, landscape : Landscape, cost : int):
+        super().__init__(name, landscape, cost)
+        self.kind = EntityKind.Creature
+
     def on_play(self):
         super().on_play()
         print("Type of GameEntity: Spell")
 
 class Building(GameEntity):
+    def __init__(self, name : str, landscape : Landscape, cost : int):
+        super().__init__(name, landscape, cost)
+        self.kind = EntityKind.Building
+
     def on_play(self):
         super().on_play()
         print("Type of GameEntity: Building")
@@ -100,9 +119,10 @@ class Trigger:
             subscriber(arg)
 
 class Lane:
+    creature: Creature
+
     def __init__(self, lane_id : int, landscape : Landscape):
         self.lane_id : int = lane_id
         self.landscape : Landscape = landscape
-        self.creature : Creature
-        self.building : Building
+        self.building : list[Building] = list()
         self.flipped_land : bool = False

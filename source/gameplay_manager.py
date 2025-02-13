@@ -170,22 +170,30 @@ def lose_unused_action_points(player : Player):
 def draw_cards(player : Player, amount : int = 1):
     move_between_collections(player, Collection.Deck, Collection.Hand, amount)
 
-def try_play_card(player : Player, card : Card):
+def check_card_landscape_requirement(player : Player, card : Card) -> bool:
     cost : int = card.game_entity.cost
     land : Landscape = card.game_entity.land
 
-    card_is_rainbow : bool = land is Landscape.Rainbow
-    cannot_pay_lands : bool = land not in player.landscapes.keys() or player.landscapes[land] < cost
+    if land is Landscape.Rainbow:
+        return sum(player.landscapes.values()) >= cost
+    else:
+        return land in player.landscapes.keys() and player.landscapes[land] >= cost
 
-    if not card_is_rainbow and cannot_pay_lands:
-        print(f"{player.name}: not enough {land.name} lands to play "
-              f"{card.game_entity.name} (cost: {cost})")
-    elif player.action_points >= cost:
+def check_card_action_cost_requirement(player : Player, cost : int) -> bool:
+    return player.action_points >= cost
+
+def try_play_card(player : Player, card : Card):
+    cost : int = card.game_entity.cost
+    landscape_requirement : bool = check_card_landscape_requirement(player, card)
+    action_cost_requirement : bool = check_card_action_cost_requirement(player, cost)
+
+    if landscape_requirement and action_cost_requirement:
         player.spend_action_points(cost)
         put_card_in_play(player, card)
+
+        print(f"{player.name} plays {card.game_entity.name}")
     else:
-        print(f"{player.name}: not enough action points ({cost}) "
-              f"to play {card.game_entity.name}")
+        print(f"{player.name} doesn't have resources to play {card.game_entity.name}")
 
 def put_card_in_play(player : Player, card : Card):
     move_between_collections(player, card, Collection.In_Play)
