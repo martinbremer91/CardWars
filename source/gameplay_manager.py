@@ -1,7 +1,11 @@
+from player import Player
+from game_entities import Entity, Creature, Spell, Building
+from card import Card
+from game_logic import Trigger
+from gameplay_enums import TurnPhase, Landscape, Collection, EntityKind
+from lane import Lane
 import random
-from gameplay_classes import (Player, Card, Trigger, TurnPhase, Collection,
-                              Creature, Spell, Landscape, Lane)
-from typing import overload
+from typing import Optional
 
 active_player : Player
 player_one : Player
@@ -14,8 +18,6 @@ p1_cards_in_play : list[Card]
 p2_cards_in_play : list[Card]
 p1_discard : list[Card]
 p2_discard : list[Card]
-p1_lanes : list[Lane]
-p2_lanes : list[Lane]
 turn_phase : TurnPhase
 start_of_turn : Trigger
 end_of_turn : Trigger
@@ -35,17 +37,10 @@ def init():
     init_lanes()
 
 def init_lanes():
-    global p1_lanes
-    global p2_lanes
-    p1_lanes = list()
-    p2_lanes = list()
-
     # <placeholder>
     for l in range(4):
-        p1_lanes.append(Lane(l, Landscape.NiceLands))
-        player_one.add_landscape(Landscape.NiceLands)
-        p2_lanes.append(Lane(l + 10, Landscape.NiceLands))
-        player_two.add_landscape(Landscape.NiceLands)
+        player_one.lanes.append(Lane(l, player_one, Landscape.NiceLands))
+        player_two.lanes.append(Lane(l + 10, player_two, Landscape.NiceLands))
     # </placeholder>
 
 def init_collections():
@@ -71,7 +66,7 @@ def init_turn_phase_triggers():
     global start_of_turn
     global end_of_turn
     start_of_turn = Trigger()
-    start_of_turn.subscribe(gain_turn_action_points)
+    start_of_turn.subscribe(gain_turn_start_action_points)
     start_of_turn.subscribe(draw_cards)
     end_of_turn = Trigger()
     end_of_turn.subscribe(lose_unused_action_points)
@@ -86,7 +81,7 @@ def start_play():
 def set_up_decks():
     # <placeholder>
     for i in range(40):
-        Card(player_one, Creature(f"entity_{i}", Landscape.NiceLands, 1), p1_deck)
+        Card(player_one, Building(f"entity_{i}", Landscape.NiceLands, 1), p1_deck)
         Card(player_two, Spell(f"entity_{i}", Landscape.NiceLands, 2), p2_deck)
 
     shuffle(p1_deck)
@@ -116,7 +111,7 @@ def advance_turn_phase():
 
     if turn_phase is TurnPhase.P1_Main or TurnPhase.P2_Main:
         end_of_turn.invoke(active_player)
-        # <placeholder> todo: call start_turn once (async) end_of_turn.invoke resolves
+        # <placeholder> todo: only call start_turn once (async) end_of_turn.invoke resolves
         start_turn()
         # </placeholder>
 
@@ -138,12 +133,8 @@ def get_collection(player : Player, collection : Collection) -> list[Card]:
         case _:
             raise Exception("No valid Collection given")
 
-@overload
-def move_between_collections(player : Player, from_enum : Collection, to_enum : Collection, amount : int): ...
-@overload
-def move_between_collections(player : Player, card : Card, to_enum : Collection): ...
-
-def move_between_collections(player : Player, source : Card | Collection, to_enum : Collection, amount : int = ...):
+def move_between_collections(player : Player, source : Card | Collection, to_enum : Collection,
+                             amount : Optional[int] = None):
     if isinstance(source, Card):
         to_coll: list[Card] = get_collection(player, to_enum)
         to_coll.append(source)
@@ -161,7 +152,7 @@ def move_between_collections(player : Player, source : Card | Collection, to_enu
             to_coll.append(card)
             card.collection = to_coll
 
-def gain_turn_action_points(player : Player):
+def gain_turn_start_action_points(player : Player):
     player.gain_action_points(2)
 
 def lose_unused_action_points(player : Player):
@@ -182,21 +173,51 @@ def check_card_landscape_requirement(player : Player, card : Card) -> bool:
 def check_card_action_cost_requirement(player : Player, cost : int) -> bool:
     return player.action_points >= cost
 
+def check_card_lane_availability(player : Player, entity : Entity, lanes : list[Lane]) -> bool:
+    match entity.kind:
+        case EntityKind.Creature:
+            for lane in player.lanes:
+                if lane.can_play_creature:
+                    lanes.append(lane)
+        case EntityKind.Spell:
+            lanes.append(player.stack)
+            return True
+        case EntityKind.Building:
+            for lane in player.lanes:
+                if lane.building is None:
+                    lanes.append(lane)
+        case _:
+            raise Exception("invalid entity kind")
+
+    return len(lanes) != 0
+
+def check_card_specific_requirements() -> bool:
+    return True
+
 def try_play_card(player : Player, card : Card):
     cost : int = card.game_entity.cost
-    landscape_requirement : bool = check_card_landscape_requirement(player, card)
-    action_cost_requirement : bool = check_card_action_cost_requirement(player, cost)
 
-    if landscape_requirement and action_cost_requirement:
-        player.spend_action_points(cost)
-        put_card_in_play(player, card)
+    if not check_card_landscape_requirement(player, card):
+        print(f"{player.name} failed land requirement")
+        return
+    if not check_card_action_cost_requirement(player, cost):
+        print(f"{player.name} failed action cost requirement")
+        return
 
-        print(f"{player.name} plays {card.game_entity.name}")
-    else:
-        print(f"{player.name} doesn't have resources to play {card.game_entity.name}")
+    available_lanes : list[Lane] = list()
+    if not check_card_lane_availability(player, card.game_entity, available_lanes):
+        print(f"{player.name} failed lane availability requirement")
+        return
+    if not check_card_specific_requirements():
+        return
+
+    # todo: lane selection / assignment of card to selected lane
+    player.spend_action_points(cost)
+    put_card_in_play(player, card)
 
 def put_card_in_play(player : Player, card : Card):
     move_between_collections(player, card, Collection.In_Play)
+    card.game_entity.on_play()
 
 def mill_cards(player : Player, amount : int = 1):
     move_between_collections(player, Collection.Deck, Collection.Discard, amount)
@@ -221,7 +242,7 @@ def discard_cards(player : Player, amount : int = 1):
 
 # test code
 def print_state():
-    print("p2 actions", player_one.action_points)
+    print("p1 actions", player_one.action_points)
     print("p1 hand", len(p1_hand))
     print("p1 deck", len(p1_deck))
     print("p1 play", len(p1_cards_in_play))
@@ -234,10 +255,22 @@ def print_state():
     print("p2 discard", len(p2_discard))
     print("---")
 
+def print_landscapes():
+    for l1 in player_one.lanes:
+        print(f"P1 lane", l1.landscape)
+    for l2 in player_two.lanes:
+        print(f"P2 lane", l2.landscape)
+    print("P1 lands", player_one.landscapes)
+    print("P2 lands", player_two.landscapes)
+    print("")
+
 init()
 start_play()
 
+print_landscapes()
+
 print_state()
+print("P1 try play card")
 try_play_card(player_one, p1_hand[0])
 print_state()
 advance_turn_phase()

@@ -9,9 +9,14 @@ GAMEPLAY
 - ~~basic game entity objects (creature, building, spell)~~
 - ~~play card / self enters play trigger~~
 - ~~action points / card cost~~
-- lanes, landscapes
+- ~~lanes, landscapes~~
 - attack phase
-- first pass of UI/UX
+- refactor gameplay_manager and gameplay_classes
+- json-to-game-entity logic
+- deck json
+- figure out cw_lang integration
+- network message format and processing (local and peer)
+- implement check_card_specific_requirements
 
 NETWORK
 - research / tests
