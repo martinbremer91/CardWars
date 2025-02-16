@@ -1,4 +1,4 @@
-﻿from gameplay_enums import Landscape, EntityKind
+﻿from source.gameplay.gameplay_enums import Landscape, EntityKind
 from typing import Optional
 
 class Entity:

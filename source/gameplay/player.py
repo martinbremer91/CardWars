@@ -1,4 +1,4 @@
-﻿from gameplay_enums import Landscape
+﻿from source.gameplay.gameplay_enums import Landscape
 
 class Player:
     def __init__(self, name: str, hp : int):

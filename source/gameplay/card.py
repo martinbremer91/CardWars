@@ -1,5 +1,5 @@
-﻿from player import Player
-from game_entities import Entity
+﻿from source.gameplay.player import Player
+from source.gameplay.game_entities import Entity
 
 class Card:
     def __init__(self, owner : Player, game_entity : Entity, collection : list):

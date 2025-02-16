@@ -270,8 +270,6 @@ start_play()
 print_landscapes()
 
 print_state()
-print("P1 try play card")
-try_play_card(player_one, p1_hand[0])
 print_state()
 advance_turn_phase()
 advance_turn_phase()
