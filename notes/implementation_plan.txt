@@ -10,10 +10,10 @@ GAMEPLAY
 - ~~play card / self enters play trigger~~
 - ~~action points / card cost~~
 - ~~lanes, landscapes~~
-- attack phase
+- ~~decks.json~~
+- json-to-game-entity logic (asset manager)
 - refactor gameplay_manager and gameplay_classes
-- json-to-game-entity logic
-- deck json
+- attack phase
 - figure out cw_lang integration
 - network message format and processing (local and peer)
 - implement check_card_specific_requirements

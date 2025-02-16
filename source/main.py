@@ -4,14 +4,12 @@ from typing import Callable
 
 import pygame
 
-import configs
-import event_manager
-import graphics
-import client
+import source.system.configs as configs
+import source.system.event_manager as event_manager
+import gui.graphics as graphics
 
 async def main():
     configs.init()
-    client.init()
     graphics.init()
 
     event_manager.register_update()

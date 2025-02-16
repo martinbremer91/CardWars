@@ -1,4 +1,4 @@
-﻿from main import quit_app, toggle_paused
+﻿from source.main import quit_app, toggle_paused
 import pygame
 from pygame.locals import *
 
