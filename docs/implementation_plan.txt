@@ -11,8 +11,8 @@ GAMEPLAY
 - ~~action points / card cost~~
 - ~~lanes, landscapes~~
 - ~~decks.json~~
-- json-to-game-entity logic (asset manager)
-- refactor gameplay_manager and gameplay_classes
+- ~~json-to-game-entity logic (asset manager)~~
+- ~~refactor gameplay_manager and gameplay_classes~~
 - attack phase
 - figure out cw_lang integration
 - network message format and processing (local and peer)
