@@ -3,7 +3,7 @@ import json
 
 asset_path : str = os.getcwd() + '/../../resources'
 
-def get_database() -> dict[int, dict[str, ]]:
+def get_database() -> dict[str, dict[str, ]]:
     cwd = os.getcwd()
     os.chdir(asset_path)
     database = json.loads(open('card_database.json', "r").read())

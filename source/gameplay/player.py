@@ -7,7 +7,6 @@ class Player:
         self.hp : int  = hp
         self.action_points : int = 0
         self.lanes : list[Lane] = list()
-        self.stack = Lane(None, self, None)
         self.landscapes : dict[Landscape, int] = dict()
 
     def take_damage(self, amount : int):
