@@ -1,12 +1,12 @@
 ﻿from typing import Optional
-from player import Player
-from gameplay_enums import Landscape
-from entities import Creature, Building
+from source.gameplay.player import Player
+from source.gameplay.gameplay_enums import Landscape
+from source.gameplay.entities import Creature, Building
 
 class Lane:
-    def __init__(self, lane_id : Optional[int], player: Player, landscape : Optional[Landscape]):
+    def __init__(self, lane_id : Optional[int], player, landscape : Optional[Landscape]):
         self.lane_id : Optional[int] = lane_id
-        self.player : Player = player
+        self.player = player
         self.creature : Optional[Creature] = None
         self.building : Optional[Building] = None
         self.landscape : Optional[Landscape] = None
@@ -34,6 +34,14 @@ class Lane:
             self.player.remove_landscape(self.landscape)
         else:
             self.player.add_landscape(self.landscape)
+
+    def add_entity(self, entity : Creature | Building):
+        if isinstance(entity, Creature):
+            # TODO: entity replacement code
+            self.creature = entity
+        elif isinstance(entity, Building):
+            self.creature = entity
+            # TODO: entity replacement code
 
 lanes : list[Lane]
 

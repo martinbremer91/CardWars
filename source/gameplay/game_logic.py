@@ -1,5 +1,4 @@
-﻿from typing import Callable, reveal_type
-
+﻿from typing import Callable
 
 class Trigger:
     def __init__(self):

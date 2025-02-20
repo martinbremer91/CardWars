@@ -23,4 +23,9 @@ def resolve_attack(lane : Lane):
         print(f'{opposite_lane.player.name} HP: {opposite_lane.player.hp}')
 
 def fight(creature_a : Creature, creature_b : Creature):
-    print(f'{creature_a.name} fights {creature_b.name}')
+    creature_b.take_damage(creature_a.attack)
+    print(f'{creature_a.name} deals {creature_a.attack} damage to {creature_b.name}')
+    print(f'{creature_b.name} def: {creature_b.defense}')
+    creature_a.take_damage(creature_b.attack)
+    print(f'{creature_b.name} deals {creature_b.attack} damage to {creature_a.name}')
+    print(f'{creature_a.name} def: {creature_a.defense}')

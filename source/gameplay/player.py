@@ -1,13 +1,30 @@
-﻿from source.gameplay.gameplay_enums import Landscape
+﻿from source.gameplay.gameplay_enums import Landscape, CollectionType
+from source.gameplay.card import Collection
 
 class Player:
     def __init__(self, name: str, hp : int):
-        from lane import Lane
         self.name : str = name
         self.hp : int  = hp
         self.action_points : int = 0
-        self.lanes : list[Lane] = list()
+        self.lanes = list()
         self.landscapes : dict[Landscape, int] = dict()
+        self.deck : Collection = Collection(self, CollectionType.Deck)
+        self.hand : Collection = Collection(self, CollectionType.Hand)
+        self.cards_in_play : Collection = Collection(self, CollectionType.In_Play)
+        self.discard : Collection = Collection(self, CollectionType.Discard)
+
+    def get_collection(self, collection_type : CollectionType) -> Collection:
+        match collection_type:
+            case CollectionType.Deck:
+                return self.deck
+            case CollectionType.Hand:
+                return self.hand
+            case CollectionType.In_Play:
+                return self.cards_in_play
+            case CollectionType.Discard:
+                return self.discard
+            case _:
+                raise Exception("No valid Collection given")
 
     def take_damage(self, amount : int):
         self.hp = max(self.hp - amount, 0)

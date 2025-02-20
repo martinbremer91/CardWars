@@ -1,9 +1,9 @@
-﻿from source.gameplay.gameplay_enums import Landscape, EntityType
-from typing import Optional
+﻿from typing import Optional
+from source.gameplay.gameplay_enums import Landscape, EntityType
 
 class Entity:
     def __init__(self, name : str, landscape : Landscape, cost : int):
-        self.kind : Optional[EntityType] = None
+        self.entity_type : Optional[EntityType] = None
         self.name : str = name
         self.base_land : Landscape = landscape
         self.land : Landscape = landscape
@@ -18,7 +18,7 @@ class Entity:
 class Creature(Entity):
     def __init__(self, name : str, landscape : Landscape, cost : int, attack : int, defense : int):
         super().__init__(name, landscape, cost)
-        self.kind : EntityType = EntityType.Creature
+        self.entity_type : EntityType = EntityType.Creature
         self.base_attack : int = attack
         self.base_defense : int = defense
         self.attack : int = self.base_attack
@@ -27,30 +27,42 @@ class Creature(Entity):
         self.flooped : bool = False
 
     def on_play(self):
-        super().on_play()
+
         print(f"Played {self.land.name} Creature")
     def place_on_lane(self, lane):
         lane.creature = self
+    def take_damage(self, damage : int):
+        self.defense = max(self.defense - damage, 0)
+        if self.defense == 0:
+            self.destroy()
+    def destroy(self):
+        # TODO: discard card
+        # TODO: remove from lane
+        # TODO: invoke on_leave_play
+        print(self.name, 'destroyed')
 
 class Spell(Entity):
     def __init__(self, name : str, landscape : Landscape, cost : int):
         super().__init__(name, landscape, cost)
-        self.kind : EntityType = EntityType.Creature
+        self.entity_type : EntityType = EntityType.Creature
 
     def on_play(self):
-        super().on_play()
         print(f"Played {self.land.name} Spell")
 
 class Building(Entity):
     def __init__(self, name : str, landscape : Landscape, cost : int):
         super().__init__(name, landscape, cost)
-        self.kind : EntityType = EntityType.Building
+        self.entity_type : EntityType = EntityType.Building
 
     def on_play(self):
-        super().on_play()
         print(f"Played {self.land.name} Building")
     def place_on_lane(self, lane):
         lane.building = self
+    def destroy(self):
+        # TODO: discard card
+        # TODO: remove from lane
+        # TODO: invoke on_leave_play
+        print(self.name, 'destroyed')
 
 def create_creature_from_card_data(card_data : dict[str,]) -> Creature:
     name : str = card_data['name']
