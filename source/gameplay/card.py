@@ -1,10 +1,11 @@
 ﻿from typing import Optional
 from random import shuffle
 from source.gameplay.player import Player
-from source.gameplay.game_entities import Entity, get_entity_kind_from_string, get_entity_from_kind
+from source.gameplay.entities import Entity, get_entity_kind_from_string, get_entity_from_kind
 from source.gameplay.gameplay_enums import EntityType, CollectionType, Landscape
-from source.gameplay.lane import Lane, select_lane
+from source.gameplay.lane import Lane
 from source.system.asset_manager import get_database, import_decklist
+from source.gameplay.game_logic import Choice
 
 class Collection:
     def __init__(self, player : Player):
@@ -171,11 +172,11 @@ def try_play_card(player : Player, card : Card):
 
     selected_lane : Optional[Lane, None] = None
     if card.game_entity.kind is not EntityType.Spell:
-        selected_lane = select_lane(available_lanes)
+        selected_lane = Choice[Lane](available_lanes).resolve()
     put_card_in_play(player, card, selected_lane)
     player.spend_action_points(cost)
 
-def put_card_in_play(player: Player, card: Card, lane : Optional[Lane, None]):
+def put_card_in_play(player: Player, card: Card, lane : Optional[Lane]):
     move_between_collections(player, card, CollectionType.In_Play)
     card.game_entity.on_play()
     if card.game_entity.kind is not EntityType.Spell:

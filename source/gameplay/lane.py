@@ -1,7 +1,7 @@
 ﻿from typing import Optional
 from player import Player
 from gameplay_enums import Landscape
-from game_entities import Creature, Building
+from entities import Creature, Building
 
 class Lane:
     def __init__(self, lane_id : Optional[int], player: Player, landscape : Optional[Landscape]):
@@ -15,6 +15,8 @@ class Lane:
 
         if landscape is not None:
             self.assign_landscape(landscape)
+
+        self.player.lanes.append(self)
 
     def assign_landscape(self, landscape : Landscape):
         if self.landscape is not None:
@@ -33,21 +35,22 @@ class Lane:
         else:
             self.player.add_landscape(self.landscape)
 
-def select_lane(options : list[Lane]) -> Lane:
-    index : int = -1
-    while index < 0 or index >= len(options):
-        user_prompt_options : str = ''
-        for i in range(len(options)):
-            user_prompt_options += f'[{i}]: {options[i].landscape.name}\n'
+lanes : list[Lane]
 
-        print(f'Available Lanes:\n{user_prompt_options}')
-        choice = input('Select lane:')
-        if not choice.isdigit():
-            continue
-        choice = int(choice)
-        if choice < 0 or choice >= len(options):
-            print('invalid lane index')
-            continue
-        index = choice
+def init_lanes(players : (Player, Player)):
+    global lanes
+    lanes = list()
 
-    return options[index]
+    for l in range(4):
+        lanes.append(Lane(l, players[0], Landscape.BluePlains))
+        lanes.append(Lane(l + 10, players[1], Landscape.Cornfield))
+
+def get_opposite_lane(lane : Lane) -> Lane:
+    opposite_index : int = lane.lane_id + 10 if lane.lane_id < 5 else lane.lane_id - 10
+    for l in lanes:
+        if l.lane_id == opposite_index:
+            return l
+    raise Exception('Failed to get opposite lane')
+
+def get_adjacent_lanes(lane : Lane) -> (Lane, Lane):
+    ...

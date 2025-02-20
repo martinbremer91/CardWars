@@ -1,8 +1,9 @@
-from player import Player
-from card import init_collections, draw_cards, set_up_decks
-from game_logic import Trigger
-from gameplay_enums import TurnPhase, Landscape
-from lane import Lane
+from source.gameplay.player import Player
+from source.gameplay.card import init_collections, draw_cards, set_up_decks
+from source.gameplay.game_logic import Trigger, Choice
+from gameplay_enums import TurnPhase
+from source.gameplay.lane import Lane, init_lanes
+from source.gameplay.combat import get_active_combat_lanes, resolve_attack
 
 active_player : Player
 player_one : Player
@@ -22,14 +23,7 @@ def init():
 
     init_collections(player_one, player_two)
     init_turn_phase_triggers()
-    init_lanes()
-
-def init_lanes():
-    # <placeholder>
-    for l in range(4):
-        player_one.lanes.append(Lane(l, player_one, Landscape.BluePlains))
-        player_two.lanes.append(Lane(l + 10, player_two, Landscape.Cornfield))
-    # </placeholder>
+    init_lanes((player_one, player_two))
 
 def init_turn_phase_triggers():
     global start_of_turn
@@ -68,22 +62,24 @@ def advance_turn_phase():
     if turn_phase.value > TurnPhase.P2_Battle.value:
         turn_phase = TurnPhase.P1_Main
 
-    if turn_phase is TurnPhase.P1_Main or TurnPhase.P2_Main:
+    if turn_phase is TurnPhase.P1_Main or turn_phase is TurnPhase.P2_Main:
         end_of_turn.invoke(active_player)
         # <placeholder> todo: only call start_turn once (async) end_of_turn.invoke resolves
         start_turn()
         # </placeholder>
+    elif turn_phase is TurnPhase.P1_Battle or TurnPhase.P2_Battle:
+        resolve_combat()
+
+def resolve_combat():
+    lanes : list[Lane] = get_active_combat_lanes(active_player)
+    while len(lanes) > 0:
+        lane = Choice[Lane](lanes).resolve()
+        resolve_attack(lane)
+        lanes.remove(lane)
+    advance_turn_phase()
 
 def gain_turn_start_action_points(player : Player):
     player.gain_action_points(2)
 
 def lose_unused_action_points(player : Player):
     player.action_points = 0
-
-
-# test code
-init()
-start_play()
-
-from card import try_play_card, p1_hand
-try_play_card(player_one, p1_hand.cards[0])

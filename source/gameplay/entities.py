@@ -23,6 +23,8 @@ class Creature(Entity):
         self.base_defense : int = defense
         self.attack : int = self.base_attack
         self.defense : int = self.base_defense
+        self.exhausted : bool = False
+        self.flooped : bool = False
 
     def on_play(self):
         super().on_play()
@@ -54,8 +56,8 @@ def create_creature_from_card_data(card_data : dict[str,]) -> Creature:
     name : str = card_data['name']
     landscape : Landscape = Landscape.get_landscape_from_str(card_data['landscape'])
     cost : int = int(card_data['cost'])
-    attack : int = card_data['attack']
-    defense : int = card_data['defense']
+    attack : int = int(card_data['attack'])
+    defense : int = int(card_data['defense'])
     return Creature(name, landscape, cost, attack, defense)
 
 def create_spell_from_card_data(card_data : dict[str,]) -> Spell:
