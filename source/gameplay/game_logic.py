@@ -1,10 +1,8 @@
-﻿from typing import Callable
-
-class Trigger:
+﻿class Trigger:
     def __init__(self):
-        self.subscribers : list[Callable] = list()
+        self.subscribers = list()
 
-    def subscribe(self, subscriber : Callable):
+    def subscribe(self, subscriber):
         self.subscribers.append(subscriber)
 
     def invoke(self, arg = ...):
@@ -12,13 +10,13 @@ class Trigger:
             subscriber(arg)
 
 class Choice[T]:
-    def __init__(self, options : list[T]):
-        self.options : list[T] = options
-        self.type_label : str = f"{type(options[0]).__name__}"
+    def __init__(self, options):
+        self.options = options
+        self.type_label = f"{type(options[0]).__name__}"
 
     def resolve(self) -> T:
         while True:
-            user_prompt_options: str = ''
+            user_prompt_options = ''
             for i in range(len(self.options)):
                 user_prompt_options += f'[{i}]: {self.options[i]}\n'
 

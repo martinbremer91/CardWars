@@ -28,7 +28,7 @@ class Landscape(IntEnum):
     LavaFlats = 7
 
     @staticmethod
-    def get_landscape_from_str(string : str):
+    def get_landscape_from_str(string):
         match string:
             case 'Rainbow':
                 return Landscape.Rainbow

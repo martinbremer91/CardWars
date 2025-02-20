@@ -1,15 +1,14 @@
-﻿from typing import Optional
-from random import shuffle
+﻿from random import shuffle
 from source.gameplay.entities import get_entity_kind_from_string, get_entity_from_kind, Entity, Creature, Building
 from source.gameplay.gameplay_enums import CollectionType, Landscape, EntityType
 from source.system.asset_manager import get_database, import_decklist
 from source.gameplay.game_logic import Choice
 
 class Collection:
-    def __init__(self, player, collection_type : CollectionType):
-        self.cards : list[Card] = list()
+    def __init__(self, player, collection_type):
+        self.cards= list()
         self.player = player
-        self.collection_type : CollectionType = collection_type
+        self.collection_type = collection_type
 
     def append(self, card):
         if not isinstance(card, Card):
@@ -19,38 +18,37 @@ class Collection:
         if not isinstance(card, Card):
             raise Exception("Cannot append collection with invalid type", type(card))
         self.cards.remove(card)
-    def pop(self, index : int):
+    def pop(self, index):
         return self.cards.pop(index)
 
 class Card:
-    def __init__(self, player , entity : Entity, collection : Collection):
-        from source.gameplay.lane import Lane
+    def __init__(self, player , entity, collection):
         self.player  = player
-        self.entity : Entity = entity
-        self.collection : Collection = collection
+        self.entity = entity
+        self.collection = collection
         self.collection.append(self)
-        self.lane = Optional[Lane]
+        self.lane = None
 
     def put_into_play(self, lane):
         self.lane = lane
         if isinstance(self.entity, Creature | Building):
             lane.add_entity(self.entity)
-    def remove_from_play(self, to_enum : CollectionType):
+    def remove_from_play(self, to_enum):
         self.lane = None
         move_between_collections(self.player, self, to_enum)
-    def replace(self, to_enum : CollectionType = CollectionType.Discard):
+    def replace(self, to_enum = CollectionType.Discard):
         self.remove_from_play(to_enum)
     def destroy(self):
         self.remove_from_play(CollectionType.Discard)
 
-def get_card_from_id(player, card_data : dict[str, ], deck : Collection) -> Card:
-    entity_kind : EntityType = get_entity_kind_from_string(card_data['type'])
+def get_card_from_id(player, card_data, deck : Collection) -> Card:
+    entity_kind = get_entity_kind_from_string(card_data['type'])
     return Card(player, get_entity_from_kind(entity_kind, card_data), deck)
 
-def get_deck_from_decklists(name : str, player) -> Collection:
-    database : dict[str, dict[str, ]] = get_database()
+def get_deck_from_decklists(name, player) -> Collection:
+    database = get_database()
 
-    decklist : list[(int, int)] = import_decklist(name)
+    decklist = import_decklist(name)
 
     for item in decklist:
         for i in range(item[0]):
@@ -65,44 +63,43 @@ def set_up_decks(player_one, player_two):
     shuffle_collection(player_one.deck)
     shuffle_collection(player_two.deck)
 
-def shuffle_collection(collection : Collection):
+def shuffle_collection(collection):
     shuffle(collection.cards)
 
-def move_between_collections(player, src: Card | CollectionType, to_enum: CollectionType,
-                             amount: Optional[int] = None):
+def move_between_collections(player, src, to_enum, amount = None):
     if isinstance(src, Card):
-        to_coll : Collection = player.get_collection(to_enum)
+        to_coll = player.get_collection(to_enum)
         to_coll.append(src)
         src.collection.remove(src)
         src.collection = to_coll
     else:
-        from_coll : Collection = player.get_collection(src)
+        from_coll = player.get_collection(src)
         if not from_coll:
             return
 
-        to_coll : Collection = player.get_collection(to_enum)
+        to_coll = player.get_collection(to_enum)
 
         for i in range(amount):
-            card : Card = from_coll.pop(0)
+            card = from_coll.pop(0)
             to_coll.append(card)
             card.collection = to_coll
 
-def draw_cards(player, amount : int = 1):
+def draw_cards(player, amount = 1):
     move_between_collections(player, CollectionType.Deck, CollectionType.Hand, amount)
 
-def check_card_landscape_requirement(player, card : Card) -> bool:
-    cost : int = card.entity.cost
-    land : Landscape = card.entity.land
+def check_card_landscape_requirement(player, card) -> bool:
+    cost = card.entity.cost
+    land = card.entity.land
 
     if land is Landscape.Rainbow:
         return sum(player.landscapes.values()) >= cost
     else:
         return land in player.landscapes.keys() and player.landscapes[land] >= cost
 
-def check_card_action_cost_requirement(player, cost : int) -> bool:
+def check_card_action_cost_requirement(player, cost) -> bool:
     return player.action_points >= cost
 
-def check_card_lane_availability(player, entity : Entity, lanes : list) -> bool:
+def check_card_lane_availability(player, entity, lanes) -> bool:
     match entity.entity_type:
         case EntityType.Creature:
             for lane in player.lanes:
@@ -122,9 +119,9 @@ def check_card_lane_availability(player, entity : Entity, lanes : list) -> bool:
 def check_card_specific_requirements() -> bool:
     return True
 
-def try_play_card(player, card : Card):
+def try_play_card(player, card):
     from source.gameplay.lane import Lane
-    cost : int = card.entity.cost
+    cost = card.entity.cost
 
     if not check_card_landscape_requirement(player, card):
         print(f"{player.name} failed land requirement")
@@ -140,7 +137,7 @@ def try_play_card(player, card : Card):
     if not check_card_specific_requirements():
         return
 
-    selected_lane : Optional[Lane] = None
+    selected_lane = None
 
     if card.entity.entity_type is not EntityType.Spell:
         selected_lane = Choice[Lane](available_lanes).resolve()
@@ -151,21 +148,21 @@ def try_play_card(player, card : Card):
     put_card_in_play(player, card, selected_lane)
     player.spend_action_points(cost)
 
-def put_card_in_play(player, card: Card, lane = None):
+def put_card_in_play(player, card, lane = None):
     move_between_collections(player, card, CollectionType.In_Play)
     card.entity.on_play()
     if card.entity.entity_type is not EntityType.Spell:
         card.entity.place_on_lane(lane)
 
-def mill_cards(player, amount: int = 1):
+def mill_cards(player, amount = 1):
     move_between_collections(player, CollectionType.Deck, CollectionType.Discard, amount)
 
-def discard_cards(player, amount: int = 1):
-    hand: Collection = player.get_collection(CollectionType.Hand)
+def discard_cards(player, amount = 1):
+    hand = player.get_collection(CollectionType.Hand)
 
     for i in range(amount):
         if not hand:
             return
 
-        card : Card = Choice(hand.cards).resolve()
+        card = Choice(hand.cards).resolve()
         move_between_collections(player, card, CollectionType.Discard)

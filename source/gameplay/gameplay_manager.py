@@ -86,8 +86,8 @@ def resolve_combat():
         lanes.remove(lane)
     advance_turn_phase()
 
-def gain_turn_start_action_points(player : Player):
+def gain_turn_start_action_points(player):
     player.gain_action_points(2)
 
-def lose_unused_action_points(player : Player):
+def lose_unused_action_points(player):
     player.action_points = 0
