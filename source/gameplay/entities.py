@@ -19,7 +19,8 @@ class Entity:
         return self.name
 
     def parse_cw_lang(self):
-        self.abilities.append(Ability(Trigger(), [DealDamage(self, Choice(TargetTag.Foe_Creatures), 1)]))
+        ...
+        # self.abilities.append(Ability(Trigger(), [DealDamage(self, Choice(TargetTag.Foe_Creatures), 1)]))
     def assign_card(self, card):
         self.card = card
     def on_play(self):

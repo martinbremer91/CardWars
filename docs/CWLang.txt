@@ -27,7 +27,7 @@ EFFECTS:
 - TO_HAND(<target>, <target>, int) // target player, target card
 - DISCARD(<target>, int)
 - DESTROY(<target>)
-- REMOVE_FROM_PLAY(<target>)
+- EXILE(<target>)
 - FIGHT(<target>, <target>)
 - FLOOP(<target>)
 - SET_INVULN(<target>, <bool>)
