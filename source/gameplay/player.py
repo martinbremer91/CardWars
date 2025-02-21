@@ -4,6 +4,7 @@ from source.gameplay.card import Collection
 class Player:
     def __init__(self, name, hp):
         self.name = name
+        self.opponent = None
         self.hp = hp
         self.action_points = 0
         self.lanes = list()
@@ -13,6 +14,8 @@ class Player:
         self.cards_in_play = Collection(self, CollectionType.In_Play)
         self.discard = Collection(self, CollectionType.Discard)
 
+    def assign_opponent(self, opponent):
+        self.opponent = opponent
     def get_collection(self, collection_type) -> Collection:
         match collection_type:
             case CollectionType.Deck:
@@ -26,12 +29,12 @@ class Player:
             case _:
                 raise Exception("No valid Collection given")
 
-    def take_damage(self, amount ):
+    def take_damage(self, amount):
         self.hp = max(self.hp - amount, 0)
-    def heal_damage(self, amount ):
+    def heal_damage(self, amount):
         self.hp = min(self.hp + amount, 25)
 
-    def gain_action_points(self, amount ):
+    def gain_action_points(self, amount):
         self.action_points += amount
     def spend_action_points(self, amount):
         if self.action_points - amount < 0:

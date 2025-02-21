@@ -16,7 +16,7 @@ GAMEPLAY
 - ~~attack phase~~
 - ~~skip first attack rule~~
 
-- replace creature
+- create TriggerType enum, require it as param for Trigger.__init__
 - figure out cw_lang integration
 - network message format and processing (local and peer)
 - implement check_card_specific_requirements

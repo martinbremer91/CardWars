@@ -17,7 +17,7 @@ class Lane:
         self.player.lanes.append(self)
 
     def __str__(self):
-        return str(self.lane_id)
+        return f'{str(self.lane_id)} / {self.landscape.name}'
 
     def assign_landscape(self, landscape):
         if self.landscape is not None:

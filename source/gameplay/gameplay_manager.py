@@ -21,6 +21,8 @@ def init():
 
     player_one = Player("Player 1", 25)
     player_two = Player("Player 2", 25)
+    player_one.assign_opponent(player_two)
+    player_two.assign_opponent(player_one)
 
     init_turn_phase_triggers()
     init_lanes((player_one, player_two))

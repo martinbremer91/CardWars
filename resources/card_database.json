@@ -8,7 +8,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -21,7 +22,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -34,7 +36,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -47,7 +50,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -60,7 +64,8 @@
         ],
         "landscape": "CornFields",
         "ability": "",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -73,7 +78,8 @@
         ],
         "landscape": "CornFields",
         "ability": "",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -86,7 +92,8 @@
         ],
         "landscape": "CornFields",
         "ability": "",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -99,7 +106,8 @@
         ],
         "landscape": "CornFields",
         "ability": "",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -112,7 +120,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -125,7 +134,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -138,7 +148,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -151,7 +162,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -164,7 +176,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -177,7 +190,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -190,7 +204,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -203,7 +218,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -216,7 +232,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -229,7 +246,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -242,7 +260,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -255,7 +274,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -268,7 +288,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -281,7 +302,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -294,7 +316,8 @@
         ],
         "landscape": "",
         "ability": "Creatures you control with no Damage on them have 'FLOOP >>> Deal 1 Damage to target Creature'",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -307,7 +330,8 @@
         ],
         "landscape": "",
         "ability": "Creatures on facedown Landscapes you control have +2 ATK.",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -320,7 +344,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "FLOOP >>> Return a random Rainbow card from your discard pile to your hand. If you control a Building in this Lane, gain 1 Action.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "7"
     },
@@ -333,7 +358,8 @@
         ],
         "landscape": "CornFields",
         "ability": "FLOOP >>> Destroy target Building in Archer Dan's Lane.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "2",
         "defense": "6"
     },
@@ -346,7 +372,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "FLOOP >>> Flip target face down Landscape you control face up.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "1",
         "defense": "4"
     },
@@ -359,7 +386,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "Your Creatures on adjacent Lanes may not be Attacked.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "2",
         "defense": "7"
     },
@@ -372,7 +400,8 @@
         ],
         "landscape": "CornFields",
         "ability": "Corn Dog has +1 DEF for each Cornfield Landscape you control. If you control 3 or fewer Cornfield Landscapes, Corn Dog has +1 ATK.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "0",
         "defense": "12"
     },
@@ -385,7 +414,8 @@
         ],
         "landscape": "CornFields",
         "ability": "Corn Lord has +1 ATK for each other Cornfield Creature you control.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "0",
         "defense": "7"
     },
@@ -398,7 +428,8 @@
         ],
         "landscape": "CornFields",
         "ability": "+1 ATK for each adjacent Cornfield Landscape.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "6"
     },
@@ -411,7 +442,8 @@
         ],
         "landscape": "CornFields",
         "ability": "When Cornataur enters play, deal 1 Damage to your opponent for each Cornfield Landscape you control.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "2",
         "defense": "10"
     },
@@ -424,7 +456,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "FLOOP >>> Move a Creature you control to an empty Lane.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "8"
     },
@@ -437,7 +470,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "3",
         "defense": "9"
     },
@@ -450,7 +484,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "FLOOP >>> Draw a card for each Flooped Creature you control (including this one).",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "1",
         "defense": "5"
     },
@@ -463,7 +498,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "1",
         "defense": "5"
     },
@@ -476,7 +512,8 @@
         ],
         "landscape": "CornFields",
         "ability": "Additional Cost: Discard a card. When Field Reaper enters play, move target Creature in this Lane to an adjacent empty Lane on your side.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "1",
         "defense": "4"
     },
@@ -489,7 +526,8 @@
         ],
         "landscape": "CornFields",
         "ability": "At the start of your turn, each player draws a card.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "10"
     },
@@ -502,7 +540,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "FLOOP >>> Put a Spell from your discard pile on top of your deck.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "5"
     },
@@ -515,7 +554,8 @@
         ],
         "landscape": "CornFields",
         "ability": "Husker Knight has +1 ATK and +2 DEF for each Cornfield Landscape you control.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "0",
         "defense": "0"
     },
@@ -528,7 +568,8 @@
         ],
         "landscape": "CornFields",
         "ability": "When Husker Worm enters play, flip a Cornfield Landscape you control face down.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "5",
         "defense": "4"
     },
@@ -541,7 +582,8 @@
         ],
         "landscape": "CornFields",
         "ability": "When Legion of Earlings enters play, you may return target Creature in this Lane to its owners hand.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "2",
         "defense": "8"
     },
@@ -554,7 +596,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "+3 ATK while your opponent does not control a Creature in this Lane.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "1",
         "defense": "2"
     },
@@ -567,7 +610,8 @@
         ],
         "landscape": "CornFields",
         "ability": "FLOOP >>> Deal 1 Damage to target Creature. Do this once for each Cornfield Landscape you control. (May only target each Creature once.)",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "0",
         "defense": "5"
     },
@@ -580,7 +624,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "7"
     },
@@ -593,7 +638,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "When Psionic Architect enters play, you may ready a Flooped Creature you control.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "6"
     },
@@ -606,7 +652,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "Each Creature that changed Lanes this turn has +2 ATK this turn.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "6"
     },
@@ -619,7 +666,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "+2 ATK for each Flooped Creature you control.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "1",
         "defense": "11"
     },
@@ -632,7 +680,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "FLOOP >>> Flip target Cornfield Landscape in this Lane face down.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "4"
     },
@@ -645,7 +694,8 @@
         ],
         "landscape": "CornFields",
         "ability": "When Travelin' Farmer leaves play, deal 1 Damage to your opponent for each card in his hand.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "2",
         "defense": "12"
     },
@@ -658,7 +708,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "Pay 1 Action >>> Target Creature in this Lane has -10 ATK this turn.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "3",
         "defense": "4"
     },
@@ -671,7 +722,8 @@
         ],
         "landscape": "CornFields",
         "ability": "+1 DEF for each Cornfield Landscape in play (counting all players).",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "4"
     },
@@ -684,7 +736,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "Woadic Chief has +2 ATK this turn for each Spell you have played this turn.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "2",
         "defense": "10"
     },
@@ -697,7 +750,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "When Woadic Marauder changes Lanes during a turn, draw a card.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "3",
         "defense": "9"
     },
@@ -710,7 +764,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "Each adjacent Creature has +1 ATK.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "9"
     },
@@ -723,7 +778,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Deal 1 Damage to each opposing Creature.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -736,7 +792,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Deal 1 Damage to target Creature for each Cornfield Landscape you control.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -749,7 +806,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Each of your Cornfield Creatures has +1 ATK this turn for each different Landscape type you control.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "",
         "defense": ""
     },
@@ -762,7 +820,8 @@
         ],
         "landscape": "CornFields",
         "ability": "Deal 1 Damage to your opponent for each card in his hand.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -775,7 +834,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "Draw 3 cards.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -788,7 +848,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "You may flip one of your Landscapes face up, and you may move one of your Buildings to one of your Lanes without one.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "",
         "defense": ""
     },
@@ -802,7 +863,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Move one of your Creatures to one of your empty Lanes.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "",
         "defense": ""
     },
@@ -815,7 +877,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Each Creature that changed Lanes this turn has +2 ATK this turn.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "",
         "defense": ""
     },
@@ -828,7 +891,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Target Blue Plains Creature you control has +2 ATK this turn.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "",
         "defense": ""
     },
@@ -842,7 +906,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Your Creature in this Lane has +1 ATK.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -856,7 +921,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Your Creature in this Lane has +3 DEF.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -869,7 +935,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "FLOOP >>> Your Creature in this Lane loses all abilities and gains the FLOOP ability of a random Creature (with a FLOOP ability) in your discard pile until end of turn.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -882,7 +949,8 @@
         ],
         "landscape": "CornFields",
         "ability": "Pay 2 Actions >>> Steal a random card from your opponent's hand and play it at no cost.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -895,7 +963,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "FLOOP >>> Move a Creature in an adjacent Lane to this Lane (if empty).",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -908,7 +977,8 @@
         ],
         "landscape": "",
         "ability": "Discard a card from your hand >>> Deal 1 Damage to target Creature.",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -921,7 +991,8 @@
         ],
         "landscape": "",
         "ability": "If you return two or more Creatures to your hand from play or your discard pile during your turn, heal 2 HP.",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -934,7 +1005,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "FLOOP >>> Return a Creature in an adjacent Lane to its owner's hand.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "6"
     },
@@ -947,7 +1019,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "3",
         "defense": "9"
     },
@@ -960,7 +1033,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "At the start of your turn, deal 3 Damage to each opponent who has no cards in hand.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "10"
     },
@@ -973,7 +1047,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "+1 ATK for every 5 cards in your discard pile.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "0",
         "defense": "5"
     },
@@ -986,7 +1061,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "Destroy a Creature you control and FLOOP >>> Destroy target opposing Creature in this Lane.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "1",
         "defense": "7"
     },
@@ -999,7 +1075,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "At the start of your turn, deal 1 Damage to target opponent for every 5 cards in your discard pile.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "7"
     },
@@ -1012,7 +1089,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "FLOOP >>> Gain 1 Action this turn.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "7"
     },
@@ -1025,7 +1103,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "Pay 1 Action >>> Return a random Useless Swamp Creature from your discard pile to your hand.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "7"
     },
@@ -1038,7 +1117,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "+2 ATK for each Green Cactiball you control.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "0",
         "defense": "4"
     },
@@ -1051,7 +1131,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "Destroy Green Mermaid >>> Deal 1 Damage to each opposing Creature.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "9"
     },
@@ -1064,7 +1145,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "FLOOP >>> Put the top card of your deck into your discard pile. Deal damage to each opposing Creature equal to the discarded cards Action Cost.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "0",
         "defense": "6"
     },
@@ -1077,7 +1159,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "Play Hot Eyebat only if you have 10 or more cards in your discard pile.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "4",
         "defense": "4"
     },
@@ -1090,7 +1173,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "While Immortal Maize Walker is on a Cornfield Landscape, it deals triple Damage.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "2",
         "defense": "8"
     },
@@ -1103,7 +1187,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "Lost Golem costs 1 less to play for each other Creature you have played this turn.",
-        "cost": "3",
+        "cw-lang": "",
+				"cost": "3",
         "attack": "5",
         "defense": "6"
     },
@@ -1116,7 +1201,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "Destroy Mace Stump >>> Target opponent discards a card for every 5 cards in your discard pile.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "3",
         "defense": "3"
     },
@@ -1129,7 +1215,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "+2 DEF for every 5 cards in your discard pile.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "4"
     },
@@ -1142,7 +1229,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "At the start of your turn, you may return Ms. Mummy to its owner's hand. If you do, target SandyLand Creature you control gains 1 DEF.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "1",
         "defense": "4"
     },
@@ -1155,7 +1243,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "When a SandyLand Creature enters play under your control, Peach Djinni has +1 ATK this turn.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "0",
         "defense": "6"
     },
@@ -1168,7 +1257,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "FLOOP >>> Return a card with cost 0 from your discard pile to your hand.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "6"
     },
@@ -1181,7 +1271,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "1",
         "defense": "5"
     },
@@ -1194,7 +1285,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "When another Creature enters play under your control, Sand Eyebat gains 1 DEF.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "1",
         "defense": "10"
     },
@@ -1207,7 +1299,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "+2 ATK if you control a Blue Plains Landscape.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "8"
     },
@@ -1220,7 +1313,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "When Sandhorn Devil enters play, deal 1 Damage to each Creature in play (including each of your Creatures).",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "3",
         "defense": "6"
     },
@@ -1233,7 +1327,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "When Sandsnake enters play, deal 4 Damage to target opposing Creature in this Lane.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "0",
         "defense": "9"
     },
@@ -1246,7 +1341,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "When SandWitch or another Creature enters play under your control, deal 1 Damage to your opponent.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "0",
         "defense": "12"
     },
@@ -1259,7 +1355,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "When a SandyLand Creature enters play during your turn (including Shark), it has +1 ATK this turn.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "2",
         "defense": "10"
     },
@@ -1272,7 +1369,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "If you have 10 or more cards in your discard pile, pay 2 fewer Actions to play Teeth Leaf.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "3",
         "defense": "10"
     },
@@ -1285,7 +1383,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "FLOOP >>> Deal 1 Damage to target Creature for each Creature that entered play this turn.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "2",
         "defense": "9"
     },
@@ -1298,7 +1397,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "FLOOP >>> Return a random Creature from your discard pile to your hand.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "2",
         "defense": "6"
     },
@@ -1311,7 +1411,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "If one or more other SandyLand Creatures enter play during your turn, Wall of Sand has +2 ATK this turn.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "1",
         "defense": "12"
     },
@@ -1324,7 +1425,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "At the start of your turn, put the top card of your deck into your discard pile.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "0",
         "defense": "10"
     },
@@ -1337,7 +1439,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "Target opponent discards a card from his hand for every 5 cards in your discard pile.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -1350,7 +1453,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Play only if you control a Useless Swamp Creature. Target opponent discards a card from his hand.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "",
         "defense": ""
     },
@@ -1363,7 +1467,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "Each of your Creatures has +1 ATK this turn for every 5 cards in your discard pile.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "",
         "defense": ""
     },
@@ -1376,7 +1481,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Reveal the top 3 cards of your deck. Put one of them on the bottom of your deck and discard the rest.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "",
         "defense": ""
     },
@@ -1389,7 +1495,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Return a random Useless Swamp Creature from your discard pile to your hand.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "",
         "defense": ""
     },
@@ -1402,7 +1509,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "Draw a card for each of your empty Lanes.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -1415,7 +1523,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Reduce the cost of the next Creature you play this turn by 2 Actions.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "",
         "defense": ""
     },
@@ -1428,7 +1537,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Target SandyLands Creature has +2 ATK this turn for each Creature that entered play into an adjacent Lane this turn.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "",
         "defense": ""
     },
@@ -1441,7 +1551,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "Opposing Creatures in this Lane don't trigger entering or leaving play effects.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -1454,7 +1565,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "FLOOP >>> Return a Creature you control in this Lane to its owner's hand.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -1467,7 +1579,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "Pay 1 Action and FLOOP >>> If you control no Creatures in this Lane, move target Creature in this Lane to your side and ready it. At the end of turn, return it to its owner's side.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "",
         "defense": ""
     },
@@ -1480,7 +1593,8 @@
         ],
         "landscape": "",
         "ability": "The first time you replace a Creature on your turn, draw a card.",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -1493,7 +1607,8 @@
         ],
         "landscape": "",
         "ability": "Once per turn, you may deal 1 Damage to one of your Creatures. That Creature has +1 ATK this turn.",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -1506,7 +1621,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "While Albino Eyebat has exactly 2 Damage on it, it has +2 ATK.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "7"
     },
@@ -1519,7 +1635,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "While Angel Heart has exactly 3 Damage on it, it has +3 ATK.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "0",
         "defense": "7"
     },
@@ -1532,7 +1649,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "Pay 1 Action >>> Heal all Damage from Angel of Chocolate.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "3",
         "defense": "7"
     },
@@ -1545,7 +1663,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "Pay 1 Action >>> Heal all Damage from Angel of Vanilla.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "6"
     },
@@ -1558,7 +1677,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "At the start of your turn, you may heal or deal 1 Damage to each Creature you control. (Choose for each Creature.)",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "1",
         "defense": "7"
     },
@@ -1571,7 +1691,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "When Blueberry Djini enters play, if it replaced a Creature, draw two cards.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "6"
     },
@@ -1584,7 +1705,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "When Brain Gooey enters play, if it replaced a Creature, it has +2 ATK this turn.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "7"
     },
@@ -1597,7 +1719,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "While Cotton Eyebat has exactly 4 Damage on it, it has +4 ATK.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "8"
     },
@@ -1610,7 +1733,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "1",
         "defense": "5"
     },
@@ -1623,7 +1747,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "FLOOP >>> You heal 1 Hit Point. (Can't go over 25.)",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "0",
         "defense": "6"
     },
@@ -1636,7 +1761,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Discard a card >>> Dogboy has +2 ATK this turn. (Use only once during each of your turns.)",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "0",
         "defense": "5"
     },
@@ -1649,7 +1775,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "Discard a card >>> Dragon Foot has +1 ATK this turn. (Use up to five times during each of your turns.)",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "5"
     },
@@ -1662,7 +1789,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "Each adjacent NiceLands Creature has +2 DEF.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "2",
         "defense": "9"
     },
@@ -1675,7 +1803,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "+2 ATK for every 5 cards in your discard pile.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "0",
         "defense": "3"
     },
@@ -1688,7 +1817,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "When Future Scholar enters play, if it replaced a Creature, gain 1 Action.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "2",
         "defense": "8"
     },
@@ -1701,7 +1831,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "When Goat enters play, if it replaced a Creature, draw a card.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "1",
         "defense": "4"
     },
@@ -1714,7 +1845,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "When Grape Djini enters play, if it replaced a Creature, you may put a card from your discard pile on top of your deck.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "6"
     },
@@ -1727,7 +1859,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "When Headphone Jerk enters play, if it replaced a Creature, deal 3 Damage to another Creature in this Lane.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "2",
         "defense": "7"
     },
@@ -1740,7 +1873,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "Discard a card >>> Herculeye has +4 ATK this turn. (Use only once during each of your turns.)",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "1",
         "defense": "6"
     },
@@ -1753,7 +1887,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "Discard a card >>> Deal 1 Damage to another Creature in this Lane. (Use any number of times during each of your turns.)",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "6"
     },
@@ -1766,7 +1901,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "While Ms. Fluff has exactly 7 Damage on it, it has +7 ATK.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "2",
         "defense": "10"
     },
@@ -1779,7 +1915,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "At the start of your turn, if Niceasaurus Rex has Damage on it, draw a card.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "7"
     },
@@ -1792,7 +1929,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "When Pieclops enters play, heal 1 Damage from each adjacent Creature.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "7"
     },
@@ -1805,7 +1943,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "Discard a card >>> Deal 1 Damage to each opposing Creature. (Use only once during each of your turns.)",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "2",
         "defense": "8"
     },
@@ -1818,7 +1957,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "At the start of your turn, you heal 1 Hit Point for each different Landscape type you control. (Can't go over 25.)",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "4"
     },
@@ -1831,7 +1971,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "FLOOP >>> Discard the top 3 cards of your deck. For each Spell discarded this way, target player discards a card.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "3",
         "defense": "6"
     },
@@ -1844,7 +1985,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "When Snakemint deals Damage to an opposing player, you heal that many Hit Points. (Can't go over 25.)",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "7"
     },
@@ -1857,7 +1999,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "Discard a card >>> Heal 1 Damage from Squatting Bald Man. (Use any number of times during each of your turns.)",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "7"
     },
@@ -1870,7 +2013,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "At the start of your turn, discard 2 cards or destroy Steakchop. (Discard after your free draw.)",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "4",
         "defense": "4"
     },
@@ -1883,7 +2027,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "FLOOP >>> Travelin' Skeleton and another Creature you control change Lands with each other.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "0",
         "defense": "8"
     },
@@ -1896,7 +2041,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "While Wall of Chocolate has no Damage on it, it has +3 ATK.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "1",
         "defense": "9"
     },
@@ -1909,7 +2055,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "Heal up to 3 Damage from target Creature you control.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -1922,7 +2069,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Target Useless Swamp Creature you control has +2 ATK this turn.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "",
         "defense": ""
     },
@@ -1935,7 +2083,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "Creatures you control take no Damage from opposing Creatures this turn.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "",
         "defense": ""
     },
@@ -1948,7 +2097,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Heal or deal 1 Damage to target Creature.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "",
         "defense": ""
     },
@@ -1961,7 +2111,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "Move target Creature you control to an empty Blue Plains Landscape you control, and then draw a card.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -1974,7 +2125,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "Each of your Creatures with no Damage has +2 ATK this turn.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -1987,7 +2139,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "Target Creature you control has +X ATK this turn, where X is the amount of Damage on it.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "",
         "defense": ""
     },
@@ -2000,7 +2153,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "Target player draws five cards.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "",
         "defense": ""
     },
@@ -2013,7 +2167,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "Target Creature you control has +2 ATK this turn for each Spell you played this turn (including this one).",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -2026,7 +2181,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "Deal 1 Damage to target Creature for every 5 cards in your discard pile.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -2039,7 +2195,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Destroy target Building. You may deal 3 Damage to a Creature in that Lane. Flip your Landscape in that Lane face down.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -2052,7 +2209,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "Discard a card >>> Your Creature in this Lane can't be targeted or attacked until the start of your next turn.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "",
         "defense": ""
     },
@@ -2065,7 +2223,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "Your Creature in this Lane has +1 DEF for every 5 cards in your discard pile.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -2078,7 +2237,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "FLOOP >>> If your opponent has no Creatures in this Lane, they discard a card.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -2091,7 +2251,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "FLOOP >>> If you control a Creature in this Lane, gain 1 Action. Use it only to play a Creature in this Lane.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -2104,7 +2265,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "While your Creature in this Lane has no Damage on it, it has +2 ATK.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -2117,7 +2279,8 @@
         ],
         "landscape": "",
         "ability": "The first time a Creature you control attacks down an empty Lane during each of your turns, it has +1 ATK.",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -2130,7 +2293,8 @@
         ],
         "landscape": "",
         "ability": "Your Creatures with 5 or more Damage on them have +1 ATK.",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -2143,7 +2307,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "+3 ATK while your opponent does not control a Creature in this Lane.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "3",
         "defense": "2"
     },
@@ -2156,7 +2321,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "When Ban-She Princess enters play, you may remove a token from an adjacent Landscape.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "7"
     },
@@ -2169,7 +2335,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "When Ban-She Queen enters play, you may remove a token from an adjacent Landscape.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "3",
         "defense": "9"
     },
@@ -2182,7 +2349,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "FLOOP >>> Move Boarder Collie to any of your empty Landscapes. If either Landscape in this Lane is Frozen, gain 1 Action.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "7"
     },
@@ -2195,7 +2363,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "Pay 1 Action >>> Move all Damage on this Creature to target Creature.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "2",
         "defense": "7"
     },
@@ -2208,7 +2377,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "If Bog Bum leaves play while Ready, each opponent discards a random card.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "6"
     },
@@ -2221,7 +2391,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "If Bog Frog Bomb leaves play while Ready, deal 2 Damage to each opposing Creature.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "3",
         "defense": "8"
     },
@@ -2234,7 +2405,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "+3 ATK while your opponent does not control a Creature in this Lane.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "4"
     },
@@ -2247,7 +2419,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "FLOOP >>> Deal 1 Damage to target Creature. If Cottonpult has 5 or more Damage on it, it heals 1 Damage and readies.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "8"
     },
@@ -2260,7 +2433,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "FLOOP >>> Heal 2 Damage from a Creature on an adjacent Landscape. If Dr. Stuffenstein has 5 or more Damage on it, heal 2 Damage from each of your Creatures instead.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "1",
         "defense": "9"
     },
@@ -2273,7 +2447,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "Creatures on Landscapes with a Frozen token on it have -1 ATK.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "8"
     },
@@ -2286,7 +2461,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "FLOOP >>> Each opponent discards a card with cost 0, or reveals a hand with none.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "6"
     },
@@ -2299,7 +2475,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "Pay 1 Action >>> Freeze a Landscape in this Lane.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "2",
         "defense": "10"
     },
@@ -2312,7 +2489,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "When Frozen Fish deals Damage to a Creature, you may Freeze a Landscape in this Lane.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "8"
     },
@@ -2325,7 +2503,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Furious Chick has +1 ATK for each Damage on it.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "0",
         "defense": "5"
     },
@@ -2338,7 +2517,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "Furious Hen has +1 ATK for each Damage on it.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "0",
         "defense": "10"
     },
@@ -2351,7 +2531,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "Furious Rooster has +1 ATK for each Damage on it.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "0",
         "defense": "8"
     },
@@ -2364,7 +2545,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "At the start of your turn, deal 1 Damage to each Creature on a Landscape with a Frozen token on it.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "1",
         "defense": "10"
     },
@@ -2377,7 +2559,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "Whenever a foe discards a card, deal 1 Damage to that foe.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "1",
         "defense": "11"
     },
@@ -2390,7 +2573,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "FLOOP >>> Draw a card. If Music Mallard has 5 or more Damage on it, draw an additional card.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "0",
         "defense": "9"
     },
@@ -2403,7 +2587,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "While Papercut Tiger has 5 Damage on it, it has +5 ATK.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "2",
         "defense": "9"
     },
@@ -2416,7 +2601,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "FLOOP >>> Draw a card for each Landscape with a Frozen token on it players control.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "4",
         "defense": "4"
     },
@@ -2429,7 +2615,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "FLOOP >>> Deal 3 Damage to target Creature on a Landscape with a Frozen token on it.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "0",
         "defense": "5"
     },
@@ -2442,7 +2629,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "FLOOP >>> Heal 1 Damage from each of your Creatures for each Landscape with a Frozen token on it players control.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "7"
     },
@@ -2455,7 +2643,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "Destroy Snow Bunny >>> Freeze target Landscape.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "3",
         "defense": "3"
     },
@@ -2468,7 +2657,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "FLOOP >>> Each adjacent Creature has +2 ATK this turn.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "2",
         "defense": "7"
     },
@@ -2481,7 +2671,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "3",
         "defense": "1"
     },
@@ -2494,7 +2685,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "Sprucy Lucy has +1 ATK for each Landscape with a Frozen token on it players control.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "2",
         "defense": "9"
     },
@@ -2507,7 +2699,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "At the start of your turn, each player draws a card and then discards a card.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "1",
         "defense": "10"
     },
@@ -2520,7 +2713,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Target Creature has +X ATK this turn, where X is the number of different Landscape types your opponent controls.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "",
         "defense": ""
     },
@@ -2533,7 +2727,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "Target foe may discard a card with cost 2 or greater. If they do not, deal 5 Damage to that foe.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "",
         "defense": ""
     },
@@ -2546,7 +2741,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Remove from game a card in any player's discard pile. Heal X Damage from target Creature, where X is the cost of the card removed this way.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "",
         "defense": ""
     },
@@ -2559,7 +2755,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "Target foe may discard a card. If they do not, deal 2 Damage to each of their Creatures.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -2572,7 +2769,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "Freeze target Landscape, and then draw a card.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -2585,7 +2783,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "Freeze each of your opponent's Landscapes.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "",
         "defense": ""
     },
@@ -2598,7 +2797,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "Target player discards 1 card from her hand for each Landscape with a Frozen token on it she controls.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "",
         "defense": ""
     },
@@ -2611,7 +2811,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Deal 1 Damage to target Creature. If that Creature is on a Landscape with a Frozen token on it, deal 3 Damage instead.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "",
         "defense": ""
     },
@@ -2624,7 +2825,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "Heal exactly 5 Damage from target Creature you control (no more and no less).",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -2637,7 +2839,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "Freeze two target Landscapes.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -2650,7 +2853,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "FLOOP >>> Heal or deal 1 Damage to your Creature in this Lane.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -2663,7 +2867,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "Cardboard Mansion costs 1 less to play for every 5 cards in your discard pile. FLOOP >>> Gain 1 Action.",
-        "cost": "5",
+        "cw-lang": "",
+				"cost": "5",
         "attack": "",
         "defense": ""
     },
@@ -2676,7 +2881,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "When a Landscape in this Lane becomes Frozen, deal 2 Damage to target Creature.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -2689,7 +2895,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "Whenever a foe discards a card, your Creature in this Lane has +1 ATK until end of turn.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -2702,7 +2909,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "Creatures on Landscapes with a Frozen token on it in this Lane cannot Attack or use abilities.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -2715,7 +2923,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "Pay 1 Action >>> Freeze target Landscape in this Lane.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "",
         "defense": ""
     },
@@ -2728,7 +2937,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "At the start of your turn, deal 1 or 2 Damage to your Creature in this Lane, then you heal 1 HP (Max 25).",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -2741,7 +2951,8 @@
         ],
         "landscape": "",
         "ability": "At the start of your Fight Phase, if you have 1 or more empty Landscapes, gain 1 HP. (Can't go over 25.)",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -2754,7 +2965,8 @@
         ],
         "landscape": "",
         "ability": "Creatures you control on Landscapes with Frozen tokens have +1 ATK.",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -2767,7 +2979,8 @@
         ],
         "landscape": "CornFields",
         "ability": "+1 DEF for each different Landscape type you control.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "4",
         "defense": "1"
     },
@@ -2780,7 +2993,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "+2 ATK for each of your empty Lanes.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "0",
         "defense": "9"
     },
@@ -2793,7 +3007,8 @@
         ],
         "landscape": "CornFields",
         "ability": "+1 ATK for each different Landscape you control.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "0",
         "defense": "6"
     },
@@ -2806,7 +3021,8 @@
         ],
         "landscape": "CornFields",
         "ability": "+1 ATK for each different Landscape you control.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "1",
         "defense": "9"
     },
@@ -2819,7 +3035,8 @@
         ],
         "landscape": "CornFields",
         "ability": "When Mantle Masher enters play, flip a Landscape in this Lane face down. When Mantle Masher leaves play, flip it face up.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "6"
     },
@@ -2832,7 +3049,8 @@
         ],
         "landscape": "CornFields",
         "ability": "When Rock 'n Roller enters play, flip a Landscape in this Lane face down. When Rock 'n Roller leaves play, flip it face up.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "2",
         "defense": "8"
     },
@@ -2845,7 +3063,8 @@
         ],
         "landscape": "CornFields",
         "ability": "+2 ATK for each face down Landscape in play.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "7"
     },
@@ -2858,7 +3077,8 @@
         ],
         "landscape": "CornFields",
         "ability": "+2 ATK for each face down Landscape in play.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "2",
         "defense": "10"
     },
@@ -2871,7 +3091,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "When a Creature you own leaves play, you may put it underneath this card instead. +1 ATK and +1 DEF for each card under this. When this card leaves play, discard all cards under it.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "0",
         "defense": "4"
     },
@@ -2884,7 +3105,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "Ska-pion costs 1 less to play while an opponent controls a Creature you own.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "3",
         "defense": "3"
     },
@@ -2897,7 +3119,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "At the start of your turn, you may return Sandmagus to its owner's hand. If you do, each other Creature you control has +1 ATK this turn.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "4"
     },
@@ -2910,7 +3133,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "At the start of your turn, you may return Grand Mummy to its owner's hand. If you do, draw two cards.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "3",
         "defense": "3"
     },
@@ -2923,7 +3147,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "When Static Parrotrooper enters play, move it to any empty Landscape. It cannot be replaced. At the start of your turn, deal 1 Damage to your Hero.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "0",
         "defense": "6"
     },
@@ -2936,7 +3161,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "When Jinxed Parrotrooper enters play, move it to any empty Landscape. It cannot be replaced. At the start of your turn, discard a card.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "5"
     },
@@ -2949,7 +3175,8 @@
         ],
         "landscape": "CornFields",
         "ability": "+1 DEF for each different Landscape type you control.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "4"
     },
@@ -2962,7 +3189,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "Remove a Frozen token from Snow Baller's Landscape >>> Deal 3 Damage to target Creature.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "7"
     },
@@ -2975,7 +3203,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "When Frosted Snowwoman enters play, Freeze both Landscapes in her Lane.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "3",
         "defense": "5"
     },
@@ -2988,7 +3217,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "When The Cooler leaves play, Freeze its Landscape.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "4",
         "defense": "7"
     },
@@ -3001,7 +3231,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "+4 ATK if both Landscapes in this Lane have Frozen tokens on them.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "6"
     },
@@ -3014,7 +3245,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "Frosted Deanimator may enter play onto a Landscape that has a Frozen token on it.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "6"
     },
@@ -3027,7 +3259,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "When Icy Infiltrator enters play, Freeze its Landscape.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "1",
         "defense": "5"
     },
@@ -3040,7 +3273,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "Icy Commando has +1 ATK for each Landscape with a Frozen token on it.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "7"
     },
@@ -3053,7 +3287,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "Pay 1 Action, FLOOP >>> Freeze target Landscape.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "8"
     },
@@ -3066,7 +3301,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "Destroy a Creature you control, FLOOP >>> Draw a card.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "6"
     },
@@ -3079,7 +3315,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "At the start of your turn, move Tired Wombat to an empty Landscape you control. If you cannot, move it to an empty Landscape your opponent controls.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "4",
         "defense": "5"
     },
@@ -3092,7 +3329,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "Fatigued Librarian comes into play exhausted and does not ready at the start of your turn. Whenever Fatigued Librarian changes Lanes, ready it.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "3",
         "defense": "4"
     },
@@ -3105,7 +3343,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "At the start of your turn, move Woadic Ring Leader to an empty Landscape you control. If you cannot, destroy it.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "3",
         "defense": "4"
     },
@@ -3118,7 +3357,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "Weakened Warrior comes into play exhausted and does not ready at the start of your turn. Whenever Weakened Warrior changes Lanes, ready it.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "5",
         "defense": "6"
     },
@@ -3131,7 +3371,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "At the start of your turn, move Drained Cleric to an empty Landscape you control. If you cannot, discard a card.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "3",
         "defense": "5"
     },
@@ -3144,7 +3385,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "When Dragoon Parrotrooper enters play, move it to an empty Landscape. It cannot be replaced. Ajacent Creatures have -1 ATK.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "1",
         "defense": "8"
     },
@@ -3157,7 +3399,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "When Husky Parrotrooper enters play, move it to an empty Landscape, and then flip that Landscape face down.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "2",
         "defense": "4"
     },
@@ -3170,7 +3413,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "When TNTimmy leaves play, deal 1 Damage to each opposing Creature.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "0",
         "defense": "5"
     },
@@ -3183,7 +3427,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Flip target Landscape face down until the start of your next turn.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "",
         "defense": ""
     },
@@ -3196,7 +3441,8 @@
         ],
         "landscape": "CornFields",
         "ability": "Each of your Creatures has +1 ATK this turn for each face down Landscape in play.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -3209,7 +3455,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Return target Creature you own to your hand.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "",
         "defense": ""
     },
@@ -3222,7 +3469,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Target Creature you control has -5 ATK this turn. Draw a card.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "",
         "defense": ""
     },
@@ -3235,7 +3483,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "Return target Creature you control to its owner's hand. Gain Actions equal to its cost.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -3248,7 +3497,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "Choose a Lane. Freeze both Landscapes in that Lane.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -3261,7 +3511,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Deal 2 Damage to each opposing Creature on a Landscape with a Frozen token on it.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "",
         "defense": ""
     },
@@ -3274,7 +3525,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "Ready each Creature you control.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -3287,7 +3539,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Each Creature in play has +1 ATK this turn (including your opponent's Creatures).",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "",
         "defense": ""
     },
@@ -3300,7 +3553,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "Target Creature you control has +2 ATK for each exhausted Creature you control (at the time you play this).",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -3313,7 +3567,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "Play only if you control one or fewer Creatures and have 15 or fewer Hit Points. Move target Creature to target empty Landscape you control.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "",
         "defense": ""
     },
@@ -3326,7 +3581,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "Each of your Creatures has +1 ATK this turn for each Creature that entered play this turn.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -3339,7 +3595,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Destroy any number of Creatures you control. Draw a card for each Creature destroyed this way.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "",
         "defense": ""
     },
@@ -3352,7 +3609,8 @@
         ],
         "landscape": "CornFields",
         "ability": "Discard a card, FLOOP >> Flip target Landscape in this Lane face down until the start of your next turn.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "",
         "defense": ""
     },
@@ -3365,7 +3623,8 @@
         ],
         "landscape": "CornFields",
         "ability": "Discard a card >>> Your Landscape in this Lane loses its type and becomes the type of your choice (except face down) until the start of your next turn.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -3378,7 +3637,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Each Creature in this Lane has -1 ATK (min 0).",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "",
         "defense": ""
     },
@@ -3391,7 +3651,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "Your Creature on this Landscape has +1 ATK during your turn for each Landscape with a Frozen token on it.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "",
         "defense": ""
     },
@@ -3404,7 +3665,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "FLOOP >> Freeze both Landscapes in this Lane. Use only if no Frozen tokens are in play.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "",
         "defense": ""
     },
@@ -3417,7 +3679,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "At the start of your Fight Phase, if you control an exhausted Creature on this Landscape, draw a card.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -3430,7 +3693,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "FLOOP >>> Move an exhausted Creature you control to this Landscape (if empty).",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "",
         "defense": ""
     },
@@ -3443,7 +3707,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "FLOOP >>> Draw a card for each Creature that entered play onto this Landscape this turn.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "",
         "defense": ""
     },
@@ -3456,7 +3721,8 @@
         ],
         "landscape": "",
         "ability": "While you control only one Landscape type, your Rainbow Creatures have +1 ATK.",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -3469,7 +3735,8 @@
         ],
         "landscape": "",
         "ability": "Each time a Building enters play under your control, heal 2 Damage from each Creature you control with a Building on its Landscape.",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -3482,7 +3749,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "FLOOP >>> Opposing Buildings in this Lane are blank while The Dog is Flooped.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "7"
     },
@@ -3495,7 +3763,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "When Lonely Panda enters play, if you control no other Creatures, draw a card.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "8"
     },
@@ -3508,7 +3777,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "If you played one or more Rainbow cards this turn, Infant Scholar has +3 ATK this turn.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "6"
     },
@@ -3521,7 +3791,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "While in play, Tiny Elephant is also a Rainbow Creature. (In addition to Blue Plains.)",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "6"
     },
@@ -3534,7 +3805,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "Woadic Matriarch has +1 ATK for each Rainbow Creature you control.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "7"
     },
@@ -3547,7 +3819,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "When Psionic Swashbuckler enters play, you may deal 3 Damage to target Flooped Creature.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "6"
     },
@@ -3560,7 +3833,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "Business Dog has +2 ATK this turn for each card you have played with 'Dog' or 'Puppy' in its title this turn.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "6"
     },
@@ -3573,7 +3847,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "FLOOP >>> Draw a card, and then discard a card. If you discard a Rainbow card this way, gain 1 Action.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "6"
     },
@@ -3586,7 +3861,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "FLOOP >>> Reveal a card from your hand. That card becomes a Rainbow card until the end of your turn. (It has no Landscape type.)",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "7"
     },
@@ -3599,7 +3875,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "When Vampire Lord deals damage, heal that much Damage from him.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "1",
         "defense": "8"
     },
@@ -3612,7 +3889,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "Each time Emboldened Retriever attacks, you may draw a card.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "2",
         "defense": "7"
     },
@@ -3625,7 +3903,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "Rainbow Creatures you control have +1 ATK.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "1",
         "defense": "10"
     },
@@ -3638,7 +3917,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "When this card is placed into your discard pile from anywhere, you may discard a card from your hand to return Impossible Possum to your hand.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "2",
         "defense": "8"
     },
@@ -3651,7 +3931,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "Creatures in this Land cannot use Floop abilities.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "2",
         "defense": "10"
     },
@@ -3664,7 +3945,8 @@
         ],
         "landscape": "CornFields",
         "ability": "FLOOP >>> Move target building you control to any Landscape without one.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "6"
     },
@@ -3677,7 +3959,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "FLOOP >>> Return a Building from your discard pile to your hand.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "1",
         "defense": "4"
     },
@@ -3690,7 +3973,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "3",
         "defense": "3"
     },
@@ -3703,7 +3987,8 @@
         ],
         "landscape": "CornFields",
         "ability": "Husker Champion has +2 ATK and +2 DEF if you control a Building on this Landscape.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "4"
     },
@@ -3716,7 +4001,8 @@
         ],
         "landscape": "CornFields",
         "ability": "You may play additional Buildings onto this Landscape.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "2",
         "defense": "9"
     },
@@ -3729,7 +4015,8 @@
         ],
         "landscape": "CornFields",
         "ability": "FLOOP >>> Heal 1 Damage from Corns Templar.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "7"
     },
@@ -3742,7 +4029,8 @@
         ],
         "landscape": "CornFields",
         "ability": "FLOOP >>> Deal 2 Damage to target opposing Creature in this Lane.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "5"
     },
@@ -3755,7 +4043,8 @@
         ],
         "landscape": "CornFields",
         "ability": "Kernel Queen has +1 ATK for each Flooped Creature you control.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "6"
     },
@@ -3768,7 +4057,8 @@
         ],
         "landscape": "CornFields",
         "ability": "Husker Valkyrie has +2 ATK and +2 DEF if you control a Building on this Landscape.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "2",
         "defense": "6"
     },
@@ -3781,7 +4071,8 @@
         ],
         "landscape": "CornFields",
         "ability": "When Tough Lumberjill enters play, deal 1 Damage to your opponent for each Building you control.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "3",
         "defense": "6"
     },
@@ -3794,7 +4085,8 @@
         ],
         "landscape": "CornFields",
         "ability": "Destroy a Building you control and Floop >>> Deal 3 damage to each opposing Creature.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "1",
         "defense": "6"
     },
@@ -3807,7 +4099,8 @@
         ],
         "landscape": "CornFields",
         "ability": "When Pied Piper attacks an opposing Creature, you may have a Flooped Creature you controll attack it instead.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "1",
         "defense": "9"
     },
@@ -3820,7 +4113,8 @@
         ],
         "landscape": "CornFields",
         "ability": "FLOOP >>> Tornado Wall of Fire has +3 ATK while Flooped.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "0",
         "defense": "10"
     },
@@ -3833,7 +4127,8 @@
         ],
         "landscape": "CornFields",
         "ability": "FLOOP >>> Draw a card for each Building you control.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "5"
     },
@@ -3846,7 +4141,8 @@
         ],
         "landscape": "CornFields",
         "ability": "Flooped Creatures you control have +1 ATK.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "8"
     },
@@ -3859,7 +4155,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "1",
         "defense": "5"
     },
@@ -3872,7 +4169,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Swap any amount of Damage between two Creatures you control.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "",
         "defense": ""
     },
@@ -3885,7 +4183,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Target Creature has +1 ATK this turn for every 2 cards you have drawn this turn.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "",
         "defense": ""
     },
@@ -3898,7 +4197,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Deal 1 Damage to target Creature for every card you have drawn this turn.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -3911,7 +4211,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "Draw 4 cards, then discard 2 cards.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -3924,7 +4225,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Creatures you control have +2 ATK this turn. Draw 2 cards.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "",
         "defense": ""
     },
@@ -3937,7 +4239,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "Heal 2 Damage from each Creature you control. Creatures you control lose their Landscape type and become Rainbow Creatures this turn.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "",
         "defense": ""
     },
@@ -3950,7 +4253,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Lose 2 Hit Points, gain 1 Action.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "",
         "defense": ""
     },
@@ -3963,7 +4267,8 @@
         ],
         "landscape": "CornFields",
         "ability": "Target Creature has +2 ATK this turn for each Flooped Creature you control.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -3976,7 +4281,8 @@
         ],
         "landscape": "CornFields",
         "ability": "Each Creature you control with a Building on its Landscape has +2 ATK this turn.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -3989,7 +4295,8 @@
         ],
         "landscape": "CornFields",
         "ability": "Put a Building from your discard pile into play.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "",
         "defense": ""
     },
@@ -4002,7 +4309,8 @@
         ],
         "landscape": "CornFields",
         "ability": "Additional Cost: Floop a Creature you control. Search your deck for a Building and put it into play. Then shuffle your deck.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "",
         "defense": ""
     },
@@ -4015,7 +4323,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "All Creatures in this Lane lose their Landscape type and become Rainbow Creatures.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -4028,7 +4337,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "Learning Center gains the game text of Buildings you control in adjacent Lanes (but not their names).",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "",
         "defense": ""
     },
@@ -4041,7 +4351,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Each time an opposing Creature in this Lane takes Damage, increase the amount by 1.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -4054,7 +4365,8 @@
         ],
         "landscape": "CornFields",
         "ability": "Farmhouse counts as an additional Cornfield Landscape you control.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "",
         "defense": ""
     },
@@ -4067,7 +4379,8 @@
         ],
         "landscape": "CornFields",
         "ability": "Cabin of Many Woods costs 1 less to play for each Flooped Creature you control. Your Creature in this Lane has +5 DEF.",
-        "cost": "5",
+        "cw-lang": "",
+				"cost": "5",
         "attack": "",
         "defense": ""
     },
@@ -4080,7 +4393,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "Your Creature on this Landscape has +2 DEF for each Oil Refinery you control.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "",
         "defense": ""
     },
@@ -4093,7 +4407,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "The opposing Creature in this Lane has -2 DEF.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -4106,7 +4421,8 @@
         ],
         "landscape": "",
         "ability": "Once during your turn, when a Creature you control damages an opponent, you may deal 1 Damage to target Creature in one of your Lanes.",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -4119,7 +4435,8 @@
         ],
         "landscape": "",
         "ability": "Once during your turn, you may move a Creature you control to an adjacent empty Landscape.",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -4132,7 +4449,8 @@
         ],
         "landscape": "",
         "ability": "Once during your turn, you may put a Creature you played this turn back into your hand, then play it for free and put 3 damage on it.",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -4145,7 +4463,8 @@
         ],
         "landscape": "",
         "ability": "Once during your turn, you may ready a Flooped Creature",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -4158,7 +4477,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "Pay 1 Action, FLOOP >>> Deal 1 Damage to each opposing Creature in play.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "6"
     },
@@ -4171,7 +4491,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "FLOOP >>> Reveal the top 3 cards of your deck. Play a revealed Teamwork for free, and then discard the other cards.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "3",
         "defense": "8"
     },
@@ -4184,7 +4505,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "The opposing Creature in this Lane has -1 DEF for every 5 cards in your discard pile.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "3",
         "defense": "7"
     },
@@ -4197,7 +4519,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "Destroy Granary Weevil >>> Destroy target opposing Creature in this Lane and any Creature with the same name in play.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "2",
         "defense": "6"
     },
@@ -4210,7 +4533,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "When TailGator enters play, draw a card for each Creature that entered your discard pile this turn.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "6"
     },
@@ -4223,7 +4547,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "While IrriGator is on an Icylands Landscape, it has +2 ATK.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "5"
     },
@@ -4236,7 +4561,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "Discard a card >>> NaviGator gets +1 ATK equal to the cost of the discarded card. (Use only once during each of your turns.)",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "6"
     },
@@ -4249,7 +4575,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "When InstiGator enters play, move target opposing Creature into InstiGator's Lane (if empty).",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "5",
         "defense": "3"
     },
@@ -4262,7 +4589,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "When Sailing Sand Crab enters play, you may play a Creature with cost 1 for free.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "6"
     },
@@ -4275,7 +4603,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "Each time another creature enters play during your turn, you must heal 1 Damage from another Creature.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "2",
         "defense": "9"
     },
@@ -4288,7 +4617,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "Each time a Creature enters play during your turn, you may swap its space with Shifty Sand Crab.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "7"
     },
@@ -4301,7 +4631,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "Each time a Creature enters play during your turn on an adjacent Landscape, Slashy Sand Crab deals 2 Damage to a Creature in its Lane.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "2",
         "defense": "8"
     },
@@ -4314,7 +4645,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "+1 ATK for each Useless Swamp Landscape in play.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "1",
         "defense": "7"
     },
@@ -4327,7 +4659,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "Each time Repelling Rock Crab takes Damage from a Creature it deals that much Damage to that Creature.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "5"
     },
@@ -4340,7 +4673,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "FLOOP >>> Target Creature gets +1 this turn equal to the total cost of Teamwork cards your team controls.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "3",
         "defense": "8"
     },
@@ -4353,7 +4687,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "Each time Routing Rock Crab takes Damage from a Creature, you may move that Creature to an adjacent empty Landscape.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "2",
         "defense": "10"
     },
@@ -4366,7 +4701,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "2",
         "defense": "3"
     },
@@ -4379,7 +4715,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Each The Barrel has +1 ATK and +1 DEF for each other The Barrel in play.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "1",
         "defense": "5"
     },
@@ -4392,7 +4729,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "When Aeromancer enters play, you may swap the positions of 2 Creatures target player controls.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "3",
         "defense": "5"
     },
@@ -4405,7 +4743,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "Each time a Creature you control changes Lanes, heal 2 Damage from Biomancer.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "8"
     },
@@ -4418,7 +4757,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "Each time Chronomancer changes Lanes, gain 1 Action.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "3",
         "defense": "6"
     },
@@ -4431,7 +4771,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "At the start of your turn, you may move Geomancer to an empty Landscape you control.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "6"
     },
@@ -4444,7 +4785,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "When Hydromancer enters into play, you may reveal cards from the top of your deck until you reveal a Teamwork, and then play it for free. Shuffle the other revealed cards into your deck.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "3",
         "defense": "6"
     },
@@ -4457,7 +4799,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "Each time a Creature you control leaves play, you may move Necromancer to that Creature's empty Landscape.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "8"
     },
@@ -4470,7 +4813,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "Each time Pyromancer enters a Landscape you may deal 2 Damage to that target Creature in that Lane. Pay 1 Action >>> Move Pyromancer to an empty Landscape you control.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "0",
         "defense": "8"
     },
@@ -4483,7 +4827,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "+1 ATK for each Creature that changed Lanes during your turn.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "2",
         "defense": "7"
     },
@@ -4496,7 +4841,8 @@
         ],
         "landscape": "CornFields",
         "ability": "When Feedman enters play the next Creature you play this turn costs 1 less to play.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "8"
     },
@@ -4509,7 +4855,8 @@
         ],
         "landscape": "CornFields",
         "ability": "When Green ZebraCorn attacks, deal 1 Damage to target opponent.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "6"
     },
@@ -4522,7 +4869,8 @@
         ],
         "landscape": "CornFields",
         "ability": "When Grizzled ZebraCorn attacks, deal 2 Damage to target opponent.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "2",
         "defense": "8"
     },
@@ -4535,7 +4883,8 @@
         ],
         "landscape": "CornFields",
         "ability": "Pay 1 Action, FLOOP >>> Deal 1 Damage to target Creature for each Cornfield Landscape you control.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "2",
         "defense": "7"
     },
@@ -4548,7 +4897,8 @@
         ],
         "landscape": "CornFields",
         "ability": "When Shielded ZebraCorn attacks, you may heal 1 Damage from an adjacent Creature.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "6"
     },
@@ -4561,7 +4911,8 @@
         ],
         "landscape": "CornFields",
         "ability": "When Spiked ZebraCorn attacks, deal 1 Damage to each opposing Creature in adjacent Lanes.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "2",
         "defense": "7"
     },
@@ -4574,7 +4925,8 @@
         ],
         "landscape": "CornFields",
         "ability": "+1 ATK for each Teamwork your team controls. If Trained ZebraCorn Husker leaves play during your Fight Phase, you may put it into your hand.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "3",
         "defense": "7"
     },
@@ -4587,7 +4939,8 @@
         ],
         "landscape": "CornFields",
         "ability": "If Young ZebraCorn Husker leaves play during your Fight Phase, you may put it on top of your deck.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "5"
     },
@@ -4600,7 +4953,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "When Brigadier Banana Split attacks, deal 2 Damage to target opposing Creature on a Landscape with a Frozen token on it.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "3",
         "defense": "9"
     },
@@ -4613,7 +4967,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "At the start of your Fight Phase, if there are 1 or more Frozen tokens in this Lane, deal 1 Damage to each Creature target player controls.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "2",
         "defense": "7"
     },
@@ -4626,7 +4981,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "Each time a Landscape becomes Frozen, draw a card.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "2",
         "defense": "9"
     },
@@ -4639,7 +4995,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "At the start of your Fight Phase, if there are one or more Frozen tokens in this Lane, deal 2 Damage to target opponent.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "7"
     },
@@ -4652,7 +5009,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "Ice Cream Captain costs 1 less to play for each player that has a Landscape with a Frozen token on it.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "4",
         "defense": "8"
     },
@@ -4665,7 +5023,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "Pay 1 Action, FLOOP >>> Choose a Lane, Freeze both Landscapes in that Lane.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "7"
     },
@@ -4678,7 +5037,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "While there is no opposing Creature in this Lane, Mint Chocouflage can't be damaged by your opponent's Spells or Creature abilities.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "3",
         "defense": "3"
     },
@@ -4691,7 +5051,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "Pay 1 Action, FLOOP >>> Deal 2 Damage to target Creature. If that Creature is destroyed this way, Freeze the Landscape it is on.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "0",
         "defense": "4"
     },
@@ -4704,7 +5065,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "When Patriot Popsicle enters play, you may Freeze a Landscape in this Lane.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "6"
     },
@@ -4717,7 +5079,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "FLOOP >>> Move target Frozen token from one Landscape to a new Landscape.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "6"
     },
@@ -4730,7 +5093,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "When Softie Recruit enters play, if your opponent does not control a Creature in this Lane, gain 1 Action.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "5"
     },
@@ -4743,7 +5107,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "FLOOP >>> Freeze target Landscape with a Creature on it.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "3",
         "defense": "6"
     },
@@ -4756,7 +5121,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "At the start of your turn, if Adorabunny has 4 or more Damage on it, deal 3 Damage to target opponent.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "0",
         "defense": "8"
     },
@@ -4769,7 +5135,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "When Cutie Koala has 4 or more Damage on it, it has +2 ATK.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "8"
     },
@@ -4782,7 +5149,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "Each time Endearing Elephant is targeted by an opponent's Spell, deal 2 Damage to target opponent.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "4",
         "defense": "4"
     },
@@ -4795,7 +5163,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "While Fluffy Fox has 4 or more Damage on it, it ignores the first 2 Damage dealt to it by opposing Creatures.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "6"
     },
@@ -4808,7 +5177,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "While Giddy Giraffe has 4 or more Damage on it, it deals Damage directly to your opponent instead of the opposing Creature.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "8"
     },
@@ -4821,7 +5191,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "While Huggable Hedgehog has 4 or more Damage on it, it deals Damage directly to your opponent instead of the opposing Creature.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "3",
         "defense": "8"
     },
@@ -4834,7 +5205,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "Knit Kitty is affected by Buildings on adjacent Landscapes.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "3",
         "defense": "7"
     },
@@ -4847,7 +5219,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "At the start of your turn, if Loveable Lamb has 4 or more Damage on it, deal 2 Damage to target opposing Creature in this Lane.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "7"
     },
@@ -4860,7 +5233,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "While Overstuffed Orangutan has 4 or more Damage on it, double its ATK.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "2",
         "defense": "8"
     },
@@ -4873,7 +5247,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "Deal 3 Damage to Patched Puppy >>> Patched Puppy has +2 ATK this turn.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "3",
         "defense": "8"
     },
@@ -4886,7 +5261,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "Each adjacent Creature has +1 ATK. If Sewn Sloth has 4 or more Damage on it, each adjacent Creature has +2 ATK instead.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "0",
         "defense": "8"
     },
@@ -4899,7 +5275,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "At the start of your turn, if Stitched Squirrel has 4 or more Damage on it, destroy target opposing Building in this Lane.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "8"
     },
@@ -4912,7 +5289,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "Add Damage to target Creature until it has 1 DEF remaining.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -4925,7 +5303,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "Opposing Creatures have -2 ATK this turn (min 0).",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -4938,7 +5317,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "Put target Creature you own into your hand, and then play it for free.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -4951,7 +5331,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "Destroy target opposing Creature. Each opponent draws cards equal to that Creature's cost.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -4964,7 +5345,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Play your next Creature or Building for free if a Creature or Building with that name is in play.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "",
         "defense": ""
     },
@@ -4977,7 +5359,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Heal or deal 1 Damage to target Creature. After playing this, you may put it into your Teammate's hand.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -4990,7 +5373,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "If target Creature you control deals 1 or more Damage to an opponent this turn, deal 2 damage to that opponent. After playing this, you may put it into your Teammate's hand.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -5003,7 +5387,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Choose another player and a Landscape you control. Draw a card for each of their Creatures that match that Landscape.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "",
         "defense": ""
     },
@@ -5016,7 +5401,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Move target Creature to an adjacent empty Landscape its controller controls. After playing this, you may put it into your Teammate's hand.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -5029,7 +5415,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Choose a Creature you control and put it into its owner's hand. Then choose another player. That player chooses a Creature they control and put it into its owners hand.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "",
         "defense": ""
     },
@@ -5042,7 +5429,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Deal 5 Damage to yourself and target opponent.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "",
         "defense": ""
     },
@@ -5055,7 +5443,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Reveal the top 3 cards of your deck. Draw 1 card and discard the rest. After playing this, you may put it into your Teammate's hand.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -5068,7 +5457,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Heal 1 Damage from a Creature you control and 1 Damage from a Creature you do not control.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "",
         "defense": ""
     },
@@ -5081,7 +5471,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Draw a card and reveal it. Another target player then reveals the top card of their deck. If their costs match, the targeted player draws it.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "",
         "defense": ""
     },
@@ -5094,7 +5485,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Discard the top 2 cards of your deck. If they have the same cost, deal Damage equal to their combined cost to target opponent. After playing this, you may put it into your Teammate's hand.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -5107,7 +5499,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Choose two players. Each reveals a random card from their hand. If their costs don't match they discard those cards.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "",
         "defense": ""
     },
@@ -5120,7 +5513,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "Look at the top 4 cards of target player's deck and put them back in any order. Then draw a card.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -5133,7 +5527,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "Move up to 3 Damage on a Creature you control to target opposing Creature in its Lane.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -5146,7 +5541,8 @@
         ],
         "landscape": "CornFields",
         "ability": "When target Creature attacks this turn, if it would leave play during the Fight Phase, remove all Damage from it instead.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -5159,7 +5555,8 @@
         ],
         "landscape": "CornFields",
         "ability": "Deal damage to yourself equal to target Creature's remaining DEF, then destroy it.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -5172,7 +5569,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "Destroy target Creature on a Landscape with a Frozen token on it.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -5185,7 +5583,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "Count the number of Landscapes with Frozen tokens. Heal 1 damage from that many friendly Creatures.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -5198,7 +5597,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "Freeze 1 of each player's target Landscapes an then draw a card.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -5211,7 +5611,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "Freeze target Landscape. You may move any number of Frozen tokens to new Landscapes (1 token per Landscape).",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -5224,7 +5625,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "Friendly Creatures have +1 ATK until the start of the Fight Phase. Then each Creature deals Damage equal to its ATK to the opposing Creature in its Lane.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -5237,7 +5639,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "Destroy target Creature you control, and then destroy target opposing Creature in its Lane.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -5250,7 +5653,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "Redistribute the Damage on Creatures you control (no Creature can have more Damage than DEF).",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -5263,7 +5667,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "Choose a Creature you control and deal Damage to it equal to its ATK, and then double its ATK this turn.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -5276,7 +5681,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "Each time an opposing Creature deals Damage to your team, deal 1 Damage to the opposing Team.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "",
         "defense": ""
     },
@@ -5289,7 +5695,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "While you or your Teammate control a Creature on a Landscape with a Frozen token on it, your Team may play Creatures onto Landscapes with Frozen tokens on them.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -5302,7 +5709,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "At the start of your or your Teammate's Fight Phase, if you or your Teammate played a Creature with cost 2 or greater this turn, the other Teammate may draw a card.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -5315,7 +5723,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "During your turn and your Teammate's Fight Phase, the first time Damage is dealt to an opponent, the other Teammate may deal 1 Damage to target Creature in 1 of their Lanes.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -5328,7 +5737,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "The first Creature that attacks another Creature during your Team's turns has +1 ATK that turn.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "",
         "defense": ""
     },
@@ -5341,7 +5751,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "At the start of your or your Teammate's Fight Phase, if you or your Teammate played no Spells this turn, the other Teammate may play a Spell with cost 1 or less without paying its cost.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -5354,7 +5765,8 @@
         ],
         "landscape": "CornFields",
         "ability": "At the start of your or your Teammate's Fight Phase, if you or your Teammate played no Creatures this turn, the other Teammate may play a Creature with cost 1 or less without paying its cost.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -5367,7 +5779,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "At the start of your or your Teammate's Fight Phase, if you or your Teammate drew 3 or more cards this turn, the other Teammate may draw a card.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -5380,7 +5793,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "The first time you or your Teammate play a Rainbow Spell during their turn, the other Teammate may play a Rainbow Spell with the same cost without paying its cost.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -5393,7 +5807,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "The first time you or your Teammate play a Rainbow Spell with cost 0 during their turn, the other Teammate may copy it and may choose new targets.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -5406,7 +5821,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "Discard a card >>> Your Creature on this Landscape has +1 ATK this turn. (Use any number of times during each of your turns.)",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -5419,7 +5835,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "Your Creature on this Landscape has +3 ATK. At the start of each of your turns, discard a card.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "",
         "defense": ""
     },
@@ -5432,7 +5849,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "Discard Sand Castle from play >>> Put your Creature on this Landscape into your hand and then play it for free.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -5445,7 +5863,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "Pay 1 Action, FLOOP >>> If this Landscape is empty, reveal cards from the top of your deck until you reveal a Creature, then play it onto this Landscape for free and shuffle the other revealed cards into your deck.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -5458,7 +5877,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "Your Creature on this Landscape cannot be targeted by your foe's Spells or Creature abilities. FLOOP >>> Move a Creature you control to this Landscape.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "",
         "defense": ""
     },
@@ -5471,7 +5891,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "Your Creature on this Landscape has +2 DEF and cannot be damaged by your foe's Spells.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -5484,7 +5905,8 @@
         ],
         "landscape": "CornFields",
         "ability": "Pay 1 Action, FLOOP >>> If this Landscape is empty, play a 'Feedman' from your discard pile onto this Landscape for free. If Haybarn leaves play, destroy the Feedman on its Landscape.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -5497,7 +5919,8 @@
         ],
         "landscape": "CornFields",
         "ability": "Your Creature on this Landscape has +1 ATK and +1 DEF for each Cornfield Creature you control.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "",
         "defense": ""
     },
@@ -5510,7 +5933,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "When Ice Base enters play, Freeze both Landscapes in this Lane. You may play Creatures onto this Landscape even while Frozen.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "",
         "defense": ""
     },
@@ -5523,7 +5947,8 @@
         ],
         "landscape": "IcyLands",
         "ability": "FLOOP, Remove a Frozen token from a Landscape in this Lane >>> Deal 3 Damage to target opponent.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -5536,7 +5961,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "FLOOP >>> Heal or deal Damage to your Creature on this Landscape until it has 4 Damage on it.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "",
         "defense": ""
     },
@@ -5549,7 +5975,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "Pay 1 Action, FLOOP >> Heal 2 or deal 2 Damage to a Creature you control on this Landscape. Do the same to another friendly Creature.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -5562,7 +5989,8 @@
         ],
         "landscape": "CornFields",
         "ability": "Apple Bully's Landscape cannot be flipped down by effects opponents control.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "3",
         "defense": "8"
     },
@@ -5575,7 +6003,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "+1 ATK for each card players (including you) have discarded from their hand this turn.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "7"
     },
@@ -5588,7 +6017,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "FLOOP >>> Deal 1 Damage to each opposing Creture that is on a Useless Swamp Landscape.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "6"
     },
@@ -5601,7 +6031,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "FLOOP >>> Draw a card, and then discard a card.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "5"
     },
@@ -5614,7 +6045,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "Whenever you draw a card, Blue Ogre has +1 ATK this turn.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "1",
         "defense": "5"
     },
@@ -5627,7 +6059,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "If you control 3 or more different Landscape types when Blue Slimey enters play, return a Creature in this Lane to its owner's hand.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "6"
     },
@@ -5640,7 +6073,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "Blueberry Pieclops costs 1 less to play for each Spell you have played this turn.",
-        "cost": "4",
+        "cw-lang": "",
+				"cost": "4",
         "attack": "5",
         "defense": "6"
     },
@@ -5653,7 +6087,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "Adjacent Cornfield Creatures have +1 ATK.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "7"
     },
@@ -5666,7 +6101,8 @@
         ],
         "landscape": "CornFields",
         "ability": "When Captain Taco enters play, deal 1 Damage to each Creature that is not on a Cornfield Landscape.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "1"
     },
@@ -5679,7 +6115,8 @@
         ],
         "landscape": "CornFields",
         "ability": "Pay 1 Action >>> Deal 1 Damage to target Creature in this Lane for each different Landscape type you control.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "7"
     },
@@ -5692,7 +6129,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "+1 DEF for each different Landscape type you control.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "4",
         "defense": "1"
     },
@@ -5705,7 +6143,8 @@
         ],
         "landscape": "CornFields",
         "ability": "Each adjacent Cornfield Creature has +1 DEF.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "3",
         "defense": "8"
     },
@@ -5718,7 +6157,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Davey Bones has +2 ATK while defending against a Creature that is on a SandyLands Landscape.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "1",
         "defense": "4"
     },
@@ -5731,7 +6171,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "When Diamond Dan leaves play from a NiceLands Landscape, return it to its owner's hand.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "2"
     },
@@ -5744,7 +6185,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "FLOOP >>> Pay 2 less to play your next Spell this turn.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "6"
     },
@@ -5757,7 +6199,8 @@
         ],
         "landscape": "CornFields",
         "ability": "When Ethan Allfire leaves play, draw 1 card for each Cornfield Landscape you control.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "0",
         "defense": "4"
     },
@@ -5770,7 +6213,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "At the start of your turn, look at the top card of your deck. You may put it on the bottom of your deck.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "8"
     },
@@ -5783,7 +6227,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "FLOOP >>> Deal 1 Damage to each opposing Creature that is on a Cornfield Landscape.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "6"
     },
@@ -5796,7 +6241,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "If Fisher Fish enters play onto a Blue Plains Landscape, deal 2 Damage to each opposing player.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "6"
     },
@@ -5809,7 +6255,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Ghost has +2 ATK while defending against a Creature that is on a Useless Swamp Landscape.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "1",
         "defense": "4"
     },
@@ -5822,7 +6269,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "When Ghost Chest Burster leaves play, draw the bottom card of your deck.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "9"
     },
@@ -5835,7 +6283,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Ghost Hag has +2 ATK while defending against a Creature that is on a Blue Plains Landscape.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "1",
         "defense": "4"
     },
@@ -5848,7 +6297,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "When Ghost Ninja deals Damage to an opposing player, that opponent can't play Spells during his next turn.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "7"
     },
@@ -5861,7 +6311,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Ghost Tree has +2 ATK while defending against a Creature that is on a Cornfield Landscape.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "1",
         "defense": "4"
     },
@@ -5874,7 +6325,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "FLOOP >>> Deal 1 Damage to target Creature for each Cornfield Landscape adjacent to this Lane.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "0",
         "defense": "7"
     },
@@ -5887,7 +6339,8 @@
         ],
         "landscape": "CornFields",
         "ability": "When Gold Ninja enters play, deal 1 Damage to target Creature for each different Landscape type you control.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "6"
     },
@@ -5900,7 +6353,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "Whenever an opponent draws a card, deal 1 Damage to that player.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "7"
     },
@@ -5913,7 +6367,8 @@
         ],
         "landscape": "CornFields",
         "ability": "FLOOP and discard a SandyLands card >>> Deal 1 Damge to each opposing Creature.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "4"
     },
@@ -5926,7 +6381,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "FLOOP >>> Deal 1 Damage to each opposing Creature that is on a Blue Plains Landscape",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "6"
     },
@@ -5939,7 +6395,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "When a Creature you control leaves play, heal 1 Damage from Green Party Ogre.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "8"
     },
@@ -5952,7 +6409,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "When Green Snakey leaves play, deal 1 Damage to target Creature in this Lane.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "6"
     },
@@ -5965,7 +6423,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "At the start of your turn, you may return a Creature you control with 2 or fewer DEF remaining to its owners hand.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "9"
     },
@@ -5978,7 +6437,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "FLOOP >>> Deal 1 Damage to each opposing Creature that is on a SandyLands Landscape.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "6"
     },
@@ -5991,7 +6451,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "If you control 3 or more different Landscape types when Lime Slimey enters play, draw 2 cards.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "6"
     },
@@ -6004,7 +6465,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "+1 DEF for each different Landscape type you control.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "4",
         "defense": "1"
     },
@@ -6017,7 +6479,8 @@
         ],
         "landscape": "CornFields",
         "ability": "FLOOP >> Put a Building from your hand below this Lane (if it doesn't already have one).",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "2"
     },
@@ -6030,7 +6493,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "When Lt. Mushroom leaves play during an opponent's turn, that opponent discards 3 cards.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "3"
     },
@@ -6043,7 +6507,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "If you control 3 or more different Landscape types when Orange Slimey enters play, deal 3 Damage to your opponent.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "6"
     },
@@ -6056,7 +6521,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "Each Creature that changed Lanes this turn has +3 ATK this turn. (Opposing Creatures do not benefit from this.)",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "3",
         "defense": "7"
     },
@@ -6069,7 +6535,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "Opponents can't play 0 cost cards.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "3",
         "defense": "8"
     },
@@ -6082,7 +6549,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "Sacrifice Pickler >>> Deal 3 Damage to target Creature.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "2",
         "defense": "9"
     },
@@ -6095,7 +6563,8 @@
         ],
         "landscape": "CornFields",
         "ability": "When Pirate Bear is on Useless Swamp Landscape, it deals triple Damage.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "3"
     },
@@ -6108,7 +6577,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "+1 DEF for each different Landscape type you control.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "4",
         "defense": "1"
     },
@@ -6121,7 +6591,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "At the start of your turn, deal 2 Damage to each opponent with 4 or more cards in hand.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "0",
         "defense": "6"
     },
@@ -6134,7 +6605,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Rocktopus has +1 ATK while attacking a Creature that is on a SandyLands Landscape.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "3",
         "defense": "6"
     },
@@ -6147,7 +6619,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "While Sack of Pain has exactly 6 Damage on it, it has +6 ATK.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "2",
         "defense": "10"
     },
@@ -6160,7 +6633,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "While Sand Jackal is on a NiceLands Landscape, when it defeats an opposing Creature, you heal 3 Hit Points.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "3",
         "defense": "3"
     },
@@ -6173,7 +6647,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Sea Hag has +1 ATK while attacking a Creature that is on a Useless Swamp Landscape.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "3",
         "defense": "6"
     },
@@ -6186,7 +6661,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "When Smouldering Elder enters play, each player discards 2 cards.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "3",
         "defense": "8"
     },
@@ -6199,7 +6675,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "If you control 3 or more different Landscape types when Strawberry Slimey enters play, heal 4 Damage from each Creature you control.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "6"
     },
@@ -6212,7 +6689,8 @@
         ],
         "landscape": "CornFields",
         "ability": "Sun King counts as an additional Cornfield Landscape you control.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "0",
         "defense": "8"
     },
@@ -6225,7 +6703,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "+1 DEF for each different Landscape type you control.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "4",
         "defense": "1"
     },
@@ -6238,7 +6717,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "FLOOP >>> Choose a card name. Remove each card with that name in target player's discard pile from the game.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "8"
     },
@@ -6251,7 +6731,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Timmy Magic Eyes has +1 ATK while attacking a Creature that is on a Blue Plains Landscape.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "3",
         "defense": "6"
     },
@@ -6264,7 +6745,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "When Travelin' Wizard enters play, the opposing Creature in this Lane and Travelin' Wizard switch sides.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "3",
         "defense": "3"
     },
@@ -6277,7 +6759,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Well-Dressed Wolf has +1 ATK while attacking a Creature that is on a Cornfield Landscape.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "3",
         "defense": "6"
     },
@@ -6290,7 +6773,8 @@
         ],
         "landscape": "CornFields",
         "ability": "FLOOP >>> Deal 1 Damage to each opposing Creature that is on a NiceLands Landscape.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "6"
     },
@@ -6303,7 +6787,8 @@
         ],
         "landscape": "CornFields",
         "ability": "While you control 3 or more different Landscape types, Yellow Slimey has +3 ATK.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "0",
         "defense": "6"
     },
@@ -6316,7 +6801,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "Each of your Creatures has +2 ATK this turn while attacking a Creature that is on a Cornfield Landscape.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -6329,7 +6815,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Deal 2 Damage to target Creature.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "",
         "defense": ""
     },
@@ -6342,7 +6829,8 @@
         ],
         "landscape": "CornFields",
         "ability": "Play only if you played a non-Cornfield card this turn. Deal 5 Damage to target Creature.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -6355,7 +6843,8 @@
         ],
         "landscape": "CornFields",
         "ability": "Each of your Creatures has +2 ATK this turn while attacking a Creature that is on a NiceLands Landscape.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -6368,7 +6857,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Reveal the top 2 cards of your deck. You may put a revealed Cornfield card into your hand. Discard the rest.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "",
         "defense": ""
     },
@@ -6381,7 +6871,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "Ready 1 Creature of each type you control. (The types are Cornfield, Rainbow, Useless Swamp, Blue Plains, NiceLands, and SandyLands.)",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -6394,7 +6885,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "Each of your Creatures has +2 ATK this turn while attacking a Creature that is on a Blue Plains Landscape.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -6407,7 +6899,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "Each of your Creatures has +2 ATK this turn while attacking a Creature that is on a SandyLands Landscape.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -6420,7 +6913,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Each of your opponent's Creatures has -1 ATK this turn.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -6433,7 +6927,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Swap up to 2 of your Landscapes with ones from outside of the game.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "",
         "defense": ""
     },
@@ -6446,7 +6941,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "You heal 1 Hit Point for every 5 cards in your discard pile.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -6459,7 +6955,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "Each of your Creatures has +2 ATK this turn while attacking a Creature that is on a SandyLands Landscape.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -6472,7 +6969,8 @@
         ],
         "landscape": "CornFields",
         "ability": "Each of your Creatures has +2 ATK this turn while attacking a Creature that is on a Blue Plains Landscape.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -6485,7 +6983,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "Return target Creature to its owner's hand.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "",
         "defense": ""
     },
@@ -6498,7 +6997,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "Move 1 of your opponent's Creatures to an adjacent empty Lane (on his side).",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -6511,7 +7011,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "Return all Creatures in play you own to your hand. (This includes stolen Creatures.)",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -6524,7 +7025,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "Ready a Flooped Creature you control. It has +2 ATK this turn.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -6537,7 +7039,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "Put a Creature with cost 2 or less from your discard pile into play.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -6550,7 +7053,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Each of your Creatures has +2 ATK this turn.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "",
         "defense": ""
     },
@@ -6563,7 +7067,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "Each of your Creatures has +2 ATK this turn while attacking a Creature that is on a Cornfield Landscape.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -6576,7 +7081,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "Each of your Creatures has +2 ATK this turn while attacking a Creature that is on a NiceLands Landscape.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -6589,7 +7095,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "Each of your Creatures has +2 ATK this turn while attacking a Creature that is on a Useless Swamp Landscape.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -6602,7 +7109,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "Each of your Creatures has +2 ATK this turn while attacking a Creature that is on a Useless Swamp Landscape.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -6615,7 +7123,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "Ready each Creature that changed Lanes this turn. They each have +2 ATK this turn.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -6628,7 +7137,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "Swap the positions of 2 Creatures you control. (They change Lanes simultaneously.)",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -6641,7 +7151,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "You may move each of your Buildings to different Lanes you control. You may move each of your opponent's Buildings to different Lanes he controls.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -6654,7 +7165,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Target opponent discards down to 5 cards, and then takes 1 Damage for each card discarded this way.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "",
         "defense": ""
     },
@@ -6667,7 +7179,8 @@
         ],
         "landscape": "CornFields",
         "ability": "Each of your Creatures that is on a Useless Swamp Landscape has +2 ATK this turn.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -6680,7 +7193,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "Pay 1 Action >>> Draw a card for each Creature in this Lane.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -6693,7 +7207,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "While your Creature in this Lane has exactly 3 Damage on it, it has +3 ATK.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "",
         "defense": ""
     },
@@ -6706,7 +7221,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "Pay 1 Action >>> Target Creature in this Lane has +1 ATK this turn for every 5 cards in your discard pile.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -6719,7 +7235,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "FLOOP >>> If your Creature in this Lane moved here from another Lane this turn, it has +3 ATK this turn.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -6732,7 +7249,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "Pay 1 Action >>> Heal or deal up to 2 Damage to your Creature in this Lane.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -6745,7 +7263,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "Pay 2 Actions >>> Return each Creature in this Lane to its owner's hand. (Affects both players.)",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -6758,7 +7277,8 @@
         ],
         "landscape": "UselessSwamp",
         "ability": "FLOOP >>> Draw a card. If you control a Creature in this Lane, discard a card.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -6771,7 +7291,8 @@
         ],
         "landscape": "CornFields",
         "ability": "Pay 1 Action >>> Deal 1 Damage to target Creature in this Lane and 1 Damage to its controller.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -6784,7 +7305,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "When a SandyLands Creature with cost 1 or greater you control enters play in this Lane, you may return it to its owner's hand.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -6797,7 +7319,8 @@
         ],
         "landscape": "CornFields",
         "ability": "At the start of your turn, each player who controls a Creature in this Lane draws a card.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -6810,7 +7333,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -6823,7 +7347,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -6836,7 +7361,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "+1 DEF for each open eye depicted on other Creatures you control.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "3",
         "defense": "1"
     },
@@ -6849,7 +7375,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "When you have an even amount of Hit Points, your Creature on this Landscape has +2 ATK.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -6862,7 +7389,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "FLOOP >>> Swap Lanes with another of your Creatures. Both Creatures have +1 ATK this turn.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "6"
     },
@@ -6875,7 +7403,8 @@
         ],
         "landscape": "",
         "ability": "The first time a Creature you control is destroyed on your turn >>> Deal 2 Damage to a Creature an opponent controls.",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -6888,7 +7417,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "When this is destroyed, your opponent must discard 2 cards.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "4",
         "defense": "4"
     },
@@ -6901,7 +7431,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "Destroy your Creature on this Landscape, FLOOP >>> Play the top 2 cards of your deck.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "",
         "defense": ""
     },
@@ -6914,7 +7445,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "Each of your Creatures has +1 ATK this turn. If an opponent's Creature is defeated this turn, ignore its text.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -6927,7 +7459,8 @@
         ],
         "landscape": "",
         "ability": "During each opponent's turn, Creatures you control with no Damage on them have +1 ATK.",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -6940,7 +7473,8 @@
         ],
         "landscape": "",
         "ability": "Once during your turn, you may deal 2 Damage to one of your Creatures and gain 2 HP.",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -6953,7 +7487,8 @@
         ],
         "landscape": "",
         "ability": "Once during your turn, you may destroy a Creature you control to gain 1 Action.",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -6966,7 +7501,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Flip a coin. If heads, destroy a Creature you control. If tails, place a Creature in your discard pile onto an empty Landscape you control.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "",
         "defense": ""
     },
@@ -6979,7 +7515,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Flip a coin. If heads, deal 2 Damage to each of your Creatures. If tails, your Creatures get +2 ATK this turn.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "",
         "defense": ""
     },
@@ -6992,7 +7529,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "If your Creature in this Lane is destroyed, destroy Monolith of Doom and all Creatures in all Lanes.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "",
         "defense": ""
     },
@@ -7005,7 +7543,8 @@
         ],
         "landscape": "",
         "ability": "Once during each of your turns, you may discard the top card of your deck. If it was a Creature, put it into your hand.",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -7018,7 +7557,8 @@
         ],
         "landscape": "CornFields",
         "ability": "Once during your turn, you may discard a card from your hand to put a token on this. FLOOP >>> Deal 1 Damage to the opposing Creature in this Lane for each token on Berserk Bakery.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "",
         "defense": ""
     },
@@ -7031,7 +7571,8 @@
         ],
         "landscape": "CornFields",
         "ability": "Discard the top card of your deck. If it was a Creature, deal 2 Damage to an opponent and you may play this Spell again.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "",
         "defense": ""
     },
@@ -7044,7 +7585,8 @@
         ],
         "landscape": "CornFields",
         "ability": "This can be on a Landscape with another Creature. When the other Creature on this Landscape is dealt Damage, deal it to Crust Crusher instead.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "2",
         "defense": "8"
     },
@@ -7057,7 +7599,8 @@
         ],
         "landscape": "",
         "ability": "When a Creature you control moves, it has +1 ATK this turn.",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -7070,7 +7613,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "Move all of your Creatures to new Lanes. Each Creature that moved gets +2 ATK this turn.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "",
         "defense": ""
     },
@@ -7083,7 +7627,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "FLOOP >>> Move a Creature from this Lane to an empty Lane. You may move another Creature you control to this Lane.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -7096,7 +7641,8 @@
         ],
         "landscape": "SandyLands",
         "ability": "When you would be dealt Damage, deal that Damage to Bongo Bounce House instead.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "",
         "defense": "8"
     },
@@ -7109,7 +7655,8 @@
         ],
         "landscape": "",
         "ability": "Once during your turn, you may turn a Landscape you control face down to deal 4 Damage to your opponent.",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -7122,7 +7669,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "When this is played on a facedown Landscape, turn it face up and heal 4 HP.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "2",
         "defense": "10"
     },
@@ -7135,7 +7683,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "Put this under an opposing Creature. If the Creature is destroyed, deal 5 Damage to your opponent.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -7148,7 +7697,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "When your Creature in this Lane leaves play, deal its ATK to your opponent.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "",
         "defense": ""
     },
@@ -7161,7 +7711,8 @@
         ],
         "landscape": "",
         "ability": "Once during your turn, you may draw a card. If you do, your opponent may draw a card.",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -7174,7 +7725,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "Gain 4 HP. Draw a card. You may put this into an opponent's hand. If you do, draw another card.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "",
         "defense": ""
     },
@@ -7187,7 +7739,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "This counts as a copy of your Landscape in this Lane.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "",
         "defense": ""
     },
@@ -7200,7 +7753,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "When this enters play, and when it Attacks, you may look at the top card of your deck. If it is a Rainbow card, you may put it into your hand.",
-        "cost": "0",
+        "cw-lang": "",
+				"cost": "0",
         "attack": "1",
         "defense": "4"
     },
@@ -7213,7 +7767,8 @@
         ],
         "landscape": "",
         "ability": "The first time you play a KICKSTARTER card on your turn, reveal the top card of your deck. If it is a KICKSTARTER card, draw it.",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -7226,7 +7781,8 @@
         ],
         "landscape": "BluePlains",
         "ability": "FLOOP >>> Swap Lanes with another of your Creatures. Both Creatures have +1 ATK this turn.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "6"
     },
@@ -7239,7 +7795,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "FLOOP >>> Flip target Cornfield Landscape in this Lane face down.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "4"
     },
@@ -7252,7 +7809,8 @@
         ],
         "landscape": "Rainbow",
         "ability": "FLOOP >>> Flip target Cornfield Landscape in this Lane face down.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "1",
         "defense": "4"
     },
@@ -7265,7 +7823,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "At the start of your turn, if Niceasaurus Rex has Damage on it, draw a card.",
-        "cost": "1",
+        "cw-lang": "",
+				"cost": "1",
         "attack": "2",
         "defense": "7"
     },
@@ -7278,7 +7837,8 @@
         ],
         "landscape": "NiceLands",
         "ability": "FLOOP >>> Heal 2 damage from a Creature on an adjacent Landscape. If Dr. Stuffenstein has 5 or more damage on it, heal 2 damage from each of your Creatures instead.",
-        "cost": "2",
+        "cw-lang": "",
+				"cost": "2",
         "attack": "1",
         "defense": "9"
     },
@@ -7291,7 +7851,8 @@
         ],
         "landscape": "",
         "ability": "Pay 1 Action >>> Reveal the top card of your deck. If it's a Rainbow card, play it.",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -7304,7 +7865,8 @@
         ],
         "landscape": "",
         "ability": "If your opponent's deck runs out of cards, you win the game.",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -7317,7 +7879,8 @@
         ],
         "landscape": "",
         "ability": "Pay 1 Action >>> Look at the top 4 cards of your deck and rearrange them.",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -7330,7 +7893,8 @@
         ],
         "landscape": "",
         "ability": "At the start of the game, choose a word with 3 or more letters. Whenever you play a card with that work in its name, deal 1 Damage to target Creature an opponent controls.",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -7343,7 +7907,8 @@
         ],
         "landscape": "",
         "ability": "When you play a card with cost exactly 2, deal 2 Damage to a Creature an opponent controls.",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -7356,7 +7921,8 @@
         ],
         "landscape": "",
         "ability": "If you have no matching Landscapes, your Creatures have +1 DEF.",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -7369,7 +7935,8 @@
         ],
         "landscape": "",
         "ability": "Once during each of your turns, you may pay 1 HP. If you do, reveal the top card of your deck. You may discard it.",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -7382,7 +7949,8 @@
         ],
         "landscape": "",
         "ability": "Pay 1 Action & destroy a Creature you control >>> Deal Damage equal to its cost to each opposing Creature.",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
     },
@@ -7395,8 +7963,23 @@
         ],
         "landscape": "",
         "ability": "Once during each of your turns, you may discard a card with 'Pie' in its name to gain 1 Action.",
-        "cost": "",
+        "cw-lang": "",
+				"cost": "",
         "attack": "",
         "defense": ""
+    },
+    "666": {
+        "name": "Test Meister",
+        "image-path": "/CardImages/None.jpg",
+        "type": "Creature",
+        "decks": [
+          ""
+        ],
+        "landscape": "Rainbow",
+        "ability": "When Test Meister enters play, deal 1 damage to a creature your opponent controls",
+        "cw-lang": "SEP:DEAL_DMG(SELECT(FOE_CREATURES, 1), 1)",
+        "cost": "1",
+        "attack": "1",
+        "defense": "3"
     }
 }

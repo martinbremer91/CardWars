@@ -48,3 +48,14 @@ class Landscape(IntEnum):
                 return Landscape.LavaFlats
             case _:
                 raise Exception("Invalid string: cannot return Landscape")
+
+class TargetTag(IntEnum):
+    Player = 0
+    Opponent = 1
+    All_Players = 2
+    Self = 3
+    All_Creatures = 4
+    Own_Creatures = 5
+    Foe_Creatures = 6
+    Adjacent_Creatures = 7
+    Opposite_Creature = 8

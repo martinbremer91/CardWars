@@ -1,5 +1,5 @@
 ﻿from random import shuffle
-from source.gameplay.entities import get_entity_kind_from_string, get_entity_from_kind, Entity, Creature, Building
+from source.gameplay.entities import get_entity_kind_from_string, get_entity_from_kind, Spell, Creature, Building
 from source.gameplay.gameplay_enums import CollectionType, Landscape, EntityType
 from source.system.asset_manager import get_database, import_decklist
 from source.gameplay.game_logic import Choice
@@ -38,9 +38,9 @@ class Card:
         self.lane = lane
         if isinstance(self.entity, Creature | Building):
             lane.add_entity(self.entity)
-        self.entity.on_play()
-        if self.entity.entity_type is not EntityType.Spell:
             self.entity.place_on_lane(lane)
+        elif isinstance(self.entity, Spell):
+            self.entity.play_spell()
     def remove_from_play(self, to_enum):
         self.lane = None
         move_between_collections(self.player, self, to_enum)
@@ -65,8 +65,8 @@ def get_deck_from_decklists(name, player) -> Collection:
     return player.deck
 
 def set_up_decks(player_one, player_two):
-    player_one.deck = get_deck_from_decklists('Hunk', player_one)
-    player_two.deck = get_deck_from_decklists('Hunk', player_two)
+    player_one.deck = get_deck_from_decklists('Test', player_one)
+    player_two.deck = get_deck_from_decklists('Test', player_two)
 
     shuffle_collection(player_one.deck)
     shuffle_collection(player_two.deck)
@@ -117,8 +117,7 @@ def check_card_lane_availability(player, entity, lanes) -> bool:
             return True
         case EntityType.Building:
             for lane in player.lanes:
-                if lane.building is None:
-                    lanes.append(lane)
+                lanes.append(lane)
         case _:
             raise Exception("invalid entity kind")
 
