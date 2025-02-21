@@ -16,6 +16,9 @@ class Lane:
 
         self.player.lanes.append(self)
 
+    def __str__(self):
+        return str(self.lane_id)
+
     def assign_landscape(self, landscape):
         if self.landscape is not None:
             self.player.remove_landscape(landscape)
@@ -58,5 +61,10 @@ def get_opposite_lane(lane) -> Lane:
             return l
     raise Exception('Failed to get opposite lane')
 
-def get_adjacent_lanes(lane) -> (Lane, Lane):
-    ...
+def get_adjacent_lanes(lane) -> list:
+    output = list()
+    for l in lane.player.output:
+        if l.lane_id == lane.lane_id - 1 or l.lane_id == lane.lane_id + 1:
+            output.append(l)
+
+    return output

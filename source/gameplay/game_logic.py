@@ -22,6 +22,7 @@ class Choice[T]:
 
             print(f'Available {self.type_label}s:\n{user_prompt_options}')
             index = input(f'Select {self.type_label}:')
+            print('')
 
             if not index.isdigit():
                 print(f'invalid {self.type_label} index: not a digit')

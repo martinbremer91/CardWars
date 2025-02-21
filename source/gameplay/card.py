@@ -28,11 +28,19 @@ class Card:
         self.collection = collection
         self.collection.append(self)
         self.lane = None
+        self.entity.assign_card(self)
+
+    def __str__(self):
+        return self.entity.name
 
     def put_into_play(self, lane):
+        move_between_collections(self.player, self, CollectionType.In_Play)
         self.lane = lane
         if isinstance(self.entity, Creature | Building):
             lane.add_entity(self.entity)
+        self.entity.on_play()
+        if self.entity.entity_type is not EntityType.Spell:
+            self.entity.place_on_lane(lane)
     def remove_from_play(self, to_enum):
         self.lane = None
         move_between_collections(self.player, self, to_enum)
@@ -145,14 +153,8 @@ def try_play_card(player, card):
             selected_lane.creature.destroy()
         elif selected_lane.building is not None:
             selected_lane.building.destroy()
-    put_card_in_play(player, card, selected_lane)
+    card.put_into_play(selected_lane)
     player.spend_action_points(cost)
-
-def put_card_in_play(player, card, lane = None):
-    move_between_collections(player, card, CollectionType.In_Play)
-    card.entity.on_play()
-    if card.entity.entity_type is not EntityType.Spell:
-        card.entity.place_on_lane(lane)
 
 def mill_cards(player, amount = 1):
     move_between_collections(player, CollectionType.Deck, CollectionType.Discard, amount)

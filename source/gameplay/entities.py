@@ -3,12 +3,18 @@
 class Entity:
     def __init__(self, name, landscape, cost):
         self.entity_type = None
+        self.card = None
         self.name = name
         self.base_land = landscape
         self.land = landscape
         self.base_cost = cost
         self.cost = cost
 
+    def str(self):
+        return self.name
+
+    def assign_card(self, card):
+        self.card = card
     def on_play(self):
         pass
     def place_on_lane(self, lane):
@@ -26,8 +32,7 @@ class Creature(Entity):
         self.flooped = False
 
     def on_play(self):
-
-        print(f"Played {self.land.name} Creature")
+        print(f"{self.card.player.name} played {self.land.name} Creature\n")
     def place_on_lane(self, lane):
         lane.creature = self
     def take_damage(self, damage):
@@ -35,8 +40,8 @@ class Creature(Entity):
         if self.defense == 0:
             self.destroy()
     def destroy(self):
-        # TODO: discard card
-        # TODO: remove from lane
+        self.card.lane.creature = None
+        self.card.destroy()
         # TODO: invoke on_leave_play
         print(self.name, 'destroyed')
 
@@ -46,7 +51,7 @@ class Spell(Entity):
         self.entity_type = EntityType.Creature
 
     def on_play(self):
-        print(f"Played {self.land.name} Spell")
+        print(f"{self.card.player.name} played {self.land.name} Spell\n")
 
 class Building(Entity):
     def __init__(self, name, landscape, cost):
@@ -54,12 +59,12 @@ class Building(Entity):
         self.entity_type = EntityType.Building
 
     def on_play(self):
-        print(f"Played {self.land.name} Building")
+        print(f"{self.card.player.name} played {self.land.name} Building\n")
     def place_on_lane(self, lane):
         lane.building = self
     def destroy(self):
-        # TODO: discard card
-        # TODO: remove from lane
+        self.card.lane.building = None
+        self.card.destroy()
         # TODO: invoke on_leave_play
         print(self.name, 'destroyed')
 

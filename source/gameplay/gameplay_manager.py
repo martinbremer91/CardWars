@@ -1,5 +1,5 @@
 from source.gameplay.player import Player
-from source.gameplay.card import draw_cards, set_up_decks
+from source.gameplay.card import draw_cards, set_up_decks, try_play_card, Card
 from source.gameplay.game_logic import Choice, Trigger
 from source.gameplay.gameplay_enums import TurnPhase
 from source.gameplay.lane import Lane, init_lanes
@@ -60,6 +60,20 @@ def start_turn():
         active_player = player_two
         start_of_turn.invoke(active_player)
 
+    resolve_main_phase()
+
+def resolve_main_phase():
+    print('##############################')
+    print(active_player.name, 'main phase')
+    while True:
+        card = Choice[Card](active_player.hand.cards).resolve()
+        if card is None:
+            break
+        try_play_card(active_player, card)
+        if active_player.action_points == 0:
+            break
+    advance_turn_phase()
+
 def advance_turn_phase():
     global turn_phase
 
@@ -79,7 +93,9 @@ def advance_turn_phase():
         resolve_combat()
 
 def resolve_combat():
-    lanes : list[Lane] = get_active_combat_lanes(active_player)
+    print('##############################')
+    print(active_player.name, 'COMBAT PHASE')
+    lanes = get_active_combat_lanes(active_player)
     while len(lanes) > 0:
         lane = Choice[Lane](lanes).resolve()
         resolve_attack(lane)
