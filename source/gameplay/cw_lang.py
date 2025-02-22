@@ -1,5 +1,6 @@
-﻿from source.gameplay.game_logic import Ability, Effect
-# Ability(Trigger(), [DealDamage(self, Choice(TargetTag.Foe_Creatures), 1)])
+﻿from source.gameplay.game_logic import Ability, Effect, DealDamage, Choice
+from source.gameplay.gameplay_enums import TargetTag
+
 
 def split_codes(codes, symbol):
     continues = 0
@@ -13,18 +14,6 @@ def split_codes(codes, symbol):
                 codes.append(part)
             codes.remove(item)
             break
-
-# def get_effect_from_code(code, entity) -> Effect | None:
-#     match code.split('(')[0]:
-#         case "deal_dmg":
-#             print('found deal damage effect')
-#         case _:
-#             print('\033[93m' + f'Entity {entity}: invalid effect code ({code})' + '\033[0m')
-#             return None
-
-# DEAL_DMG(SELECT(FOE_CREATURES, 1), 1)
-# {DEAL_DMG: [{SELECT: [FOE_CREATURES, 1]}, 1]}
-# {deal_dmg: [{select: [[foe_creatures, 1]]}]}
 
 def get_scope_params(code):
     inner_scope_starts = 0
@@ -70,9 +59,37 @@ def tokenize_code(code):
                 return {function : values}
     return code
 
-def parse(cw_code, entity):
-    import json
+def get_function_from_tokens(tokens, entity):
+    if isinstance(tokens, dict):
+        for key in tokens.keys():
+            params = get_function_from_tokens(tokens[key], entity)
 
+            match key:
+                case 'deal_dmg':
+                    return DealDamage(entity, params[0], params[1])
+                case 'choice':
+                    return Choice(params[0], params[1])
+                case _:
+                    return None
+
+    elif isinstance(tokens, list):
+        params = list()
+        for item in tokens:
+            params.append(get_function_from_tokens(item, entity))
+        return params
+
+    else:
+        if not isinstance(tokens, str):
+            return None
+        if tokens.isdigit():
+            return int(tokens)
+        match tokens:
+            case 'foe_creatures':
+                return TargetTag.Foe_Creatures
+            case _:
+                return None
+
+def parse(cw_code, entity):
     if cw_code == '':
         return list()
 
@@ -84,14 +101,20 @@ def parse(cw_code, entity):
     split_codes(effect_codes, ';')
 
     effects = list()
-    for item in effect_codes:
-        tokens = tokenize_code(item)
-        # print(tokens)
-        # print(json.dumps(tokens, sort_keys=False, indent=4))
+    for code in effect_codes:
+        tokens = tokenize_code(code)
 
-        # effect = get_effect_from_code(item, entity)
-        # if effect is None:
-        #     return list()
-        # effects.append(effect)
+        import json
+        print(tokens)
+        #print(json.dumps(tokens, sort_keys=False, indent=4))
+        print('')
+
+        effect = get_function_from_tokens(tokens, entity)
+
+        if effect is None:
+            print('\033[93m' + f'Entity {entity}: invalid effect code ({code})' + '\033[0m')
+            return list()
+
+        effects.append(effect)
 
     # return Ability()

@@ -147,7 +147,7 @@ def try_play_card(player, card):
     selected_lane = None
 
     if card.entity.entity_type is not EntityType.Spell:
-        selected_lane = Choice[Lane](available_lanes).resolve()
+        selected_lane = Choice(available_lanes).resolve()
         if selected_lane.creature is not None:
             selected_lane.creature.destroy()
         elif selected_lane.building is not None:

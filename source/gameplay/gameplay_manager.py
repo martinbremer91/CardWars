@@ -68,7 +68,7 @@ def resolve_main_phase():
     print('##############################')
     print(active_player.name, 'main phase')
     while True:
-        card = Choice[Card](active_player.hand.cards).resolve()
+        card = Choice(active_player.hand.cards).resolve()
         if card is None:
             break
         try_play_card(active_player, card)
@@ -99,7 +99,7 @@ def resolve_combat():
     print(active_player.name, 'COMBAT PHASE')
     lanes = get_active_combat_lanes(active_player)
     while len(lanes) > 0:
-        lane = Choice[Lane](lanes).resolve()
+        lane = Choice(lanes).resolve()
         resolve_attack(lane)
         lanes.remove(lane)
     advance_turn_phase()

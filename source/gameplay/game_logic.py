@@ -11,9 +11,10 @@ class Trigger:
         for subscriber in self.subscribers:
             subscriber(arg)
 
-class Choice[T]:
-    def __init__(self, options = None):
+class Choice:
+    def __init__(self, options = None, amount = 1):
         self.options = list() if not options else options
+        self.amount = amount
         self.type_label = ""
         self.set_type_label()
 
@@ -24,7 +25,7 @@ class Choice[T]:
             self.type_label = self.options.name
         else:
             self.type_label = f"{type(self.options[0]).__name__}"
-    def resolve(self, entity = None) -> T:
+    def resolve(self, entity = None):
         if self.options and isinstance(self.options, TargetTag):
             if not entity:
                 raise Exception('Failed to resolve choice: tag given but entity is None')
@@ -33,24 +34,32 @@ class Choice[T]:
             print('No suitable options to choose\n')
             return None
 
-        while True:
-            user_prompt_options = ''
-            for i in range(len(self.options)):
-                user_prompt_options += f'[{i}]: {self.options[i]}\n'
+        choices = list()
 
-            print(f'Available {self.type_label}s:\n{user_prompt_options}')
-            index = input(f'Select {self.type_label}:')
-            print('')
+        for c in range(min(len(self.options), self.amount)):
+            while True:
+                user_prompt_options = ''
+                for i in range(len(self.options)):
+                    user_prompt_options += f'[{i}]: {self.options[i]}\n'
 
-            if not index.isdigit():
-                print(f'invalid {self.type_label} index: not a digit')
-                continue
-            index = int(index)
-            if index < 0 or index >= len(self.options):
-                print(f'invalid {self.type_label} index: digit out of range')
-                continue
+                print(f'Available {self.type_label}s:\n{user_prompt_options}')
+                index = input(f'Select {self.type_label}:')
+                print('')
 
-            return self.options[index]
+                if not index.isdigit():
+                    print(f'invalid {self.type_label} index: not a digit')
+                    continue
+                index = int(index)
+                if index < 0 or index >= len(self.options):
+                    print(f'invalid {self.type_label} index: digit out of range')
+                    continue
+
+                choices.append(self.options[index])
+                break
+
+        if len(choices) == 1:
+            return choices[0]
+        return choices
 
 class Effect:
     def __init__(self, entity):
