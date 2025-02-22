@@ -1,16 +1,5 @@
 ﻿from source.gameplay.gameplay_enums import TargetTag
 
-class Trigger:
-    def __init__(self):
-        self.subscribers = list()
-
-    def subscribe(self, subscriber):
-        self.subscribers.append(subscriber)
-
-    def invoke(self, arg):
-        for subscriber in self.subscribers:
-            subscriber(arg)
-
 class Choice:
     def __init__(self, options = None, amount = 1):
         self.options = list() if not options else options
@@ -60,37 +49,6 @@ class Choice:
         if len(choices) == 1:
             return choices[0]
         return choices
-
-class Effect:
-    def __init__(self, entity):
-        self.entity = entity
-    def resolve(self, arg):
-        pass
-
-class DealDamage(Effect):
-    def __init__(self, entity, target, value):
-        super().__init__(entity)
-        self.target = target
-        self.value = value
-    def resolve(self, arg):
-        if isinstance(self.target, Choice):
-            self.target = self.target.resolve(self.entity)
-        if self.target is not None:
-            self.target.take_damage(self.value)
-            print(f'{self.entity} deals {self.value} damage to {self.target}. HP: {self.target.defense}')
-        else:
-            print(f"{self.entity.name}'s ability fizzled")
-
-class Ability:
-    def __init__(self, trigger, effects):
-        self.trigger = trigger
-        self.effects = effects
-        # TODO: this shouldn't always happen here (depends on trigger: e.g. SEP yes, EOT no)
-        self.subscribe_effects_to_trigger()
-
-    def subscribe_effects_to_trigger(self):
-        for effect in self.effects:
-            self.trigger.subscribe(effect.resolve)
 
 def get_creatures_from_lanes(lanes):
     creatures = list()

@@ -1,7 +1,6 @@
 import pygame
 from pygame.locals import *
 from source.main import register_update as main_register_update
-from source.gui import graphics
 from source.system import input_manager
 
 def register_update():

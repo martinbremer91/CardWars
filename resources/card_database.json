@@ -7977,7 +7977,7 @@
         ],
         "landscape": "Rainbow",
         "ability": "When Test Meister enters play, deal 1 damage to a creature your opponent controls",
-        "cw-lang": "SEP:DEAL_DMG(SELECT(FOE_CREATURES, 1), 1)",
+        "cw-lang": "SEP:DEAL_DMG(CHOICE(FOE_CREATURES, 1), 1)",
         "cost": "1",
         "attack": "1",
         "defense": "3"

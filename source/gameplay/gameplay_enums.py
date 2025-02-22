@@ -59,3 +59,22 @@ class TargetTag(IntEnum):
     Foe_Creatures = 6
     Adjacent_Creatures = 7
     Opposite_Creature = 8
+
+class TriggerType(IntEnum):
+    Start_of_Turn = 0
+    End_of_Turn = 1
+    Self_Enters_Play = 2
+    Self_Exits_Play = 3
+    While_in_Play = 4
+    When_Self_Attacks = 5
+    Cost_Paid = 6
+
+'''
+SOT -> global   | SOT, SOT(<condition>)         | only while in play
+EOT -> global   | EOT, maybe EOT(<condition>)   | 
+SEP -> local    | SEP, SEP(<condition>)         | 
+SXP -> local    | SXP, SXP(<condition>)         | 
+WIP -> local    | WIP, maybe WIP(<condition>)   | 
+WSA -> local    | WSA, WSA(<target>)            | 
+CST -> local    | CST([<effect>])               | 
+'''

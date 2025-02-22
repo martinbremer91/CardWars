@@ -1,5 +1,6 @@
-﻿from source.gameplay.gameplay_enums import CollectionType
+﻿from source.gameplay.gameplay_enums import CollectionType, TriggerType
 from source.gameplay.card import Collection
+from source.gameplay.trigger import Trigger
 
 class Player:
     def __init__(self, name, hp):
@@ -13,6 +14,8 @@ class Player:
         self.hand = Collection(self, CollectionType.Hand)
         self.cards_in_play = Collection(self, CollectionType.In_Play)
         self.discard = Collection(self, CollectionType.Discard)
+        self.start_of_turn = Trigger(TriggerType.Start_of_Turn)
+        self.end_of_turn = Trigger(TriggerType.End_of_Turn)
 
     def assign_opponent(self, opponent):
         self.opponent = opponent
@@ -33,14 +36,6 @@ class Player:
         self.hp = max(self.hp - amount, 0)
     def heal_damage(self, amount):
         self.hp = min(self.hp + amount, 25)
-
-    def gain_action_points(self, amount):
-        self.action_points += amount
-    def spend_action_points(self, amount):
-        if self.action_points - amount < 0:
-            raise Exception(f"{self.name}: player cannot have negative number of action points")
-        else:
-            self.action_points -= amount
 
     def add_landscape(self, landscape):
         if landscape in self.landscapes.keys():

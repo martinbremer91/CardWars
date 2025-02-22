@@ -1,11 +1,9 @@
 ﻿import pygame
-from pygame import Surface, Rect
+from pygame import Surface
 from pygame.font import Font
 
 from source import main
 from source.system import configs
-
-import pygame_gui
 
 screen: Surface
 font: Font

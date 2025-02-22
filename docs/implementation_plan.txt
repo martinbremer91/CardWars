@@ -15,11 +15,22 @@ GAMEPLAY
 - ~~refactor gameplay_manager and gameplay_classes~~
 - ~~attack phase~~
 - ~~skip first attack rule~~
+- ~~create TriggerType enum, require it as param for Trigger init~~
+- ~~figure out cw_lang integration~~
+- ~~refactor convert existing trigger effects:~~
+	- ~~per-turn draw~~
+	- ~~gain/loss of actions~~
+- ~~refactor game_logic: separate classes into own modules~~
 
-- create TriggerType enum, require it as param for Trigger.__init__
-- figure out cw_lang integration
+- implement effect conditions
+- properly implement triggers (fix TODO in ability.py, see NOTES)
 - network message format and processing (local and peer)
 - implement check_card_specific_requirements
 
 NETWORK
 - research / tests
+
+
+NOTES: 
+- at some point make sure TriggerType is actually being used
+- maybe create EOT and WIP trigger objects as children of Trigger

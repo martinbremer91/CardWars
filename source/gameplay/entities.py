@@ -1,5 +1,6 @@
-﻿from source.gameplay.gameplay_enums import Landscape, EntityType, TargetTag
-from source.gameplay.game_logic import Ability, Trigger, DealDamage, Choice
+﻿from source.gameplay.gameplay_enums import Landscape, EntityType, TriggerType
+from source.gameplay.trigger import Trigger
+from source.gameplay.cw_lang import parse
 
 class Entity:
     def __init__(self, name, landscape, cost, ability_text, cw_lang):
@@ -12,21 +13,17 @@ class Entity:
         self.cost = cost
         self.ability_text = ability_text
         self.cw_lang = cw_lang
+        self.self_enters_play = Trigger(TriggerType.Self_Enters_Play)
         self.abilities = list()
-        self.parse_cw_lang()
+        self.abilities.append(parse(cw_lang, self))
 
     def __str__(self):
         return self.name
 
-    def parse_cw_lang(self):
-        ...
-        self.abilities.append(Ability(Trigger(), [DealDamage(self, Choice(TargetTag.Foe_Creatures, 1), 1)]))
     def assign_card(self, card):
         self.card = card
     def on_play(self):
-        # <placeholder>
-        self.abilities[0].trigger.invoke(None)
-        # </placeholder>
+        self.self_enters_play.invoke()
     def place_on_lane(self, lane):
         pass
 

@@ -1,4 +1,6 @@
-﻿from source.gameplay.game_logic import Ability, Effect, DealDamage, Choice
+﻿from source.gameplay.ability import Ability
+from source.gameplay.effect import DealDamage
+from source.gameplay.choice import Choice
 from source.gameplay.gameplay_enums import TargetTag
 
 
@@ -104,10 +106,10 @@ def parse(cw_code, entity):
     for code in effect_codes:
         tokens = tokenize_code(code)
 
-        import json
-        print(tokens)
+        #import json
+        #print(tokens)
         #print(json.dumps(tokens, sort_keys=False, indent=4))
-        print('')
+        #print('')
 
         effect = get_function_from_tokens(tokens, entity)
 
@@ -117,4 +119,6 @@ def parse(cw_code, entity):
 
         effects.append(effect)
 
-    # return Ability()
+    # <placeholder> hard-coded self_enters_play: should get trigger from parsing trigger_code
+    return Ability(entity.self_enters_play, effects)
+    # </placeholder>

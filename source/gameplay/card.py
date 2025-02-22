@@ -2,7 +2,8 @@
 from source.gameplay.entities import get_entity_kind_from_string, get_entity_from_kind, Spell, Creature, Building
 from source.gameplay.gameplay_enums import CollectionType, Landscape, EntityType
 from source.system.asset_manager import get_database, import_decklist
-from source.gameplay.game_logic import Choice
+from source.gameplay.effect import SpendActionPoints
+from source.gameplay.choice import Choice
 
 class Collection:
     def __init__(self, player, collection_type):
@@ -92,9 +93,6 @@ def move_between_collections(player, src, to_enum, amount = None):
             to_coll.append(card)
             card.collection = to_coll
 
-def draw_cards(player, amount = 1):
-    move_between_collections(player, CollectionType.Deck, CollectionType.Hand, amount)
-
 def check_card_landscape_requirement(player, card) -> bool:
     cost = card.entity.cost
     land = card.entity.land
@@ -127,7 +125,6 @@ def check_card_specific_requirements() -> bool:
     return True
 
 def try_play_card(player, card):
-    from source.gameplay.lane import Lane
     cost = card.entity.cost
 
     if not check_card_landscape_requirement(player, card):
@@ -153,7 +150,7 @@ def try_play_card(player, card):
         elif selected_lane.building is not None:
             selected_lane.building.destroy()
     card.put_into_play(selected_lane)
-    player.spend_action_points(cost)
+    SpendActionPoints(card.entity, player, cost).resolve()
 
 def mill_cards(player, amount = 1):
     move_between_collections(player, CollectionType.Deck, CollectionType.Discard, amount)
