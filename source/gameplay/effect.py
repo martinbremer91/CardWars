@@ -1,4 +1,4 @@
-﻿from source.gameplay.gameplay_enums import CollectionType
+﻿from source.gameplay.game_enums import CollectionType
 from source.gameplay.choice import Choice
 
 class Effect:
@@ -13,7 +13,6 @@ class GainActionPoints(Effect):
         self.player = player
         self.amount = amount
     def resolve(self):
-        print(f"/// {self.player.name} GainAP")
         self.player.action_points += self.amount
 
 class SpendActionPoints(Effect):
@@ -22,7 +21,6 @@ class SpendActionPoints(Effect):
         self.player = player
         self.amount = amount
     def resolve(self):
-        print(f"/// {self.player.name} SpendAP")
         to_be_deducted = self.player.action_points if self.amount == -1 else self.amount
         if self.player.action_points - to_be_deducted < 0:
             raise Exception(f"{self.player.name}: player cannot have negative number of action points\n"
@@ -35,7 +33,6 @@ class DrawCards(Effect):
         self.player = player
         self.amount = amount
     def resolve(self):
-        print(f"/// {self.player.name} DrawCards")
         from source.gameplay.card import move_between_collections
         move_between_collections(self.player, CollectionType.Deck, CollectionType.Hand, self.amount)
 

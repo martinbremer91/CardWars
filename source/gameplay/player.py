@@ -1,4 +1,4 @@
-﻿from source.gameplay.gameplay_enums import CollectionType, TriggerType
+﻿from source.gameplay.game_enums import CollectionType, TriggerType
 from source.gameplay.card import Collection
 from source.gameplay.trigger import Trigger
 

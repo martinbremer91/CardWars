@@ -22,7 +22,7 @@ GAMEPLAY
 	- ~~gain/loss of actions~~
 - ~~refactor game_logic: separate classes into own modules~~
 
-- implement effect conditions
+- implement conditions
 - properly implement triggers (fix TODO in ability.py, see NOTES)
 - network message format and processing (local and peer)
 - implement check_card_specific_requirements
@@ -31,6 +31,7 @@ NETWORK
 - research / tests
 
 
-NOTES: 
+NOTES:
+- can trigger conditions and effect filters use the same logic?
 - at some point make sure TriggerType is actually being used
 - maybe create EOT and WIP trigger objects as children of Trigger

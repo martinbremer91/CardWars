@@ -65,16 +65,34 @@ class TriggerType(IntEnum):
     End_of_Turn = 1
     Self_Enters_Play = 2
     Self_Exits_Play = 3
-    While_in_Play = 4
-    When_Self_Attacks = 5
-    Cost_Paid = 6
+    When_Self_Attacks = 4
+    Cost_Paid = 5
+
+class ConditionType(IntEnum):
+    Is = 0
+    Not = 1
+    Greater_Than = 2
+    Less_Than = 3
+    Greater_Equal = 4
+    Less_Equal = 5
+
+class SubscriptionLifetime(IntEnum):
+    Indefinite = 0
+    End_of_Turn = 1
 
 '''
-SOT -> global   | SOT, SOT(<condition>)         | only while in play
-EOT -> global   | EOT, maybe EOT(<condition>)   | 
-SEP -> local    | SEP, SEP(<condition>)         | 
-SXP -> local    | SXP, SXP(<condition>)         | 
-WIP -> local    | WIP, maybe WIP(<condition>)   | 
-WSA -> local    | WSA, WSA(<target>)            | 
-CST -> local    | CST([<effect>])               | 
+TRIGGERS
+
+NAME                | CODE  | VARIANTS                      | 
+-------------------------------------------------------------
+start of turn       | SOT   | SOT, SOT(<condition>)         | 
+end of turn         | EOT   | EOT, maybe EOT(<condition>)   | 
+self enters play    | SEP   | SEP, SEP(<condition>)         | 
+self exits play     | SXP   | SXP, SXP(<condition>)         | 
+when self attacks   | WSA   | WSA, WSA(<target>)            | 
+cost paid           | CST   | CST([<effect>])               | 
+
+
+
+
 '''

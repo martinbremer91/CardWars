@@ -1,5 +1,5 @@
 ﻿# from source.gameplay.gameplay_enums import Landscape
-from source.gameplay.gameplay_manager import init, start_play
+from source.gameplay.game_manager import init, start_play
 
 init()
 start_play()

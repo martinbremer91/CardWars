@@ -1,4 +1,4 @@
-﻿from source.gameplay.gameplay_enums import Landscape, EntityType, TriggerType
+﻿from source.gameplay.game_enums import Landscape, EntityType, TriggerType
 from source.gameplay.trigger import Trigger
 from source.gameplay.cw_lang import parse
 
@@ -14,6 +14,7 @@ class Entity:
         self.ability_text = ability_text
         self.cw_lang = cw_lang
         self.self_enters_play = Trigger(TriggerType.Self_Enters_Play)
+        self.self_exits_play = Trigger(TriggerType.Self_Exits_Play)
         self.abilities = list()
         self.abilities.append(parse(cw_lang, self))
 
@@ -24,12 +25,14 @@ class Entity:
         self.card = card
     def on_play(self):
         self.self_enters_play.invoke()
+    def on_exit_play(self):
+        self.self_exits_play.invoke()
     def place_on_lane(self, lane):
         pass
 
 class Creature(Entity):
     def __init__(self, name, landscape, cost, ability_text, cw_lang, attack, defense):
-        super().__init__(name, landscape, cost, ability_text, cw_lang, )
+        super().__init__(name, landscape, cost, ability_text, cw_lang)
         self.entity_type = EntityType.Creature
         self.base_attack = attack
         self.base_defense = defense
@@ -43,27 +46,24 @@ class Creature(Entity):
         super().on_play()
     def place_on_lane(self, lane):
         lane.creature = self
-        self.on_play()
     def take_damage(self, damage):
         self.defense = max(self.defense - damage, 0)
         if self.defense == 0:
             self.destroy()
     def destroy(self):
-        self.card.lane.creature = None
-        self.card.destroy()
-        # TODO: invoke on_leave_play
         print(self.name, 'destroyed')
+        self.card.lane.creature = None
+        self.self_exits_play.invoke()
+        self.card.destroy()
 
 class Spell(Entity):
     def __init__(self, name, landscape, cost, ability_text, cw_lang):
         super().__init__(name, landscape, cost, ability_text, cw_lang)
         self.entity_type = EntityType.Creature
 
-    def play_spell(self):
-        # structurally analogous to Creature.place_on_lane
-        self.on_play()
     def on_play(self):
         print(f"{self.card.player.name} played {self.name} ({self.land.name} Spell)\n")
+        super().on_play()
 
 class Building(Entity):
     def __init__(self, name, landscape, cost, ability_text, cw_lang):
@@ -72,14 +72,14 @@ class Building(Entity):
 
     def on_play(self):
         print(f"{self.card.player.name} played {self.name} ({self.land.name} Building)\n")
+        super().on_play()
     def place_on_lane(self, lane):
         lane.building = self
-        self.on_play()
     def destroy(self):
-        self.card.lane.building = None
-        self.card.destroy()
-        # TODO: invoke on_leave_play
         print(self.name, 'destroyed')
+        self.card.lane.building = None
+        self.self_exits_play.invoke()
+        self.card.destroy()
 
 def create_creature_from_card_data(card_data) -> Creature:
     name = card_data['name']

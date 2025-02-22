@@ -1,7 +1,7 @@
 ﻿from source.gameplay.ability import Ability
 from source.gameplay.effect import DealDamage
 from source.gameplay.choice import Choice
-from source.gameplay.gameplay_enums import TargetTag
+from source.gameplay.game_enums import TargetTag
 
 
 def split_codes(codes, symbol):

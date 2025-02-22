@@ -1,4 +1,4 @@
-﻿from source.gameplay.gameplay_enums import Landscape
+﻿from source.gameplay.game_enums import Landscape
 from source.gameplay.entities import Creature, Building
 
 class Lane:

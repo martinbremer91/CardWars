@@ -1,6 +1,6 @@
 ﻿from random import shuffle
 from source.gameplay.entities import get_entity_kind_from_string, get_entity_from_kind, Spell, Creature, Building
-from source.gameplay.gameplay_enums import CollectionType, Landscape, EntityType
+from source.gameplay.game_enums import CollectionType, Landscape, EntityType
 from source.system.asset_manager import get_database, import_decklist
 from source.gameplay.effect import SpendActionPoints
 from source.gameplay.choice import Choice
@@ -40,8 +40,7 @@ class Card:
         if isinstance(self.entity, Creature | Building):
             lane.add_entity(self.entity)
             self.entity.place_on_lane(lane)
-        elif isinstance(self.entity, Spell):
-            self.entity.play_spell()
+        self.entity.on_play()
     def remove_from_play(self, to_enum):
         self.lane = None
         move_between_collections(self.player, self, to_enum)

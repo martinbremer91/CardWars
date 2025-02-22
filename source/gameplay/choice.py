@@ -1,4 +1,4 @@
-﻿from source.gameplay.gameplay_enums import TargetTag
+﻿from source.gameplay.game_enums import TargetTag
 
 class Choice:
     def __init__(self, options = None, amount = 1):
