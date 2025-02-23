@@ -1,5 +1,5 @@
 ﻿from random import shuffle
-from source.gameplay.entities import get_entity_kind_from_string, get_entity_from_kind, Spell, Creature, Building
+from source.gameplay.entities import get_entity_kind_from_string, get_entity_from_kind, Creature, Building
 from source.gameplay.game_enums import CollectionType, Landscape, EntityType
 from source.system.asset_manager import get_database, import_decklist
 from source.gameplay.effect import SpendActionPoints

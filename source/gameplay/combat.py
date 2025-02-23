@@ -1,4 +1,5 @@
-﻿from source.gameplay.lane import Lane, get_opposite_lane
+﻿from source.gameplay.effect import DealDamage
+from source.gameplay.lane import Lane, get_opposite_lane
 
 def get_active_combat_lanes(player) -> list[Lane]:
     active_lanes = list()
@@ -10,19 +11,13 @@ def get_active_combat_lanes(player) -> list[Lane]:
 def resolve_attack(lane):
     opposite_lane = get_opposite_lane(lane)
     attacker = lane.creature
-    defender= opposite_lane.creature
+    defender = opposite_lane.creature
 
     if defender is not None:
         fight(attacker, defender)
     else:
-        opposite_lane.player.take_damage(attacker.attack)
-        print(f'{attacker.name} deals {attacker.attack} damage to {opposite_lane.player.name}')
-        print(f'{opposite_lane.player.name} HP: {opposite_lane.player.hp}')
+        DealDamage(attacker, opposite_lane.player, attacker.attack).resolve()
 
 def fight(creature_a, creature_b):
-    creature_b.take_damage(creature_a.attack)
-    print(f'{creature_a.name} deals {creature_a.attack} damage to {creature_b.name}')
-    print(f'{creature_b.name} def: {creature_b.defense}')
-    creature_a.take_damage(creature_b.attack)
-    print(f'{creature_b.name} deals {creature_b.attack} damage to {creature_a.name}')
-    print(f'{creature_a.name} def: {creature_a.defense}')
+    DealDamage(creature_a, creature_b, creature_a.attack).resolve()
+    DealDamage(creature_b, creature_a, creature_b.attack).resolve()

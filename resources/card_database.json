@@ -7981,5 +7981,19 @@
         "cost": "1",
         "attack": "1",
         "defense": "3"
+    },
+	"667": {
+		"name": "Test Spell",
+        "image-path": "/CardImages/None.jpg",
+        "type": "Spell",
+        "decks": [
+          ""
+        ],
+        "landscape": "Rainbow",
+        "ability": "Target creature you control has +1 ATK until end of turn",
+        "cw-lang": "EOT:MOD_ATK(CHOICE(OWN_CREATURES, 1), 1)",
+        "cost": "1",
+        "attack": "",
+        "defense": ""
     }
 }

@@ -21,8 +21,8 @@ def init():
 
     turn_counter = 0
 
-    player_one = Player("Player 1", 25)
-    player_two = Player("Player 2", 25)
+    player_one = Player("Player 1")
+    player_two = Player("Player 2")
     player_one.assign_opponent(player_two)
     player_two.assign_opponent(player_one)
 

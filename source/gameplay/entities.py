@@ -35,9 +35,10 @@ class Creature(Entity):
         super().__init__(name, landscape, cost, ability_text, cw_lang)
         self.entity_type = EntityType.Creature
         self.base_attack = attack
-        self.base_defense = defense
         self.attack = self.base_attack
+        self.base_defense = defense
         self.defense = self.base_defense
+        self.damage = 0
         self.exhausted = False
         self.flooped = False
 
@@ -47,9 +48,11 @@ class Creature(Entity):
     def place_on_lane(self, lane):
         lane.creature = self
     def take_damage(self, damage):
-        self.defense = max(self.defense - damage, 0)
-        if self.defense == 0:
+        self.damage += damage
+        if self.damage >= self.defense:
             self.destroy()
+    def heal_damage(self, value):
+        self.damage = max(0, self.damage - value)
     def destroy(self):
         print(self.name, 'destroyed')
         self.card.lane.creature = None

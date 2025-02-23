@@ -1,8 +1,7 @@
 ﻿from source.gameplay.ability import Ability
-from source.gameplay.effect import DealDamage
+from source.gameplay.effect import DealDamage, ModAttack
 from source.gameplay.choice import Choice
 from source.gameplay.game_enums import TargetTag
-
 
 def split_codes(codes, symbol):
     continues = 0
@@ -71,6 +70,8 @@ def get_function_from_tokens(tokens, entity):
                     return DealDamage(entity, params[0], params[1])
                 case 'choice':
                     return Choice(params[0], params[1])
+                case 'mod_atk':
+                    return ModAttack(entity, params[0], params[1])
                 case _:
                     return None
 

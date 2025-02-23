@@ -35,6 +35,12 @@ class Choice:
                 index = input(f'Select {self.type_label}:')
                 print('')
 
+                # <placeholder>
+                if index == 'c':
+                    print('Application stopped by user')
+                    exit()
+                # </placeholder>
+
                 if not index.isdigit():
                     print(f'invalid {self.type_label} index: not a digit')
                     continue

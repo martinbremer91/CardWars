@@ -10,12 +10,9 @@ class Lane:
         self.landscape = None
         self.flipped_land : bool = False
         self.can_play_creature : bool = True
-
         if landscape is not None:
             self.assign_landscape(landscape)
-
         self.player.lanes.append(self)
-
     def __str__(self):
         return f'{str(self.lane_id)} / {self.landscape.name}'
 

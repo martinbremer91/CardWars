@@ -3,10 +3,11 @@ from source.gameplay.card import Collection
 from source.gameplay.trigger import Trigger
 
 class Player:
-    def __init__(self, name, hp):
+    def __init__(self, name):
         self.name = name
         self.opponent = None
-        self.hp = hp
+        self.damage = 0
+        self.defense = 25
         self.action_points = 0
         self.lanes = list()
         self.landscapes = dict()
@@ -16,6 +17,8 @@ class Player:
         self.discard = Collection(self, CollectionType.Discard)
         self.start_of_turn = Trigger(TriggerType.Start_of_Turn)
         self.end_of_turn = Trigger(TriggerType.End_of_Turn)
+    def __str__(self):
+        return self.name
 
     def assign_opponent(self, opponent):
         self.opponent = opponent
@@ -32,10 +35,20 @@ class Player:
             case _:
                 raise Exception("No valid Collection given")
 
+    def win_game(self):
+        print(self.name, 'wins!')
+        exit()
+    def lose_game(self):
+        self.opponent.win_game()
+
     def take_damage(self, amount):
-        self.hp = max(self.hp - amount, 0)
+        self.damage += amount
+        if self.get_hp() < 1:
+            self.lose_game()
     def heal_damage(self, amount):
-        self.hp = min(self.hp + amount, 25)
+        self.damage = max(self.damage - amount, 0)
+    def get_hp(self):
+        return max(self.defense - self.damage, 0)
 
     def add_landscape(self, landscape):
         if landscape in self.landscapes.keys():
