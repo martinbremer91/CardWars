@@ -62,7 +62,7 @@ class Creature(Entity):
 class Spell(Entity):
     def __init__(self, name, landscape, cost, ability_text, cw_lang):
         super().__init__(name, landscape, cost, ability_text, cw_lang)
-        self.entity_type = EntityType.Creature
+        self.entity_type = EntityType.Spell
 
     def on_play(self):
         print(f"{self.card.player.name} played {self.name} ({self.land.name} Spell)\n")
