@@ -1,25 +1,49 @@
-﻿from source.gameplay.game_enums import Landscape, EntityType, TriggerType
+﻿from source.gameplay.game_enums import Landscape, EntityType
 from source.gameplay.trigger import Trigger
 from source.gameplay.cw_lang import parse
 
-class Entity:
+class GameObject:
+    def __init__(self, name, ability_text, cw_lang):
+        self.name = name
+        self.ability_text = ability_text
+        self.cw_lang = cw_lang
+        self.abilities = list()
+
+    def __str__(self):
+        return self.name
+    def get_parsed_abilities(self):
+        parsed_abilities = parse(self.cw_lang, self)
+        if parsed_abilities:
+            self.abilities.append(parsed_abilities)
+
+class Hero(GameObject):
+    def __init__(self, name, player, ability_text, cw_lang):
+        super().__init__(name, ability_text, cw_lang)
+        self.player = player
+        self.self_enters_play = Trigger()
+        self.get_parsed_abilities()
+
+    def get_player(self):
+        return self.player
+
+class Entity(GameObject):
     def __init__(self, name, landscape, cost, ability_text, cw_lang):
+        super().__init__(name, ability_text, cw_lang)
         self.entity_type = None
         self.card = None
-        self.name = name
+        self.self_enters_play = Trigger()
+        self.self_exits_play = Trigger()
         self.base_land = landscape
         self.land = landscape
         self.base_cost = cost
         self.cost = cost
-        self.ability_text = ability_text
-        self.cw_lang = cw_lang
-        self.self_enters_play = Trigger(TriggerType.Self_Enters_Play)
-        self.self_exits_play = Trigger(TriggerType.Self_Exits_Play)
-        self.abilities = list()
-        self.abilities.append(parse(cw_lang, self))
+        self.get_parsed_abilities()
 
     def __str__(self):
         return self.name
+
+    def get_player(self):
+        return self.card.player
 
     def assign_card(self, card):
         self.card = card
@@ -47,6 +71,10 @@ class Creature(Entity):
         super().on_play()
     def place_on_lane(self, lane):
         lane.creature = self
+    def mod_attack(self, value):
+        self.attack += value
+    def get_attack(self):
+        return max(0, self.attack)
     def take_damage(self, damage):
         self.damage += damage
         if self.damage >= self.defense:

@@ -60,14 +60,6 @@ class TargetTag(IntEnum):
     Adjacent_Creatures = 7
     Opposite_Creature = 8
 
-class TriggerType(IntEnum):
-    Start_of_Turn = 0
-    End_of_Turn = 1
-    Self_Enters_Play = 2
-    Self_Exits_Play = 3
-    When_Self_Attacks = 4
-    Cost_Paid = 5
-
 class ConditionType(IntEnum):
     Is = 0
     Not = 1
@@ -83,16 +75,12 @@ class SubscriptionLifetime(IntEnum):
 '''
 TRIGGERS
 
-NAME                | CODE  | VARIANTS                      | 
--------------------------------------------------------------
-start of turn       | SOT   | SOT, SOT(<condition>)         | 
-end of turn         | EOT   | EOT, maybe EOT(<condition>)   | 
-self enters play    | SEP   | SEP, SEP(<condition>)         | 
-self exits play     | SXP   | SXP, SXP(<condition>)         | 
-when self attacks   | WSA   | WSA, WSA(<target>)            | 
-cost paid           | CST   | CST([<effect>])               | 
-
-
-
-
+NAME                | CODE  | VARIANTS              | EFFECTS TRIGGER                         
+----------------------------------------------------------------------------------------------
+start of turn       | SOT   | SOT, SOT(<condition>) | game_object.get_player().start_of_turn  
+end of turn         | EOT   | EOT, EOT(<condition>) | game_object.get_player().end_of_turn    
+self enters play    | SEP   | SEP, SEP(<condition>) | game_object.self_enters_play            
+self exits play     | SXP   | SXP, SXP(<condition>) | game_object.self_exits_play             
+when self attacks   | WSA   | WSA, WSA(<target>)    | game_object.self_attacks                
+cost paid           | CST   | CST([<effect>])       | cost_trigger (append to cost_triggers)  
 '''

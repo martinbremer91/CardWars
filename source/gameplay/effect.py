@@ -17,7 +17,7 @@ class Effect:
             else:
                 self.perform_effect(self.targets)
         else:
-            print(f"{self.entity.name}'s ability fizzled")
+            print(f"{self.entity.name}'s ability fizzled\n")
     def perform_effect(self, target):
         pass
 
@@ -68,4 +68,5 @@ class ModAttack(Effect):
         super().__init__(entity, targets)
         self.value = value
     def perform_effect(self, target):
-        raise Exception('Not implemented')
+        target.mod_attack(self.value)
+        print(f"{self.entity} changes {target}'s attack by {self.value}. Current attack: {target.get_attack()}")

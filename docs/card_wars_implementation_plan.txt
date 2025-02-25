@@ -1,5 +1,4 @@
 GAMEPLAY
-
 - ~~player object~~
 - ~~turn structure: main phase, battle phase, pass turn~~
 - ~~basic card object~~
@@ -23,7 +22,7 @@ GAMEPLAY
 - ~~refactor game_logic: separate classes into own modules~~
 
 - implement conditions
-- properly implement triggers (fix TODO in ability.py, see NOTES)
+- properly implement triggers
 - network message format and processing (local and peer)
 - implement check_card_specific_requirements
 
@@ -31,7 +30,9 @@ NETWORK
 - research / tests
 
 
+Modifier Object: always has a deactivation trigger
+
 NOTES:
+- "-1" doesn't register as a digit -> but can be cast as int no problem
 - can trigger conditions and effect filters use the same logic?
-- at some point make sure TriggerType is actually being used
 - maybe create EOT and WIP trigger objects as children of Trigger

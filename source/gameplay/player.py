@@ -1,4 +1,4 @@
-﻿from source.gameplay.game_enums import CollectionType, TriggerType
+﻿from source.gameplay.game_enums import CollectionType
 from source.gameplay.card import Collection
 from source.gameplay.trigger import Trigger
 
@@ -15,8 +15,8 @@ class Player:
         self.hand = Collection(self, CollectionType.Hand)
         self.cards_in_play = Collection(self, CollectionType.In_Play)
         self.discard = Collection(self, CollectionType.Discard)
-        self.start_of_turn = Trigger(TriggerType.Start_of_Turn)
-        self.end_of_turn = Trigger(TriggerType.End_of_Turn)
+        self.start_of_turn = Trigger()
+        self.end_of_turn = Trigger()
     def __str__(self):
         return self.name
 

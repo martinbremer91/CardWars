@@ -16,8 +16,8 @@ def resolve_attack(lane):
     if defender is not None:
         fight(attacker, defender)
     else:
-        DealDamage(attacker, opposite_lane.player, attacker.attack).resolve()
+        DealDamage(attacker, opposite_lane.player, attacker.get_attack()).resolve()
 
 def fight(creature_a, creature_b):
-    DealDamage(creature_a, creature_b, creature_a.attack).resolve()
-    DealDamage(creature_b, creature_a, creature_b.attack).resolve()
+    DealDamage(creature_a, creature_b, creature_a.get_attack()).resolve()
+    DealDamage(creature_b, creature_a, creature_b.get_attack()).resolve()
