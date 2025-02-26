@@ -1,20 +1,21 @@
 ﻿from source.gameplay.game_enums import CollectionType
 from source.gameplay.card import Collection
 from source.gameplay.trigger import Trigger
+from source.gameplay.stat import IntStat
 
 class Player:
     def __init__(self, name):
         self.name = name
         self.opponent = None
-        self.damage = 0
-        self.defense = 25
-        self.action_points = 0
+        self.damage = IntStat(0)
+        self.defense = IntStat(25)
+        self.action_points = IntStat(0)
         self.lanes = list()
         self.landscapes = dict()
-        self.deck = Collection(self, CollectionType.Deck)
-        self.hand = Collection(self, CollectionType.Hand)
-        self.cards_in_play = Collection(self, CollectionType.In_Play)
-        self.discard = Collection(self, CollectionType.Discard)
+        self.deck = Collection(self)
+        self.hand = Collection(self)
+        self.cards_in_play = Collection(self)
+        self.discard = Collection(self)
         self.start_of_turn = Trigger()
         self.end_of_turn = Trigger()
     def __str__(self):
@@ -46,9 +47,9 @@ class Player:
         if self.get_hp() < 1:
             self.lose_game()
     def heal_damage(self, amount):
-        self.damage = max(self.damage - amount, 0)
+        self.damage = max(self.damage.get() - amount, 0)
     def get_hp(self):
-        return max(self.defense - self.damage, 0)
+        return max(self.defense.get() - self.damage, 0)
 
     def add_landscape(self, landscape):
         if landscape in self.landscapes.keys():

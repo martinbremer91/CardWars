@@ -18,6 +18,14 @@ class IntStat(Stat):
     def __init__(self, value):
         super().__init__(value)
         self.modifiers = list()
+    def __add__(self, other):
+        if isinstance(other, IntStat):
+            return self.value + other.value
+        return self.value + other
+    def __sub__(self, other):
+        if isinstance(other, IntStat):
+            return self.value - other.value
+        return self.value - other
     def get(self):
         sum_of_values = self.value
         for m in self.modifiers:

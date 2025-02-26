@@ -29,7 +29,7 @@ class Choice:
             while True:
                 user_prompt_options = ''
                 for i in range(len(self.options)):
-                    user_prompt_options += f'[{i}]: {self.options[i]}\n'
+                    user_prompt_options += f'[{i}]: {self.options[i].__str__()}\n'
 
                 print(f'Available {self.type_label}s:\n{user_prompt_options}')
                 index = input(f'Select {self.type_label}:')

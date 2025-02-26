@@ -6,10 +6,9 @@ from source.gameplay.effect import SpendActionPoints
 from source.gameplay.choice import Choice
 
 class Collection:
-    def __init__(self, player, collection_type):
-        self.cards= list()
+    def __init__(self, player):
+        self.cards = list()
         self.player = player
-        self.collection_type = collection_type
 
     def append(self, card):
         if not isinstance(card, Card):
@@ -93,8 +92,8 @@ def move_between_collections(player, src, to_enum, amount = None):
             card.collection = to_coll
 
 def check_card_landscape_requirement(player, card) -> bool:
-    cost = card.entity.cost
-    land = card.entity.land
+    cost = card.entity.cost.get()
+    land = card.entity.land.get()
 
     if land is Landscape.Rainbow:
         return sum(player.landscapes.values()) >= cost
@@ -105,7 +104,7 @@ def check_card_action_cost_requirement(player, cost) -> bool:
     return player.action_points >= cost
 
 def check_card_lane_availability(player, entity, lanes) -> bool:
-    match entity.entity_type:
+    match entity.entity_type.get():
         case EntityType.Creature:
             for lane in player.lanes:
                 if lane.can_play_creature:
@@ -129,7 +128,7 @@ def try_play_card(player, card):
     if not check_card_landscape_requirement(player, card):
         print(f"{player.name} failed land requirement")
         return
-    if not check_card_action_cost_requirement(player, cost):
+    if not check_card_action_cost_requirement(player, cost.get()):
         print(f"{player.name} failed action cost requirement")
         return
 
@@ -149,7 +148,7 @@ def try_play_card(player, card):
         elif selected_lane.building is not None:
             selected_lane.building.destroy()
     card.put_into_play(selected_lane)
-    SpendActionPoints(card.entity, player, cost).resolve()
+    SpendActionPoints(card.entity, player, cost.get()).resolve()
 
 def mill_cards(player, amount = 1):
     move_between_collections(player, CollectionType.Deck, CollectionType.Discard, amount)

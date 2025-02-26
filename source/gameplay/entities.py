@@ -1,10 +1,11 @@
 ﻿from source.gameplay.game_enums import Landscape, EntityType
 from source.gameplay.trigger import Trigger
 from source.gameplay.cw_lang import parse
+from source.gameplay.stat import Stat, IntStat
 
 class GameObject:
     def __init__(self, name, ability_text, cw_lang):
-        self.name = name
+        self.name = Stat(name)
         self.ability_text = ability_text
         self.cw_lang = cw_lang
         self.abilities = list()
@@ -29,18 +30,16 @@ class Hero(GameObject):
 class Entity(GameObject):
     def __init__(self, name, landscape, cost, ability_text, cw_lang):
         super().__init__(name, ability_text, cw_lang)
-        self.entity_type = None
+        self.entity_type = Stat(None)
         self.card = None
         self.self_enters_play = Trigger()
         self.self_exits_play = Trigger()
-        self.base_land = landscape
-        self.land = landscape
-        self.base_cost = cost
-        self.cost = cost
+        self.land = Stat(landscape)
+        self.cost = IntStat(cost)
         self.get_parsed_abilities()
 
     def __str__(self):
-        return self.name
+        return self.name.__str__()
 
     def get_player(self):
         return self.card.player
@@ -57,30 +56,24 @@ class Entity(GameObject):
 class Creature(Entity):
     def __init__(self, name, landscape, cost, ability_text, cw_lang, attack, defense):
         super().__init__(name, landscape, cost, ability_text, cw_lang)
-        self.entity_type = EntityType.Creature
-        self.base_attack = attack
-        self.attack = self.base_attack
-        self.base_defense = defense
-        self.defense = self.base_defense
-        self.damage = 0
-        self.exhausted = False
-        self.flooped = False
+        self.entity_type = Stat(EntityType.Creature)
+        self.attack = IntStat(attack)
+        self.defense = IntStat(defense)
+        self.damage = IntStat(0)
+        self.exhausted = Stat(False)
+        self.flooped = Stat(False)
 
     def on_play(self):
-        print(f"{self.card.player.name} played {self.name} ({self.land.name} Creature)\n")
+        print(f"{self.card.player.name} played {self.name} ({self.land.get().name} Creature)\n")
         super().on_play()
     def place_on_lane(self, lane):
         lane.creature = self
-    def mod_attack(self, value):
-        self.attack += value
-    def get_attack(self):
-        return max(0, self.attack)
     def take_damage(self, damage):
         self.damage += damage
-        if self.damage >= self.defense:
+        if self.damage >= self.defense.get():
             self.destroy()
     def heal_damage(self, value):
-        self.damage = max(0, self.damage - value)
+        self.damage = max(0, self.damage.get() - value)
     def destroy(self):
         print(self.name, 'destroyed')
         self.card.lane.creature = None
@@ -93,7 +86,7 @@ class Spell(Entity):
         self.entity_type = EntityType.Spell
 
     def on_play(self):
-        print(f"{self.card.player.name} played {self.name} ({self.land.name} Spell)\n")
+        print(f"{self.card.player.name} played {self.name} ({self.land.get().name} Spell)\n")
         super().on_play()
 
 class Building(Entity):
@@ -102,7 +95,7 @@ class Building(Entity):
         self.entity_type = EntityType.Building
 
     def on_play(self):
-        print(f"{self.card.player.name} played {self.name} ({self.land.name} Building)\n")
+        print(f"{self.card.player.name} played {self.name} ({self.land.get().name} Building)\n")
         super().on_play()
     def place_on_lane(self, lane):
         lane.building = self
