@@ -66,9 +66,10 @@ class HealDamage(Effect):
         print(f'{self.entity} heals {self.value} damage from {target}. Current damage: {target.damage}/{target.defense}')
 
 class ModAttack(Effect):
-    def __init__(self, entity, targets, value):
+    def __init__(self, entity, targets, value, deactivation_trigger):
         super().__init__(entity, targets)
         self.value = value
+        self.deactivation_trigger = deactivation_trigger
     def perform_effect(self, target):
-        target.mod_attack(self.value)
-        print(f"{self.entity} changes {target}'s attack by {self.value}. Current attack: {target.get_attack()}")
+        target.attack.add_modifier(self.value, self.deactivation_trigger)
+        print(f"{self.entity} changes {target}'s attack by {self.value}. Current attack: {target.attack.value}")

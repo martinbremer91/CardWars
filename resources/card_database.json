@@ -7995,5 +7995,19 @@
         "cost": "1",
         "attack": "",
         "defense": ""
+    },
+	"668": {
+        "name": "Test Apprentice",
+        "image-path": "/CardImages/None.jpg",
+        "type": "Creature",
+        "decks": [
+          ""
+        ],
+        "landscape": "Rainbow",
+        "ability": "When Test Apprentice enters play, it has +1 ATK until end of turn",
+        "cw-lang": "SEP:MOD_ATK(SELF, 1, EOT)",
+        "cost": "1",
+        "attack": "1",
+        "defense": "3"
     }
 }

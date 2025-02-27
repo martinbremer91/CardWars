@@ -3,8 +3,7 @@
 counter = 0
 # action_list = []
 action_list = [0, 0, 0, 1,
-               0, 0, 0, 0, 1, 0, 0, 0,
-               0, 0, 0, 0, 2, 0, 0, 0, 0]
+               0, 0, 0, 1, 0, 0]
 
 class Choice:
     def __init__(self, options = None, amount = 1):

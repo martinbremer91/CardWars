@@ -72,7 +72,7 @@ def get_function_from_tokens(tokens, game_object):
                 case 'choice':
                     return Choice(params[0], params[1])
                 case 'mod_atk':
-                    return ModAttack(game_object, params[0], params[1])
+                    return ModAttack(game_object, params[0], params[1], params[2])
                 case _:
                     return None
 
@@ -93,19 +93,19 @@ def get_function_from_tokens(tokens, game_object):
         match tokens:
             case 'foe_creatures':
                 return TargetTag.Foe_Creatures
+            case 'self':
+                return game_object
+            case 'eot':
+                return game_object.end_of_turn
             case _:
                 return None
 
-def get_triggers_from_code(code, game_object, active, inactive):
+def get_triggers_from_code(code, game_object):
     match code:
         case 'sot':
             return game_object.get_player().start_of_turn
         case 'sep':
             return game_object.self_enters_play
-        case 'eot':
-            return game_object.self_enters_play # placeholder
-        case 'wip':
-            pass
         case _:
             return None
 
@@ -117,9 +117,7 @@ def parse(cw_code, game_object):
     cw_code = cw_code.lower()
     trigger_code = cw_code.split(':')[0]
 
-    active_trigger = None
-    inactive_trigger = None
-    trigger = get_triggers_from_code(trigger_code, game_object, active_trigger, inactive_trigger)
+    trigger = get_triggers_from_code(trigger_code, game_object)
 
     if trigger is None:
         print('\033[93m' + f'{game_object}: invalid trigger code ({trigger_code})' + '\033[0m')
@@ -145,4 +143,4 @@ def parse(cw_code, game_object):
 
         effects.append(effect)
 
-    return Ability(trigger, effects, active_trigger, inactive_trigger)
+    return Ability(trigger, effects, None, None)

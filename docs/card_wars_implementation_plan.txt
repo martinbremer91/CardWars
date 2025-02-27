@@ -23,10 +23,10 @@ GAMEPLAY
 - ~~implement basic Stat and IntStat and Modifier classes~~
 - ~~implement placeholder quit and test options in Choice input loop~~
 
-- implement ListStat
 - implement modifier application in cw_lang
 - implement conditions
-- properly implement triggers
+- implement proper main phase (with choices of what to do, incl. flooping)
+- implement floop
 - network message format and processing (local and peer)
 - implement check_card_specific_requirements
 
