@@ -1,7 +1,7 @@
-﻿from source.gameplay.game_enums import CollectionType
+﻿from source.gameplay.game_enums import CollectionType, Landscape
 from source.gameplay.card import Collection
 from source.gameplay.trigger import Trigger
-from source.gameplay.stat import IntStat, Stat
+from source.gameplay.stat import Stat
 
 class Player:
     def __init__(self, name):
@@ -11,7 +11,6 @@ class Player:
         self.defense = Stat(25)
         self.action_points = Stat(0)
         self.lanes = list()
-        self.landscapes = dict()
         self.deck = Collection(self)
         self.hand = Collection(self)
         self.cards_in_play = Collection(self)
@@ -54,16 +53,10 @@ class Player:
     def get_hp(self):
         return max(self.defense - self.damage, 0)
 
-    def add_landscape(self, landscape):
-        if landscape in self.landscapes.keys():
-            self.landscapes[landscape] += 1
-        else:
-            self.landscapes[landscape] = 1
-    def remove_landscape(self, landscape):
-        if landscape not in self.landscapes.keys():
-            raise Exception(f"{self.name}: attempted to remove landscape type ({landscape.name}) "
-                            f"but player has none")
-        else:
-            self.landscapes[landscape] -= 1
-            if self.landscapes[landscape] == 0:
-                self.landscapes.pop(landscape)
+    @property
+    def landscapes(self):
+        return [lane.landscape for lane in self.lanes]
+    def landscape_count(self, land = None):
+        if not land:
+            return len([l for l in self.landscapes if l is not None])
+        return len([l for l in self.landscapes if l is land])

@@ -96,9 +96,9 @@ def check_card_landscape_requirement(player, card) -> bool:
     land = card.entity.land.value
 
     if land is Landscape.Rainbow:
-        return sum(player.landscapes.values()) >= cost
+        return player.landscape_count() >= cost
     else:
-        return land in player.landscapes.keys() and player.landscapes[land] >= cost
+        return player.landscape_count(land) >= cost
 
 def check_card_action_cost_requirement(player, cost) -> bool:
     return int(player.action_points.value) >= cost
