@@ -1,5 +1,7 @@
 ﻿from source.gameplay.game_enums import CollectionType
 from source.gameplay.choice import Choice
+from source.gameplay.stat import Modifier
+
 
 class Effect:
     def __init__(self, entity, target):
@@ -26,18 +28,18 @@ class GainActionPoints(Effect):
         super().__init__(entity, targets)
         self.amount = amount
     def perform_effect(self, target):
-        target.action_points += self.amount
+        target.action_points.add_modifier(self.amount, target.end_of_turn)
 
 class SpendActionPoints(Effect):
     def __init__(self, entity, targets, amount):
         super().__init__(entity, targets)
         self.amount = amount
     def perform_effect(self, target):
-        to_be_deducted = target.action_points if self.amount == -1 else self.amount
-        if target.action_points - to_be_deducted < 0:
-            raise Exception(f"{target.name}: player cannot have negative number of action points\n"
-                            f"(Player has {target.action_points}. To be deducted: {to_be_deducted}")
-        target.action_points -= to_be_deducted
+        new_value = target.action_points - self.amount
+        if new_value < 0:
+            raise Exception(f"{target}: player cannot have negative number of action points\n"
+                            f"(Player has {target.action_points}. To be deducted: {self.amount}")
+        target.action_points.add_modifier(new_value, target.end_of_turn)
 
 class DrawCards(Effect):
     def __init__(self, entity, targets, amount):

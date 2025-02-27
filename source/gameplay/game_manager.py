@@ -35,8 +35,6 @@ def subscribe_players_global_abilities():
     player_two.start_of_turn.subscribe(DrawCards(None, player_two, 1).resolve)
     player_one.start_of_turn.subscribe(GainActionPoints(None, player_one, 2).resolve)
     player_two.start_of_turn.subscribe(GainActionPoints(None, player_two, 2).resolve)
-    player_one.end_of_turn.subscribe(SpendActionPoints(None, player_one, -1).resolve)
-    player_two.end_of_turn.subscribe(SpendActionPoints(None, player_two, -1).resolve)
 
 def start_play():
     global turn_phase
@@ -68,7 +66,7 @@ def resolve_main_phase():
     print('##############################')
     print(active_player.name, 'main phase')
     while True:
-        card = Choice(active_player.hand.cards).resolve()
+        card = Choice(active_player.hand.cards).resolve(active_player)
         if card is None:
             break
         try_play_card(active_player, card)
@@ -98,6 +96,6 @@ def resolve_combat():
     print(active_player.name, 'COMBAT PHASE')
     lanes = get_active_combat_lanes(active_player)
     while len(lanes) > 0:
-        lane = Choice(lanes).resolve()
+        lane = Choice(lanes).resolve(active_player)
         resolve_attack(lane)
         lanes.remove(lane)

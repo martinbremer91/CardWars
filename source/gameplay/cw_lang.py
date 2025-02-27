@@ -2,6 +2,7 @@
 from source.gameplay.effect import DealDamage, ModAttack
 from source.gameplay.choice import Choice
 from source.gameplay.game_enums import TargetTag
+from source.system.console_colors import *
 
 def split_codes(codes, symbol):
     continues = 0
@@ -139,7 +140,7 @@ def parse(cw_code, game_object):
         effect = get_function_from_tokens(tokens, game_object)
 
         if effect is None:
-            print('\033[93m' + f'{game_object}: invalid effect code ({code})' + '\033[0m')
+            print_w(f'{game_object}: invalid effect code ({code})')
             return None
 
         effects.append(effect)

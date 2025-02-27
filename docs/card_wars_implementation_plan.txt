@@ -21,19 +21,16 @@ GAMEPLAY
 	- ~~gain/loss of actions~~
 - ~~refactor game_logic: separate classes into own modules~~
 - ~~implement basic Stat and IntStat and Modifier classes~~
+- ~~implement placeholder quit and test options in Choice input loop~~
 
-- implement placeholder quit and test options in Choice input loop
+- implement ListStat
+- implement modifier application in cw_lang
 - implement conditions
 - properly implement triggers
 - network message format and processing (local and peer)
 - implement check_card_specific_requirements
 
-NETWORK
-- research / tests
-
 
 NOTES:
-- Might want a ListStat (for things like Landscapes and Buildings in the future)
-- "-1" doesn't register as a digit -> but can be cast as int no problem
+- cw_lang: "-1" doesn't register as a digit -> but can be cast as int no problem
 - can trigger conditions and effect filters use the same logic?
-- maybe create EOT and WIP trigger objects as children of Trigger

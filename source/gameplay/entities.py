@@ -59,21 +59,21 @@ class Creature(Entity):
         self.entity_type = Stat(EntityType.Creature)
         self.attack = IntStat(attack)
         self.defense = IntStat(defense)
-        self.damage = IntStat(0)
+        self.damage = Stat(0)
         self.exhausted = Stat(False)
         self.flooped = Stat(False)
 
     def on_play(self):
-        print(f"{self.card.player.name} played {self.name} ({self.land.get().name} Creature)\n")
+        print(f"{self.card.player.name} played {self.name} ({self.land} Creature)\n")
         super().on_play()
     def place_on_lane(self, lane):
         lane.creature = self
     def take_damage(self, damage):
-        self.damage += damage
-        if self.damage >= self.defense.get():
+        self.damage.add_modifier(self.damage + damage, self.self_exits_play)
+        if self.damage >= self.defense:
             self.destroy()
     def heal_damage(self, value):
-        self.damage = max(0, self.damage.get() - value)
+        self.damage.add_modifier(max(0, self.damage - value), self.self_exits_play)
     def destroy(self):
         print(self.name, 'destroyed')
         self.card.lane.creature = None
@@ -86,7 +86,7 @@ class Spell(Entity):
         self.entity_type = EntityType.Spell
 
     def on_play(self):
-        print(f"{self.card.player.name} played {self.name} ({self.land.get().name} Spell)\n")
+        print(f"{self.card.player.name} played {self} ({self.land} Spell)\n")
         super().on_play()
 
 class Building(Entity):
@@ -95,7 +95,7 @@ class Building(Entity):
         self.entity_type = EntityType.Building
 
     def on_play(self):
-        print(f"{self.card.player.name} played {self.name} ({self.land.get().name} Building)\n")
+        print(f"{self.card.player} played {self.name} ({self.land.value} Building)\n")
         super().on_play()
     def place_on_lane(self, lane):
         lane.building = self

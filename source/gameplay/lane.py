@@ -14,7 +14,7 @@ class Lane:
             self.assign_landscape(landscape)
         self.player.lanes.append(self)
     def __str__(self):
-        return f'{str(self.lane_id)} / {self.landscape.name}'
+        return f'{str(self.lane_id)} / {self.landscape}: C = {self.creature} | B: {self.building}'
 
     def assign_landscape(self, landscape):
         if self.landscape is not None:
@@ -35,11 +35,9 @@ class Lane:
 
     def add_entity(self, entity):
         if isinstance(entity, Creature):
-            # TODO: entity replacement code
             self.creature = entity
         elif isinstance(entity, Building):
             self.creature = entity
-            # TODO: entity replacement code
 
 lanes : list[Lane]
 

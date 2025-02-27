@@ -1,15 +1,15 @@
 ﻿from source.gameplay.game_enums import CollectionType
 from source.gameplay.card import Collection
 from source.gameplay.trigger import Trigger
-from source.gameplay.stat import IntStat
+from source.gameplay.stat import IntStat, Stat
 
 class Player:
     def __init__(self, name):
         self.name = name
         self.opponent = None
-        self.damage = IntStat(0)
-        self.defense = IntStat(25)
-        self.action_points = IntStat(0)
+        self.damage = Stat(0)
+        self.defense = Stat(25)
+        self.action_points = Stat(0)
         self.lanes = list()
         self.landscapes = dict()
         self.deck = Collection(self)
@@ -18,6 +18,7 @@ class Player:
         self.discard = Collection(self)
         self.start_of_turn = Trigger()
         self.end_of_turn = Trigger()
+        self.end_of_game = Trigger()
     def __str__(self):
         return self.name
 
@@ -37,19 +38,21 @@ class Player:
                 raise Exception("No valid Collection given")
 
     def win_game(self):
-        print(self.name, 'wins!')
+        print(self, 'wins!')
+        self.end_of_game.invoke()
         exit()
     def lose_game(self):
         self.opponent.win_game()
+        self.end_of_game.invoke()
 
     def take_damage(self, amount):
-        self.damage += amount
+        self.damage.add_modifier(self.damage + amount, self.end_of_game)
         if self.get_hp() < 1:
             self.lose_game()
     def heal_damage(self, amount):
-        self.damage = max(self.damage.get() - amount, 0)
+        self.damage.add_modifier(max(self.damage - amount, 0), self.end_of_game)
     def get_hp(self):
-        return max(self.defense.get() - self.damage, 0)
+        return max(self.defense - self.damage, 0)
 
     def add_landscape(self, landscape):
         if landscape in self.landscapes.keys():

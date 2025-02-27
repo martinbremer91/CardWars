@@ -1,5 +1,11 @@
 ﻿from source.gameplay.game_enums import TargetTag
 
+counter = 0
+# action_list = []
+action_list = [0, 0, 0, 1,
+               0, 0, 0, 0, 1, 0, 0, 0,
+               0, 0, 0, 0, 2, 0, 0, 0, 0]
+
 class Choice:
     def __init__(self, options = None, amount = 1):
         self.options = list() if not options else options
@@ -11,19 +17,20 @@ class Choice:
         if not self.options:
             self.type_label = ""
         elif isinstance(self.options, TargetTag):
-            self.type_label = self.options.name
+            self.type_label = str(self.options)
         else:
             self.type_label = f"{type(self.options[0]).__name__}"
-    def resolve(self, entity = None):
+    def resolve(self, ctx):
         if self.options and isinstance(self.options, TargetTag):
-            if not entity:
-                raise Exception('Failed to resolve choice: tag given but entity is None')
-            self.options = get_targets_from_tag(self.options, entity)
+            if not ctx:
+                raise Exception('Failed to resolve choice: tag given but no entity passed in as "ctx" param')
+            self.options = get_targets_from_tag(self.options, ctx)
         if not self.options:
             print('No suitable options to choose\n')
             return None
 
         choices = list()
+        global counter
 
         for c in range(min(len(self.options), self.amount)):
             while True:
@@ -32,7 +39,8 @@ class Choice:
                     user_prompt_options += f'[{i}]: {self.options[i].__str__()}\n'
 
                 print(f'Available {self.type_label}s:\n{user_prompt_options}')
-                index = input(f'Select {self.type_label}:')
+                index = str(action_list[counter]) if len(action_list) > counter else input(f'Select {self.type_label}:')
+                counter += 1
                 print('')
 
                 # <placeholder>
@@ -42,7 +50,9 @@ class Choice:
                 # </placeholder>
 
                 if not index.isdigit():
-                    print(f'invalid {self.type_label} index: not a digit')
+                    # <placeholder>
+                    test(index, self, ctx)
+                    # </placeholder>
                     continue
                 index = int(index)
                 if index < 0 or index >= len(self.options):
@@ -87,4 +97,20 @@ def get_targets_from_tag(tag, entity):
             from source.gameplay.lane import get_opposite_lane
             return get_creatures_from_lanes([get_opposite_lane(entity.card.lane)])
         case _:
-            raise Exception(f'Could not get targets: invalid tag {tag.name}')
+            raise Exception(f'Could not get targets: invalid tag {tag}')
+
+# <placeholder>
+def test(index, choice, ctx):
+    try:
+        player = ctx.card.player
+        entity = ctx
+    except AttributeError:
+        player = ctx
+        entity = None
+
+    match index:
+        case 'ap':
+            print(player.action_points)
+        case _:
+            print(f'invalid {choice.type_label} index: not a digit')
+# </placeholder>

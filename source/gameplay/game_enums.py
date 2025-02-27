@@ -1,23 +1,27 @@
 ﻿from enum import IntEnum
 
-class TurnPhase(IntEnum):
+class CustomEnum(IntEnum):
+    def __str__(self):
+        return self.name
+
+class TurnPhase(CustomEnum):
     P1_Main = 0
     P1_Battle = 1
     P2_Main = 2
     P2_Battle = 3
 
-class CollectionType(IntEnum):
+class CollectionType(CustomEnum):
     Deck = 0
     Hand = 1
     In_Play = 2
     Discard = 3
 
-class EntityType(IntEnum):
+class EntityType(CustomEnum):
     Creature = 0
     Spell = 1
     Building = 2
 
-class Landscape(IntEnum):
+class Landscape(CustomEnum):
     Rainbow = 0
     BluePlains = 1
     NiceLands = 2
@@ -49,7 +53,7 @@ class Landscape(IntEnum):
             case _:
                 raise Exception("Invalid string: cannot return Landscape")
 
-class TargetTag(IntEnum):
+class TargetTag(CustomEnum):
     Player = 0
     Opponent = 1
     All_Players = 2
@@ -60,17 +64,13 @@ class TargetTag(IntEnum):
     Adjacent_Creatures = 7
     Opposite_Creature = 8
 
-class ConditionType(IntEnum):
+class ConditionType(CustomEnum):
     Is = 0
     Not = 1
     Greater_Than = 2
     Less_Than = 3
     Greater_Equal = 4
     Less_Equal = 5
-
-class SubscriptionLifetime(IntEnum):
-    Indefinite = 0
-    End_of_Turn = 1
 
 '''
 TRIGGERS
