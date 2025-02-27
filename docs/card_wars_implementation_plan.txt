@@ -22,8 +22,9 @@ GAMEPLAY
 - ~~refactor game_logic: separate classes into own modules~~
 - ~~implement basic Stat and IntStat and Modifier classes~~
 - ~~implement placeholder quit and test options in Choice input loop~~
+- ~~implement modifier application in cw_lang~~
 
-- implement modifier application in cw_lang
+- test deactivation trigger (kill creature and continue play)
 - implement conditions
 - implement proper main phase (with choices of what to do, incl. flooping)
 - implement floop

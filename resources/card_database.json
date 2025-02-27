@@ -8009,5 +8009,19 @@
         "cost": "1",
         "attack": "1",
         "defense": "3"
+    },
+	"669": {
+        "name": "Test Novice",
+        "image-path": "/CardImages/None.jpg",
+        "type": "Creature",
+        "decks": [
+          ""
+        ],
+        "landscape": "Rainbow",
+        "ability": "At the start of your turn, Test Novice gets +1 ATK until end of turn",
+        "cw-lang": "SOT:MOD_ATK(SELF, 1, EOT)",
+        "cost": "1",
+        "attack": "1",
+        "defense": "3"
     }
 }

@@ -34,6 +34,7 @@ class Entity(GameObject):
         self.card = None
         self.self_enters_play = Trigger()
         self.self_exits_play = Trigger()
+        self.start_of_turn = Trigger()
         self.end_of_turn = Trigger()
         self.land = Stat(landscape)
         self.cost = IntStat(cost)

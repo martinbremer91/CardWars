@@ -101,13 +101,19 @@ def get_function_from_tokens(tokens, game_object):
                 return None
 
 def get_triggers_from_code(code, game_object):
+    activation_trigger, deactivation_trigger = None, None
+
     match code:
         case 'sot':
-            return game_object.get_player().start_of_turn
+            activation_trigger = game_object.self_enters_play
+            deactivation_trigger = game_object.self_exits_play
+            trigger = game_object.start_of_turn
         case 'sep':
-            return game_object.self_enters_play
+            trigger = game_object.self_enters_play
         case _:
-            return None
+            return None, None, None
+
+    return trigger, activation_trigger, deactivation_trigger
 
 def parse(cw_code, game_object):
     if cw_code == '':
@@ -117,10 +123,13 @@ def parse(cw_code, game_object):
     cw_code = cw_code.lower()
     trigger_code = cw_code.split(':')[0]
 
-    trigger = get_triggers_from_code(trigger_code, game_object)
+    triggers = get_triggers_from_code(trigger_code, game_object)
+    trigger = triggers[0]
+    activation_trigger = triggers[1]
+    deactivation_trigger = triggers[2]
 
     if trigger is None:
-        print('\033[93m' + f'{game_object}: invalid trigger code ({trigger_code})' + '\033[0m')
+        print_w(f'{game_object}: invalid trigger code ({trigger_code})')
         return None
 
     effect_codes = [cw_code.split(':')[1]]
@@ -129,12 +138,6 @@ def parse(cw_code, game_object):
     effects = list()
     for code in effect_codes:
         tokens = tokenize_code(code)
-
-        #import json
-        #print(tokens)
-        #print(json.dumps(tokens, sort_keys=False, indent=4))
-        #print('')
-
         effect = get_function_from_tokens(tokens, game_object)
 
         if effect is None:
@@ -143,4 +146,4 @@ def parse(cw_code, game_object):
 
         effects.append(effect)
 
-    return Ability(trigger, effects, None, None)
+    return Ability(trigger, effects, activation_trigger, deactivation_trigger)

@@ -18,6 +18,7 @@ class Player:
         self.start_of_turn = Trigger()
         self.end_of_turn = Trigger()
         self.end_of_game = Trigger()
+        self.start_of_turn.subscribe(self.invoke_active_entities_start_of_turn)
         self.end_of_turn.subscribe(self.invoke_active_entities_end_of_turn)
     def __str__(self):
         return self.name
@@ -37,6 +38,9 @@ class Player:
             case _:
                 raise Exception("No valid Collection given")
 
+    def invoke_active_entities_start_of_turn(self):
+        for card in self.cards_in_play.cards:
+            card.entity.start_of_turn.invoke()
     def invoke_active_entities_end_of_turn(self):
         for card in self.cards_in_play.cards:
             card.entity.end_of_turn.invoke()
