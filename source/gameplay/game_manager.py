@@ -1,6 +1,6 @@
 from source.gameplay.player import Player
 from source.gameplay.card import set_up_decks, try_play_card
-from source.gameplay.choice import Choice
+from source.gameplay.target import Choice
 from source.gameplay.effect import DrawCards, GainActionPoints, SpendActionPoints
 from source.gameplay.game_enums import TurnPhase
 from source.gameplay.lane import init_lanes

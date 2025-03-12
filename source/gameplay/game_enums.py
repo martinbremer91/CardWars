@@ -64,13 +64,22 @@ class TargetTag(CustomEnum):
     Adjacent_Creatures = 7
     Opposite_Creature = 8
 
+class StatType(CustomEnum):
+    Attack = 0
+    Defense = 1
+    Damage = 2
+
 class ConditionType(CustomEnum):
-    Is = 0
-    Not = 1
+    Equals = 0
+    NotEquals = 1
     Greater_Than = 2
     Less_Than = 3
     Greater_Equal = 4
     Less_Equal = 5
+    Is = 6
+    Is_Not = 7
+
+
 
 '''
 TRIGGERS

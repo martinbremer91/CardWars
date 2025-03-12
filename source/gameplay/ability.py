@@ -2,8 +2,8 @@
     def __init__(self, trigger, effects, activation_trigger = None, deactivation_trigger = None):
         self.trigger = trigger
         self.effects = effects
-        self.active_trigger = activation_trigger
-        self.inactive_trigger = deactivation_trigger
+        self.activation_trigger = activation_trigger
+        self.deactivation_trigger = deactivation_trigger
 
         if not activation_trigger:
             self.subscribe_ability_effects()
@@ -13,9 +13,9 @@
             self.subscribe_deactivation_trigger()
 
     def subscribe_activation_trigger(self):
-        self.active_trigger.subscribe(self.subscribe_ability_effects)
+        self.activation_trigger.subscribe(self.subscribe_ability_effects)
     def subscribe_deactivation_trigger(self):
-        self.inactive_trigger.subscribe(self.unsubscribe_ability_effects)
+        self.deactivation_trigger.subscribe(self.unsubscribe_ability_effects)
 
     def subscribe_ability_effects(self):
         if isinstance(self.effects, list):

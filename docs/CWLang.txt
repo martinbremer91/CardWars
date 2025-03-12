@@ -18,6 +18,8 @@ TRIGGERS:
     EOT, maybe EOT(<condition>)
 - WHEN SELF ATTACKS (WSA):
     WSA, WSA(<target>)
+- DAMAGE TAKEN CHANGED(DTC):
+    DTC, DTC(<condition>)
 
 EFFECTS:
 - NO_EFFECT
@@ -32,8 +34,8 @@ EFFECTS:
 - EXILE(<target>)
 - FIGHT(<target>, <target>)
 - FLOOP(<target>)
-- SET_INVULN(<target>, <bool>)
-- SET_UNTARG(<target>, <bool>)
+- SET_INVULNERABLE(<target>, <bool>)
+- SET_UNTARGETABLE(<target>, <bool>)
 - HEAL(<target>, <int>)
 - DEAL_DMG(<target>, <int>)
 - ATTACK(<target>, <target>)

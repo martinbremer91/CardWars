@@ -19,5 +19,9 @@ def resolve_attack(lane):
         DealDamage(attacker, opposite_lane.player, attacker.attack.value).resolve()
 
 def fight(creature_a, creature_b):
-    DealDamage(creature_a, creature_b, creature_a.attack.value).resolve()
-    DealDamage(creature_b, creature_a, creature_b.attack.value).resolve()
+    # necessary in case taking damage changes ATK stat
+    a_attack = creature_a.attack.value
+    b_attack = creature_b.attack.value
+
+    DealDamage(creature_a, creature_b, a_attack).resolve()
+    DealDamage(creature_b, creature_a, b_attack).resolve()

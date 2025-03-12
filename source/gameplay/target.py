@@ -1,11 +1,17 @@
-﻿from source.gameplay.game_enums import TargetTag
+﻿import random
+from source.gameplay.game_enums import TargetTag
 
 counter = 0
 # action_list = []
 action_list = [0, 0, 0, 1,
-               0, 0, 0, 1, 0, 0]
+               0, 0, 0, 1,
+               0, 0,
+               0, 2, 0, 3,
+               0, 0, 0, 0,
+               0, 2, 0, 3,
+               0, 0, 0, 0]
 
-class Choice:
+class Target:
     def __init__(self, options = None, amount = 1):
         self.options = list() if not options else options
         self.amount = amount
@@ -20,22 +26,47 @@ class Choice:
         else:
             self.type_label = f"{type(self.options[0]).__name__}"
     def resolve(self, ctx):
-        if self.options and isinstance(self.options, TargetTag):
-            if not ctx:
-                raise Exception('Failed to resolve choice: tag given but no entity passed in as "ctx" param')
-            self.options = get_targets_from_tag(self.options, ctx)
-        if not self.options:
-            print('No suitable options to choose\n')
-            return None
+        return self.options if not isinstance(self.options, TargetTag) \
+            else get_targets_from_tag(self.options, ctx)
 
+class Random(Target):
+    def __init__(self, options = None, amount = 1):
+        super().__init__(options, amount)
+    def resolve(self, ctx):
+        current_options = super().resolve(ctx)
+        if isinstance(current_options, list) and len(current_options) >= self.amount:
+            return random.choices(current_options, k=self.amount)
+        return current_options
+
+class Filter(Target):
+    def __init__(self, condition, options = None, amount = 1):
+        super().__init__(options, amount)
+        self.condition = condition
+    def resolve(self, ctx):
+        current_options = super().resolve(ctx)
+        filtered_options = None
+        if isinstance(current_options, list):
+            filtered_options = list()
+            for option in current_options:
+                if self.condition.resolve():
+                    filtered_options.append(option)
+        elif self.condition.resolve():
+            filtered_options = current_options
+        return filtered_options
+
+class Choice(Target):
+    def __init__(self, options = None, amount = 1):
+        super().__init__(options, amount)
+    def resolve(self, ctx):
+        current_options = super().resolve(ctx)
         choices = list()
         global counter
 
-        for c in range(min(len(self.options), self.amount)):
+        for c in range(min(len(current_options), self.amount)):
             while True:
                 user_prompt_options = ''
-                for i in range(len(self.options)):
-                    user_prompt_options += f'[{i}]: {self.options[i].__str__()}\n'
+                for i in range(len(current_options)):
+                    user_prompt_options += f'[{i}]: {current_options[i].__str__()}\n'
 
                 print(f'Available {self.type_label}s:\n{user_prompt_options}')
                 index = str(action_list[counter]) if len(action_list) > counter else input(f'Select {self.type_label}:')
@@ -54,11 +85,11 @@ class Choice:
                     # </placeholder>
                     continue
                 index = int(index)
-                if index < 0 or index >= len(self.options):
+                if index < 0 or index >= len(current_options):
                     print(f'invalid {self.type_label} index: digit out of range')
                     continue
 
-                choices.append(self.options[index])
+                choices.append(current_options[index])
                 break
 
         if len(choices) == 1:
@@ -66,22 +97,26 @@ class Choice:
         return choices
 
 def get_creatures_from_lanes(lanes):
-    creatures = list()
-    for lane in lanes:
-        if lane.creature:
-            creatures.append(lane.creature)
+    creatures = None
+    if isinstance(lanes, list):
+        creatures = list()
+        for lane in lanes:
+            if lane.creature:
+                creatures.append(lane.creature)
+    elif lanes.creature:
+        creatures = lanes.creature
     return creatures
 
 def get_targets_from_tag(tag, entity):
     match tag:
         case TargetTag.Player:
-            return [entity.card.player]
+            return entity.card.player
         case TargetTag.Opponent:
-            return [entity.card.player.opponent]
+            return entity.card.player.opponent
         case TargetTag.All_Players:
             return [entity.card.player, entity.card.player.opponent]
         case TargetTag.Self:
-            return [entity]
+            return entity
         case TargetTag.All_Creatures:
             return [get_creatures_from_lanes(entity.card.player.lanes),
                     get_creatures_from_lanes(entity.card.player.opponent.lanes)]
@@ -94,7 +129,7 @@ def get_targets_from_tag(tag, entity):
             return get_creatures_from_lanes(get_adjacent_lanes(entity.card.lane))
         case TargetTag.Opposite_Creature:
             from source.gameplay.lane import get_opposite_lane
-            return get_creatures_from_lanes([get_opposite_lane(entity.card.lane)])
+            return get_creatures_from_lanes(get_opposite_lane(entity.card.lane))
         case _:
             raise Exception(f'Could not get targets: invalid tag {tag}')
 

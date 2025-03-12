@@ -42,7 +42,7 @@ def get_opposite_lane(lane) -> Lane:
             return l
     raise Exception('Failed to get opposite lane')
 
-def get_adjacent_lanes(lane) -> list:
+def get_adjacent_lanes(lane):
     output = list()
     for l in lane.player.output:
         if l.lane_id == lane.lane_id - 1 or l.lane_id == lane.lane_id + 1:

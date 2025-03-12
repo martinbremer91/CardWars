@@ -57,6 +57,7 @@ class Entity(GameObject):
 
 class Creature(Entity):
     def __init__(self, name, landscape, cost, ability_text, cw_lang, attack, defense):
+        self.damage_taken_changed = Trigger()
         super().__init__(name, landscape, cost, ability_text, cw_lang)
         self.entity_type = Stat(EntityType.Creature)
         self.attack = IntStat(attack)
@@ -71,11 +72,15 @@ class Creature(Entity):
     def place_on_lane(self, lane):
         lane.creature = self
     def take_damage(self, damage):
-        self.damage.add_modifier(self.damage + damage, self.self_exits_play)
+        if damage > 0:
+            self.damage.add_modifier(self.damage + damage, self.self_exits_play)
+            self.damage_taken_changed.invoke()
         if self.damage >= self.defense:
             self.destroy()
     def heal_damage(self, value):
-        self.damage.add_modifier(max(0, self.damage - value), self.self_exits_play)
+        if value > 0:
+            self.damage.add_modifier(max(0, self.damage - value), self.self_exits_play)
+            self.damage_taken_changed.invoke()
     def destroy(self):
         print(self.name, 'destroyed')
         self.card.lane.creature = None

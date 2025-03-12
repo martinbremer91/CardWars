@@ -29,8 +29,6 @@
         if self._value != value:
             self.modifier = Modifier(value, deactivation_trigger)
             self.modifier.register_deactivation_trigger(self)
-    def remove_modifier(self, modifier = None):
-        self.modifier = None
 
 class IntStat(Stat):
     def __init__(self, value):
@@ -46,8 +44,6 @@ class IntStat(Stat):
         modifier = Modifier(value, deactivation_trigger)
         self.modifiers.append(modifier)
         modifier.register_deactivation_trigger(self)
-    def remove_modifier(self, modifier = None):
-        self.modifiers.remove(modifier)
 
 class Modifier:
     def __init__(self, value, deactivation_trigger):
@@ -60,4 +56,8 @@ class Modifier:
         self.deactivation_trigger.subscribe(self.remove_self_from_stat)
     def remove_self_from_stat(self):
         self.deactivation_trigger.unsubscribe(self.remove_self_from_stat)
-        self.stat.remove_modifier(self)
+
+        if isinstance(self.stat, IntStat):
+            self.stat.modifiers.remove(self)
+        else:
+            self.stat.modifier = None

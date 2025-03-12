@@ -3,7 +3,7 @@ from source.gameplay.entities import get_entity_kind_from_string, get_entity_fro
 from source.gameplay.game_enums import CollectionType, Landscape, EntityType
 from source.system.asset_manager import get_database, import_decklist
 from source.gameplay.effect import SpendActionPoints
-from source.gameplay.choice import Choice
+from source.gameplay.target import Choice
 
 class Collection:
     def __init__(self, player):

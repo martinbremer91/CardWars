@@ -8018,10 +8018,10 @@
           ""
         ],
         "landscape": "Rainbow",
-        "ability": "At the start of your turn, Test Novice gets +1 ATK until end of turn",
-        "cw-lang": "SOT:MOD_ATK(SELF, 1, EOT)",
+        "ability": "Test Novice has +1 ATK while it has exactly 1 damage",
+        "cw-lang": "DTC:[SELF, DAMAGE, ==, 1]MOD_ATK(SELF, 1, DTC)",
         "cost": "1",
         "attack": "1",
-        "defense": "3"
+        "defense": "7"
     }
 }
