@@ -35,3 +35,6 @@
             for subscriber in self.subscribe_queue:
                 self.internal_subscribe(subscriber)
         self.invoking = False
+
+        self.subscribe_queue.clear()
+        self.unsubscribe_queue.clear()

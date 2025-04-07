@@ -11,7 +11,7 @@ class GameObject:
         self.abilities = list()
 
     def __str__(self):
-        return self.name
+        return self.name.__str__()
     def get_parsed_abilities(self):
         parsed_abilities = parse(self.cw_lang, self)
         if parsed_abilities:

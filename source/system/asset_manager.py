@@ -1,7 +1,7 @@
 import os
 import json
 
-asset_path : str = os.getcwd() + '/../../resources'
+asset_path : str = os.getcwd() + '/resources'
 
 def get_database() -> dict[str, dict[str, ]]:
     cwd = os.getcwd()
