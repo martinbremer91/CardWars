@@ -23,10 +23,10 @@ GAMEPLAY
 - ~~implement basic Stat and IntStat and Modifier classes~~
 - ~~implement placeholder quit and test options in Choice input loop~~
 - ~~implement modifier application in cw_lang~~
+- ~~implement conditions (add them as optional params in effect constructor)~~
+- ~~create Target parent class (children: Choice, Random, Filter)~~
+    - ~~replace Choice type checks with Target type checks~~
 
-- implement conditions (add them as optional params in trigger constructor)
-- create Target parent class (children: Choice, Random, Filter)
-    - replace Choice type checks with Target type checks
 - implement proper main phase (with choices of what to do, incl. flooping)
 - implement floop
 - network message format and processing (local and peer)
