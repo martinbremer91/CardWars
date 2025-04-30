@@ -22,3 +22,28 @@ def import_decklist(name : str)-> list[(int, int)]:
     if not name in decklists:
         raise Exception(f"Deck '{name}' does not exist")
     return decklists[name]
+
+def init_log():
+    cwd = os.getcwd()
+    os.chdir(asset_path)
+    log = open('log.txt', 'w')
+    log.write('')
+    log.close()
+    os.chdir(cwd)
+
+def append_log(item):
+    cwd = os.getcwd()
+    os.chdir(asset_path)
+    log = open('log.txt', 'a')
+    log.write(item)
+    log.close()
+    os.chdir(cwd)
+
+def read_log():
+    cwd = os.getcwd()
+    os.chdir(asset_path)
+    log = open('log.txt', 'r')
+    log_string = log.read()
+    log.close()
+    os.chdir(cwd)
+    return log_string
