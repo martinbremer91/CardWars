@@ -1,3 +1,4 @@
+from datetime import datetime
 from source.system.asset_manager import init_log, append_log, read_log
 
 global current_entry
@@ -9,6 +10,8 @@ def init():
     current_entry = list()
     previous_entry = list()
     init_log()
+    add_message(f'CARD WARS - {datetime.now()}\n\nGAME START')
+    push_log_entry()
 
 def get_latest_log():
     return previous_entry
