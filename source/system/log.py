@@ -1,6 +1,11 @@
 from datetime import datetime
 from source.system.asset_manager import init_log, append_log, read_log
 
+LOG_ERRORS = True
+LOG_WARNINGS = True
+LOG_GREEN_MSG = True
+LOG_HL_MSG = True
+
 global current_entry
 global previous_entry
 
