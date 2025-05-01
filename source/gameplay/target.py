@@ -73,12 +73,6 @@ class Choice(Target):
                 counter += 1
                 print('')
 
-                # <placeholder>
-                if index == 'c':
-                    print('Application stopped by user')
-                    exit()
-                # </placeholder>
-
                 if not index.isdigit():
                     # <placeholder>
                     test(index, self, ctx)

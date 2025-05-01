@@ -4,7 +4,9 @@ from source.gameplay.target import Choice
 from source.gameplay.effect import DrawCards, GainActionPoints, SpendActionPoints
 from source.gameplay.game_enums import TurnPhase
 from source.gameplay.lane import init_lanes
-from source.gameplay.combat import get_active_combat_lanes, resolve_attack
+from source.gameplay.combat import get_active_combat_lanes, resolve_attack  
+from source.system.input_manager import await_command, Result
+from source.ui.ui_manager import print_main_phase
 
 active_player : Player
 player_one : Player
@@ -55,23 +57,28 @@ def start_turn():
 
     if turn_phase is TurnPhase.P1_Main:
         active_player = player_one
-        active_player.start_of_turn.invoke()
     elif turn_phase is TurnPhase.P2_Main:
         active_player = player_two
-        active_player.start_of_turn.invoke()
+    active_player.start_of_turn.invoke()
 
     resolve_main_phase()
 
 def resolve_main_phase():
-    print('##############################')
-    print(active_player.name, 'main phase')
     while True:
-        card = Choice(active_player.hand.cards).resolve(active_player)
-        if card is None:
-            break
-        try_play_card(active_player, card)
-        if active_player.action_points == 0:
-            break
+        print_main_phase(active_player)
+        match await_command().result:
+            case Result.Nominal:
+                ...
+            case Result.Cancel:
+                raise Exception('Cannot cancel MainPhase')
+            case Result.Invalid:
+                continue
+        #card = Choice(active_player.hand.cards).resolve(active_player)
+        #if card is None:
+        #    break
+        #try_play_card(active_player, card)
+        #if active_player.action_points == 0:
+        #    break
     advance_turn_phase()
 
 def advance_turn_phase():
@@ -92,8 +99,6 @@ def advance_turn_phase():
         advance_turn_phase()
 
 def resolve_combat():
-    print('##############################')
-    print(active_player.name, 'COMBAT PHASE')
     lanes = get_active_combat_lanes(active_player)
     while len(lanes) > 0:
         lane = Choice(lanes).resolve(active_player)

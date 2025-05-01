@@ -1,37 +1,32 @@
-import asyncio
-import sys
-from typing import Callable
+from source.gameplay.game_manager import init as game_init
+from source.gameplay.game_manager import start_play
+from source.system.log import init as log_init
+from source.system.input_manager import init as input_init
+from source.system.input_manager import Result, await_confirmation
+from source.ui.ui_manager import print_confirmation_dialog
 
-import pygame
-
-import source.system.configs as configs
-import source.system.event_manager as event_manager
-import gui.graphics as graphics
-
-async def main():
-    configs.init()
-    graphics.init()
-
-    event_manager.register_update()
-    graphics.register_update()
-
-    clock = pygame.time.Clock()
-
+def handle_quit_command():
+    message = None
     while True:
-        pg_delta_time = clock.tick(60)/1000
+        print_confirmation_dialog('Are you sure you want to quit?', message)
+        command = await_confirmation()
+        match command.result:
+            case Result.Nominal:
+                quit()
+            case Result.Invalid:
+                message = f'Invalid command: {command.input}'
+                continue
+            case Result.Cancel:
+                return Result.Refresh
+            case _:
+                raise Exception(f'Result not implemented: {command.result}')
 
-        for update in configs.update_methods:
-            update(pg_delta_time)
+def quit():
+    print('User quit the application')
+    exit()
 
-def register_update(update: Callable):
-    configs.update_methods.append(update)
+log_init()
+input_init(handle_quit_command)
+game_init()
 
-def quit_app():
-    pygame.quit()
-    sys.exit()
-
-def toggle_paused():
-    configs.paused = not configs.paused
-
-if __name__ == '__main__':
-    asyncio.run(main())
+start_play()
