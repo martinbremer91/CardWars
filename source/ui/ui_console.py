@@ -1,5 +1,5 @@
 import os
-from source.system.log import get_log_text
+from source.system.log import get_log_text, add_message, LOG_GREEN_MSG, LOG_HL_MSG, LOG_ERRORS, LOG_WARNINGS
 
 class Color:
     DEFAULT = '\033[0m'
@@ -13,13 +13,22 @@ class Color:
     UNDERLINE = '\033[4m'
 
 def print_g(message):
+    if LOG_GREEN_MSG:
+        add_message(f'GREEN: {message}')
     print(Color.OKGREEN + message + Color.DEFAULT)
 def print_w(message):
+    if LOG_WARNINGS:
+        add_message(f'WARNING: {message}')
     print(Color.WARNING + message + Color.DEFAULT)
 def print_e(message):
+    if LOG_ERRORS:
+        add_message(f'ERROR: {message}')
     print(Color.ERROR + message + Color.DEFAULT)
 def print_h(message):
+    if LOG_HL_MSG:
+        add_message(f'HIGHLIGHTED: {message}')
     print(Color.OKCYAN + message + Color.DEFAULT)
+
 def clear():
     os.system('clear')
 
