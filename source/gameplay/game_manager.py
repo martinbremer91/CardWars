@@ -5,7 +5,7 @@ from source.gameplay.effect import DrawCards, GainActionPoints, SpendActionPoint
 from source.gameplay.game_enums import TurnPhase
 from source.gameplay.lane import init_lanes
 from source.gameplay.combat import get_active_combat_lanes, resolve_attack  
-from source.system.input_manager import await_command, Result
+from source.system.input_manager import await_command, Result, Options
 from source.ui.ui_manager import print_main_phase
 
 active_player : Player
@@ -66,7 +66,7 @@ def start_turn():
 def resolve_main_phase():
     while True:
         print_main_phase(active_player)
-        match await_command().result:
+        match await_command(Options(-1, [])).result:
             case Result.Nominal:
                 ...
             case Result.Cancel:

@@ -21,3 +21,10 @@ def print_confirmation_dialog(message, warning = None):
             ui_console.print_confirmation_dialog(message, warning)
         case UISetting.GUI:
             ...
+
+def print_log(warning = None):
+    match UI_SETTING:
+        case UISetting.CONSOLE:
+            ui_console.print_log(warning)
+        case UISetting.GUI:
+            ...

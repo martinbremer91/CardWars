@@ -3,6 +3,7 @@ from enum import IntEnum
 from source.ui.ui_manager import UI_SETTING, UISetting
 
 global quit_event
+global open_log_event
 
 class Constant:
     ESCAPE = '\\x1b'
@@ -49,10 +50,12 @@ class Options:
         if valid_command:
             return valid_command
         return Command(Result.Invalid, raw_input)
-    
-def init(quit_handler):
+
+def init(quit_handler, log_handler):
     global quit_event
+    global open_log_event
     quit_event = quit_handler
+    open_log_event = log_handler
 
 def get_input():
     file_descriptor = sys.stdin.fileno()
@@ -65,11 +68,14 @@ def get_input():
     finally:
         termios.tcsetattr(file_descriptor, termios.TCSAFLUSH, orig)
 
-def await_command(require_confirm = False):
+def await_command(options):
+    require_confirm = False
     raw_input = repr(input()) if require_confirm else get_input()
-    if UI_SETTING is UISetting.CONSOLE and raw_input == 'x' and quit_event() is Result.Cancel:
-        return Command(Result.Refresh)
-    return Command(Result.Nominal, raw_input)
+    if UI_SETTING is UISetting.CONSOLE and raw_input == 'x':
+        return quit_event()
+    if raw_input == '?':
+        return open_log_event()
+    return options.validate(raw_input)
 
 def await_confirmation():
     constants = [ Constant.ESCAPE, Constant.Y, Constant.N ]

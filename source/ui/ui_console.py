@@ -38,21 +38,26 @@ def print_divider():
 def print_subdivider():
     print("----------------------------------------\n")
 
-def print_log():
+def print_warning_message(message):
+    if not message:
+        return
+    print_e(message)
+    print_subdivider()
+
+def print_log(warning = None):
     clear()
+    print_warning_message(warning)
     print(get_log_text())
 
 def print_main_phase(player):
     clear()
     print(f"{player} MAIN PHASE")
     print_divider()
-    
+
 def print_choice():
     clear()
 
 def print_confirmation_dialog(message, warning = None):
     clear()
-    if warning:
-        print_e(warning)
-        print_subdivider()
+    print_warning_message(warning)
     print(f"{message} [Y/N]")
