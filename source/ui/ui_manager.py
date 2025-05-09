@@ -7,10 +7,10 @@ class UISetting(IntEnum):
 
 UI_SETTING = UISetting.CONSOLE
 
-def print_main_phase(player):
+def print_main_phase(player, action_labels, warning):
     match UI_SETTING:
         case UISetting.CONSOLE:
-            ui_console.print_main_phase(player)
+            ui_console.print_main_phase(player, action_labels, warning)
         case GUI:
             # TODO implement ui_gui
             ...

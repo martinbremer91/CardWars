@@ -7,12 +7,16 @@ from source.gameplay.lane import init_lanes
 from source.gameplay.combat import get_active_combat_lanes, resolve_attack  
 from source.system.input_manager import await_command, Result, Options
 from source.ui.ui_manager import print_main_phase
+from source.gameplay.action_data import UserAction, ActionLabel, ActionCode
 
 active_player : Player
 player_one : Player
 player_two : Player
 turn_phase : TurnPhase
 turn_counter : int
+main_phase_actions : list
+combat_phase_actions : list
+pass_turn_action_code = ActionCode.SPACE
 
 def init():
     global player_one
@@ -29,7 +33,8 @@ def init():
     player_two.assign_opponent(player_one)
 
     subscribe_players_global_abilities()
-
+    create_main_phase_user_actions()
+    create_combat_phase_user_actions()
     init_lanes((player_one, player_two))
 
 def subscribe_players_global_abilities():
@@ -37,6 +42,22 @@ def subscribe_players_global_abilities():
     player_two.start_of_turn.subscribe(DrawCards(None, player_two, 1).resolve)
     player_one.start_of_turn.subscribe(GainActionPoints(None, player_one, 2).resolve)
     player_two.start_of_turn.subscribe(GainActionPoints(None, player_two, 2).resolve)
+
+def create_main_phase_user_actions():
+    global main_phase_actions
+    pass_code = pass_turn_action_code
+    main_phase_actions = list()
+    main_phase_actions.append(UserAction(ActionLabel('Hand'), ActionCode.INDEX))
+    main_phase_actions.append(UserAction(ActionLabel('Lanes'), ActionCode.INDEX))
+    main_phase_actions.append(UserAction(ActionLabel('Graveyard'), ActionCode.INDEX))
+    main_phase_actions.append(UserAction(ActionLabel('Pass Turn', pass_code.to_icon()), pass_code))
+    for i in range(1, len(main_phase_actions)):
+        if main_phase_actions[i-1].action_code is ActionCode.INDEX:
+            main_phase_actions[i-1].label.symbol = str(i)
+
+def create_combat_phase_user_actions():
+    global combat_phase_actions
+    combat_phase_actions = list()
 
 def start_play():
     global turn_phase
@@ -64,14 +85,22 @@ def start_turn():
     resolve_main_phase()
 
 def resolve_main_phase():
+    warning = None
+    labels = [a.label for a in main_phase_actions]
+    action_codes = [c.action_code for c in main_phase_actions]
     while True:
-        print_main_phase(active_player)
-        match await_command(Options(-1, [])).result:
+        print_main_phase(active_player, labels, warning)
+        command = await_command(Options(action_codes))
+        match command.result:
             case Result.Nominal:
                 ...
+            case Result.OutOfRange:
+                warning = 'Index out of range'
+                continue
             case Result.Cancel:
                 raise Exception('Cannot cancel MainPhase')
             case Result.Invalid:
+                warning = 'Invalid command'
                 continue
         #card = Choice(active_player.hand.cards).resolve(active_player)
         #if card is None:

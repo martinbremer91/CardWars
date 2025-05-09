@@ -49,10 +49,17 @@ def print_log(warning = None):
     print_warning_message(warning)
     print(get_log_text())
 
-def print_main_phase(player):
+def print_main_phase(player, action_labels, warning):
     clear()
+    print_warning_message(warning)
     print(f"{player} MAIN PHASE")
     print_divider()
+
+    # print '%-12i%-12i' % (10 ** i, 20 ** i)
+
+    for label in action_labels:
+        print('%-5s -> %s' % (label.symbol, label.text))
+        # print(f'{label.symbol} -> {label.text}')
 
 def print_choice():
     clear()
