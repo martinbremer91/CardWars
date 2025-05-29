@@ -50,7 +50,7 @@ def create_main_phase_user_actions():
     main_phase_actions.append(UserAction(ActionLabel('Hand'), ActionCode.INDEX))
     main_phase_actions.append(UserAction(ActionLabel('Lanes'), ActionCode.INDEX))
     main_phase_actions.append(UserAction(ActionLabel('Graveyard'), ActionCode.INDEX))
-    main_phase_actions.append(UserAction(ActionLabel('Pass Turn', pass_code.to_icon()), pass_code))
+    main_phase_actions.append(UserAction(ActionLabel('Pass Turn', pass_code.to_icon()), pass_code.to_repr()))
     for i in range(1, len(main_phase_actions)):
         if main_phase_actions[i-1].action_code is ActionCode.INDEX:
             main_phase_actions[i-1].label.symbol = str(i)
@@ -93,14 +93,18 @@ def resolve_main_phase():
         command = await_command(Options(action_codes))
         match command.result:
             case Result.Nominal:
-                ...
+                print('Success: valid input -> exit()')
+                exit()
+            case Result.Index:
+                print('Success: valid index -> exit()')
+                exit()
             case Result.OutOfRange:
                 warning = 'Index out of range'
                 continue
             case Result.Cancel:
                 raise Exception('Cannot cancel MainPhase')
             case Result.Invalid:
-                warning = 'Invalid command'
+                warning = f"Invalid command: \'{command.code_repr}\'"
                 continue
         #card = Choice(active_player.hand.cards).resolve(active_player)
         #if card is None:

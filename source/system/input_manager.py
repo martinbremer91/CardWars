@@ -21,16 +21,16 @@ class Options:
             self.action_codes.append(action_codes[i])
         self.indices_max = 0
         for action in action_codes:
-            if action.action_code is ActionCode.INDEX:
+            if action is ActionCode.INDEX:
                 self.indices_max += 1
     def validate(self, raw_input):
         if raw_input.isdigit():
             if 1 <= int(raw_input) <= self.indices_max:
                 return Command(Result.Index, raw_input)
             return Command(Result.OutOfRange, raw_input)
-        valid_code = next((c for c in self.code_reprs if c == raw_input), None)
+        valid_code = next((c for c in self.action_codes if c == raw_input), None)
         if valid_code:
-            return valid_code
+            return Command(Result.Nominal, valid_code)
         return Command(Result.Invalid, raw_input)
 
 class Command:
