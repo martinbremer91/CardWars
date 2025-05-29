@@ -1,9 +1,10 @@
 from enum import IntEnum
 
 class UserAction:
-    def __init__(self, label, action_code):
+    def __init__(self, label, action_code, subscriber = None):
         self.label = label
         self.action_code = action_code
+        self.subscriber = subscriber
 
 class ActionLabel:
     def __init__(self, text, symbol = None):

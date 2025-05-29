@@ -1,5 +1,6 @@
+from source.constants import GRAVEYARD_LABEL_TEXT, HAND_LABEL_TEXT
 from source.gameplay.player import Player
-from source.gameplay.card import set_up_decks, try_play_card
+from source.gameplay.card import set_up_decks, inspect_hand, inspect_lanes, inspect_graveyard
 from source.gameplay.target import Choice
 from source.gameplay.effect import DrawCards, GainActionPoints
 from source.gameplay.game_enums import TurnPhase
@@ -47,9 +48,9 @@ def create_main_phase_user_actions():
     global main_phase_actions
     pass_code = pass_turn_action_code
     main_phase_actions = list()
-    main_phase_actions.append(UserAction(ActionLabel('Hand'), ActionCode.INDEX))
-    main_phase_actions.append(UserAction(ActionLabel('Lanes'), ActionCode.INDEX))
-    main_phase_actions.append(UserAction(ActionLabel('Graveyard'), ActionCode.INDEX))
+    main_phase_actions.append(UserAction(ActionLabel(HAND_LABEL_TEXT), ActionCode.INDEX, inspect_hand))
+    main_phase_actions.append(UserAction(ActionLabel('Lanes'), ActionCode.INDEX, inspect_lanes))
+    main_phase_actions.append(UserAction(ActionLabel(GRAVEYARD_LABEL_TEXT), ActionCode.INDEX, inspect_graveyard))
     main_phase_actions.append(UserAction(ActionLabel('Pass Turn', pass_code.to_icon()), pass_code.to_repr()))
     for i in range(1, len(main_phase_actions)):
         if main_phase_actions[i-1].action_code is ActionCode.INDEX:
@@ -97,8 +98,9 @@ def resolve_main_phase():
                     break
                 raise Exception(f'Nominal result but code repr not implemented: {command.code_repr}')
             case Result.Index:
-                card = Choice(active_player.hand.cards).resolve(active_player)
-                try_play_card(active_player, card)
+                if command.code_repr is None or not command.code_repr.isdigit():
+                    raise Exception("Command code is None or is not a digit")
+                main_phase_actions[int(command.code_repr) - 1].subscriber(active_player)
             case Result.OutOfRange:
                 warning = 'Index out of range'
             case Result.Cancel:
@@ -107,12 +109,6 @@ def resolve_main_phase():
                 warning = f"Invalid command: \'{command.code_repr}\'"
             case Result.Refresh:
                 warning = None
-        #card = Choice(active_player.hand.cards).resolve(active_player)
-        #if card is None:
-        #    break
-        #try_play_card(active_player, card)
-        #if active_player.action_points == 0:
-        #    break
     advance_turn_phase()
 
 def advance_turn_phase():
@@ -131,9 +127,6 @@ def advance_turn_phase():
         if turn_counter > 1:
             resolve_combat()
         advance_turn_phase()
-
-def resolve_hand():
-    ...
 
 def resolve_combat():
     lanes = get_active_combat_lanes(active_player)

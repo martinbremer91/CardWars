@@ -4,6 +4,7 @@ from source.gameplay.game_enums import CollectionType, Landscape, EntityType
 from source.system.asset_manager import get_database, import_decklist
 from source.gameplay.effect import SpendActionPoints
 from source.gameplay.target import Choice
+from source.ui.ui_console import print_inspect_hand
 
 class Collection:
     def __init__(self, player):
@@ -72,6 +73,24 @@ def set_up_decks(player_one, player_two):
 
 def shuffle_collection(collection):
     shuffle(collection.cards)
+
+def inspect_hand(player):
+    #card = Choice(active_player.hand.cards).resolve(active_player)
+    #if card is None:
+    #    break
+    #try_play_card(active_player, card)
+    #if active_player.action_points == 0:
+    #    break
+    print_inspect_hand(player, None, None)
+
+def inspect_lanes(player):
+    print("inspect lanes")
+    exit()
+
+def inspect_graveyard(player):
+    print("inspect graveyard")
+    exit()
+
 
 def move_between_collections(player, src, to_enum, amount = None):
     if isinstance(src, Card):

@@ -30,6 +30,7 @@ GAMEPLAY
 - ~~implement logging system in game_manager (remember to log.init())~~
 - ~~implement await_input~~
 
+- implement inspect lanes (with TAB to toggle between players)
 - implement proper main phase (with choices of what to do, incl. flooping)
 - implement floop
 - network message format and processing (local and peer)
