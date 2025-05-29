@@ -1,7 +1,7 @@
 from source.gameplay.player import Player
 from source.gameplay.card import set_up_decks, try_play_card
 from source.gameplay.target import Choice
-from source.gameplay.effect import DrawCards, GainActionPoints, SpendActionPoints
+from source.gameplay.effect import DrawCards, GainActionPoints
 from source.gameplay.game_enums import TurnPhase
 from source.gameplay.lane import init_lanes
 from source.gameplay.combat import get_active_combat_lanes, resolve_attack  
@@ -89,23 +89,24 @@ def resolve_main_phase():
     labels = [a.label for a in main_phase_actions]
     action_codes = [c.action_code for c in main_phase_actions]
     while True:
-        print_main_phase(active_player, labels, warning)
+        print_main_phase(active_player, turn_counter, labels, warning)
         command = await_command(Options(action_codes))
         match command.result:
             case Result.Nominal:
-                print('Success: valid input -> exit()')
-                exit()
+                if command.code_repr == pass_turn_action_code.to_repr():
+                    break
+                raise Exception(f'Nominal result but code repr not implemented: {command.code_repr}')
             case Result.Index:
-                print('Success: valid index -> exit()')
-                exit()
+                card = Choice(active_player.hand.cards).resolve(active_player)
+                try_play_card(active_player, card)
             case Result.OutOfRange:
                 warning = 'Index out of range'
-                continue
             case Result.Cancel:
                 raise Exception('Cannot cancel MainPhase')
             case Result.Invalid:
                 warning = f"Invalid command: \'{command.code_repr}\'"
-                continue
+            case Result.Refresh:
+                warning = None
         #card = Choice(active_player.hand.cards).resolve(active_player)
         #if card is None:
         #    break
@@ -130,6 +131,9 @@ def advance_turn_phase():
         if turn_counter > 1:
             resolve_combat()
         advance_turn_phase()
+
+def resolve_hand():
+    ...
 
 def resolve_combat():
     lanes = get_active_combat_lanes(active_player)

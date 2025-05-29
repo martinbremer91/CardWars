@@ -25,10 +25,10 @@ def handle_log_action():
         print_log(warning)
         command = await_command(Options([ActionCode.ESCAPE.to_repr()]), False)
         match command.result:
-            case Result.Cancel:
+            case Result.Nominal:
                 return Command(Result.Refresh)
-            case _:
-                warning = f'Invalid command'
+            case Result.Invalid:
+                warning = f'Invalid command : {command.code_repr}'
                 continue
 
 def await_confirmation(message):
@@ -42,11 +42,11 @@ def await_confirmation(message):
         command = await_command(Options(action_codes), False)
         match command.result:
             case Result.Nominal:
-                return Command(Result.Nominal)
-            case Result.Invalid:
-                warning = f'Invalid command'
-                continue
-            case Result.Cancel:
+                if command.code_repr == ActionCode.Y.to_repr():
+                    return Command(Result.Nominal)
                 return Command(Result.Cancel)
+            case Result.Invalid:
+                warning = f'Invalid command : {command.code_repr}'
+                continue
             case _:
                 raise Exception(f'Result not implemented: {command.result}')

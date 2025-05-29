@@ -49,10 +49,10 @@ def print_log(warning = None):
     print_warning_message(warning)
     print(get_log_text())
 
-def print_main_phase(player, action_labels, warning):
+def print_main_phase(player, turn_counter, action_labels, warning):
     clear()
     print_warning_message(warning)
-    print(f"{player} MAIN PHASE")
+    print(f"{player} MAIN PHASE - ROUND {int(turn_counter / 2 + (turn_counter % 2))}")
     print_divider()
 
     # print '%-12i%-12i' % (10 ** i, 20 ** i)
