@@ -59,7 +59,7 @@ def set_index_label_symbols(actions, offset = 1):
             counter += 1
 
 def get_action_indices_min_max(actions) -> tuple[int, int]:
-    min = 0
+    min = 9999
     max = 0
     for action in actions:
         if action.action_code is not ActionCode.INDEX:
