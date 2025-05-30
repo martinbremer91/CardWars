@@ -50,3 +50,8 @@ def await_confirmation(message):
                 continue
             case _:
                 raise Exception(f'Result not implemented: {command.result}')
+
+def set_index_label_symbols(actions):
+    for i in range(1, len(actions)):
+        if actions[i-1].action_code is ActionCode.INDEX:
+            actions[i-1].label.symbol = str(i)

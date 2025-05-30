@@ -1,5 +1,5 @@
 import os
-from source.constants import GRAVEYARD_LABEL_TEXT, HAND_LABEL_TEXT
+from source.constants import DISCARD_PILE_LABEL_TEXT, HAND_LABEL_TEXT
 from source.system.log import get_log_text, add_message, LOG_GREEN_MSG, LOG_HL_MSG, LOG_ERRORS, LOG_WARNINGS
 
 class Color:
@@ -57,32 +57,32 @@ def print_main_phase(player, turn_counter, action_labels, warning):
     clear_and_warning(warning)
     print(f"{player} MAIN PHASE - ROUND {int(turn_counter / 2 + (turn_counter % 2))}")
     print_divider()
-    for label in action_labels:
-        label_with_count = get_card_count_for_collection_label(player, label)
-        print('%-5s -> %s' % (label.symbol, label_with_count))
+    print_action_labels(action_labels, player, get_card_count_for_collection_label)
+
+def print_inspect_hand(player, action_labels, warning):
+    clear_and_warning(warning)
+    print(f"{player} HAND ({len(player.hand.cards)})")
+    print_divider()
+    print_action_labels(action_labels, player)
+    exit()
+
+def print_inspect_lanes(player, action_labels, warning):
+    clear_and_warning(warning)
+
+def print_inspect_discard_pile(player, action_labels, warning):
+    clear_and_warning(warning)
+
+def print_action_labels(labels, player, label_text_override = None):
+    for label in labels:
+        text = label_text_override(player, label) if label_text_override is not None else label.text
+        print('%-5s -> %s' % (label.symbol, text))
 
 def get_card_count_for_collection_label(player, label):
     if label.text == HAND_LABEL_TEXT:
         return label.text + f' ({len(player.hand.cards)})'
-    elif label.text == GRAVEYARD_LABEL_TEXT:
+    elif label.text == DISCARD_PILE_LABEL_TEXT:
         return label.text + f' ({len(player.discard.cards)})'
     return label.text
-
-def print_inspect_hand(player, actions_labels, warning):
-    clear_and_warning(warning)
-    print(f"{player} HAND ({len(player.hand.cards)})")
-    print_divider()
-    exit()
-    # print_choice()
-
-def print_inspect_lanes(player, actions_labels, warning):
-    clear_and_warning(warning)
-
-def print_inspect_graveyard(player, actions_labels, warning):
-    clear_and_warning(warning)
-
-def print_choice():
-    clear()
 
 def print_confirmation_dialog(message, warning = None):
     clear_and_warning(warning)

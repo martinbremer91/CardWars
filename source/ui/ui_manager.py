@@ -12,7 +12,27 @@ def print_main_phase(player, turn_counter, action_labels, warning):
         case UISetting.CONSOLE:
             ui_console.print_main_phase(player, turn_counter, action_labels, warning)
         case GUI:
-            # TODO implement ui_gui
+            ...
+
+def print_inspect_hand(player, actions_labels, warning):
+    match UI_SETTING:
+        case UISetting.CONSOLE:
+            ui_console.print_inspect_hand(player, actions_labels, warning)
+        case UISetting.GUI:
+            ...
+
+def print_inspect_lanes(player, actions_labels, warning):
+    match UI_SETTING:
+        case UISetting.CONSOLE:
+            ui_console.print_inspect_lanes(player, actions_labels, warning)
+        case UISetting.GUI:
+            ...
+
+def print_inspect_discard_pile(player, action_labels, warning):
+    match UI_SETTING:
+        case UISetting.CONSOLE:
+            ui_console.print_inspect_discard_pile(player, action_labels, warning)
+        case UISetting.GUI:
             ...
 
 def print_confirmation_dialog(message, warning = None):

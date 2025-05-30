@@ -34,7 +34,7 @@ class ActionCode(IntEnum):
                 return 'n'
             case _:
                 raise Exception(f'Action code not implemented {self}')
-    def to_icon(self):
+    def to_symbol(self):
         match self:
             case ActionCode.INDEX:
                 raise Exception('cannot get symbol of indexed actions')

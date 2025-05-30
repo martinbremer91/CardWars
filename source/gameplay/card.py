@@ -1,10 +1,12 @@
 ﻿from random import shuffle
+from source.gameplay.action_logic import set_index_label_symbols
 from source.gameplay.entities import get_entity_kind_from_string, get_entity_from_kind, Creature, Building
 from source.gameplay.game_enums import CollectionType, Landscape, EntityType
 from source.system.asset_manager import get_database, import_decklist
 from source.gameplay.effect import SpendActionPoints
 from source.gameplay.target import Choice
-from source.ui.ui_console import print_inspect_hand
+from source.ui.ui_manager import print_inspect_hand
+from source.gameplay.action_data import ActionCode, UserAction, ActionLabel
 
 class Collection:
     def __init__(self, player):
@@ -81,16 +83,27 @@ def inspect_hand(player):
     #try_play_card(active_player, card)
     #if active_player.action_points == 0:
     #    break
-    print_inspect_hand(player, None, None)
+    warning = None
+    inspect_hand_actions = list()
+    for card in player.hand.cards:
+        card_action = UserAction(ActionLabel(card.entity.name), ActionCode.INDEX, inspect_card)
+        inspect_hand_actions.append(card_action)
+    inspect_hand_actions.append(UserAction(ActionLabel('Back', ActionCode.ESCAPE.to_symbol()), ActionCode.ESCAPE.to_repr()))
+    set_index_label_symbols(inspect_hand_actions)
+    labels = [a.label for a in inspect_hand_actions]
+    action_codes = [c.action_code for c in inspect_hand_actions]
+    print_inspect_hand(player, labels, warning)
+
+def inspect_card():
+    ...
 
 def inspect_lanes(player):
     print("inspect lanes")
     exit()
 
-def inspect_graveyard(player):
-    print("inspect graveyard")
+def inspect_discard_pile(player):
+    print("inspect discard pile")
     exit()
-
 
 def move_between_collections(player, src, to_enum, amount = None):
     if isinstance(src, Card):

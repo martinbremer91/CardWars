@@ -1,6 +1,7 @@
-from source.constants import GRAVEYARD_LABEL_TEXT, HAND_LABEL_TEXT
+from source.constants import DISCARD_PILE_LABEL_TEXT, HAND_LABEL_TEXT
+from source.gameplay.action_logic import set_index_label_symbols
 from source.gameplay.player import Player
-from source.gameplay.card import set_up_decks, inspect_hand, inspect_lanes, inspect_graveyard
+from source.gameplay.card import set_up_decks, inspect_hand, inspect_lanes, inspect_discard_pile
 from source.gameplay.target import Choice
 from source.gameplay.effect import DrawCards, GainActionPoints
 from source.gameplay.game_enums import TurnPhase
@@ -50,11 +51,9 @@ def create_main_phase_user_actions():
     main_phase_actions = list()
     main_phase_actions.append(UserAction(ActionLabel(HAND_LABEL_TEXT), ActionCode.INDEX, inspect_hand))
     main_phase_actions.append(UserAction(ActionLabel('Lanes'), ActionCode.INDEX, inspect_lanes))
-    main_phase_actions.append(UserAction(ActionLabel(GRAVEYARD_LABEL_TEXT), ActionCode.INDEX, inspect_graveyard))
-    main_phase_actions.append(UserAction(ActionLabel('Pass Turn', pass_code.to_icon()), pass_code.to_repr()))
-    for i in range(1, len(main_phase_actions)):
-        if main_phase_actions[i-1].action_code is ActionCode.INDEX:
-            main_phase_actions[i-1].label.symbol = str(i)
+    main_phase_actions.append(UserAction(ActionLabel(DISCARD_PILE_LABEL_TEXT), ActionCode.INDEX, inspect_discard_pile))
+    main_phase_actions.append(UserAction(ActionLabel('Pass Turn', pass_code.to_symbol()), pass_code.to_repr()))
+    set_index_label_symbols(main_phase_actions)
 
 def create_combat_phase_user_actions():
     global combat_phase_actions
