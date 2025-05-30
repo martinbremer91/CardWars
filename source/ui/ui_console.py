@@ -64,7 +64,6 @@ def print_inspect_hand(player, action_labels, warning):
     print(f"{player} HAND ({len(player.hand.cards)})")
     print_divider()
     print_action_labels(action_labels, player)
-    exit()
 
 def print_inspect_lanes(player, action_labels, warning):
     clear_and_warning(warning)

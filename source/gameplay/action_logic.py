@@ -51,7 +51,21 @@ def await_confirmation(message):
             case _:
                 raise Exception(f'Result not implemented: {command.result}')
 
-def set_index_label_symbols(actions):
-    for i in range(1, len(actions)):
-        if actions[i-1].action_code is ActionCode.INDEX:
-            actions[i-1].label.symbol = str(i)
+def set_index_label_symbols(actions, offset = 1):
+    counter = offset
+    for action in actions:
+        if action.action_code is ActionCode.INDEX:
+            action.label.symbol = str(counter)
+            counter += 1
+
+def get_action_indices_min_max(actions) -> tuple[int, int]:
+    min = 0
+    max = 0
+    for action in actions:
+        if action.action_code is not ActionCode.INDEX:
+            continue
+        index = int(action.label.symbol)
+        min = index if index < min else min
+        max = index if index > max else max
+    return (min, max)
+

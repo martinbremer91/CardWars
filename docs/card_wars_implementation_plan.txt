@@ -30,7 +30,8 @@ GAMEPLAY
 - ~~implement logging system in game_manager (remember to log.init())~~
 - ~~implement await_input~~
 
-- Inspect Hand -> Inspect Card (with action labels for abilities, floop, play...)
+- evaulate: remove Result.Cancel? might be able to handle all cases with Refresh instead?
+- inspect Hand -> Inspect Card (with action labels for abilities, floop, play...)
     - if index goes above 9, digits are processed as they are pressed and list gets filtered
 	- e.g. if index goes to 13, pressing 3 selects option with index 3, but pressing 1
 	reprints list with only options 1, 10, 11, 12, and 13 (press RET for 1, 0 for 10, etc)

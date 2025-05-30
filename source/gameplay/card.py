@@ -1,10 +1,11 @@
 ﻿from random import shuffle
-from source.gameplay.action_logic import set_index_label_symbols
+from source.gameplay.action_logic import get_action_indices_min_max, set_index_label_symbols
 from source.gameplay.entities import get_entity_kind_from_string, get_entity_from_kind, Creature, Building
 from source.gameplay.game_enums import CollectionType, Landscape, EntityType
 from source.system.asset_manager import get_database, import_decklist
 from source.gameplay.effect import SpendActionPoints
 from source.gameplay.target import Choice
+from source.system.input_manager import await_command, Result, Options
 from source.ui.ui_manager import print_inspect_hand
 from source.gameplay.action_data import ActionCode, UserAction, ActionLabel
 
@@ -57,13 +58,10 @@ def get_card_from_id(player, card_data, deck : Collection) -> Card:
 
 def get_deck_from_decklists(name, player) -> Collection:
     database = get_database()
-
     decklist = import_decklist(name)
-
     for item in decklist:
         for i in range(item[0]):
             get_card_from_id(player, database[str(item[1])], player.deck)
-
     return player.deck
 
 def set_up_decks(player_one, player_two):
@@ -77,24 +75,68 @@ def shuffle_collection(collection):
     shuffle(collection.cards)
 
 def inspect_hand(player):
+    warning = None
+    override = False
+    inspect_hand_actions = list()
+    while True:
+        if not override:
+            inspect_hand_actions.clear()
+            for card in player.hand.cards:
+                card_action = UserAction(ActionLabel(card.entity.name), ActionCode.INDEX, inspect_card)
+                inspect_hand_actions.append(card_action)
+                inspect_hand_actions.append(UserAction(ActionLabel('test'), ActionCode.INDEX, None))
+            inspect_hand_actions.append(UserAction(ActionLabel('Back', ActionCode.ESCAPE.to_symbol()), ActionCode.ESCAPE.to_repr()))
+            set_index_label_symbols(inspect_hand_actions)
+        labels = [a.label for a in inspect_hand_actions]
+        action_codes = [c.action_code for c in inspect_hand_actions]
+        print_inspect_hand(player, labels, warning)
+        indices_min_max = get_action_indices_min_max(inspect_hand_actions)
+        command = await_command(Options(action_codes, indices_min_max))
+        match command.result:
+            case Result.Nominal:
+                if command.code_repr == ActionCode.ESCAPE.to_repr():
+                    if override:
+                        warning = None
+                        override = False
+                        continue
+                    break
+                elif command.code_repr == ActionCode.RETURN.to_repr():
+                    print('inspect first card')
+                    exit()
+            case Result.Index:
+                print(f'inspect card: {command.code_repr}')
+                exit()
+            case Result.OutOfRange:
+                warning = f"Index out of range: \'{command.code_repr}\'"
+            case Result.Invalid:
+                warning = f"Invalid command: \'{command.code_repr}\'"
+            case Result.Refresh:
+                warning = None
+                override = False
+            case Result.Filter:
+                warning = None
+                override = True
+                override_actions = list()
+                input = int(command.code_repr)
+                for action in inspect_hand_actions:
+                    if action.action_code != ActionCode.INDEX:
+                        continue
+                    if input == int(action.label.symbol):
+                        override_actions.append(UserAction(ActionLabel(action.label.text, ActionCode.RETURN.to_symbol()), ActionCode.RETURN.to_repr()))
+                    action_first_digit = int(str(action.label.symbol)[0])
+                    if input == action_first_digit:
+                        override_actions.append(action)
+                inspect_hand_actions = override_actions
+                inspect_hand_actions.append(UserAction(ActionLabel('Cancel', ActionCode.ESCAPE.to_symbol()), ActionCode.ESCAPE.to_repr()))
+                set_index_label_symbols(inspect_hand_actions, offset = 0)
+
+def inspect_card():
     #card = Choice(active_player.hand.cards).resolve(active_player)
     #if card is None:
     #    break
     #try_play_card(active_player, card)
     #if active_player.action_points == 0:
     #    break
-    warning = None
-    inspect_hand_actions = list()
-    for card in player.hand.cards:
-        card_action = UserAction(ActionLabel(card.entity.name), ActionCode.INDEX, inspect_card)
-        inspect_hand_actions.append(card_action)
-    inspect_hand_actions.append(UserAction(ActionLabel('Back', ActionCode.ESCAPE.to_symbol()), ActionCode.ESCAPE.to_repr()))
-    set_index_label_symbols(inspect_hand_actions)
-    labels = [a.label for a in inspect_hand_actions]
-    action_codes = [c.action_code for c in inspect_hand_actions]
-    print_inspect_hand(player, labels, warning)
-
-def inspect_card():
     ...
 
 def inspect_lanes(player):

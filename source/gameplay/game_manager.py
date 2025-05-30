@@ -1,5 +1,5 @@
 from source.constants import DISCARD_PILE_LABEL_TEXT, HAND_LABEL_TEXT
-from source.gameplay.action_logic import set_index_label_symbols
+from source.gameplay.action_logic import get_action_indices_min_max, set_index_label_symbols
 from source.gameplay.player import Player
 from source.gameplay.card import set_up_decks, inspect_hand, inspect_lanes, inspect_discard_pile
 from source.gameplay.target import Choice
@@ -87,12 +87,14 @@ def start_turn():
 def resolve_main_phase():
     warning = None
     labels = [a.label for a in main_phase_actions]
-    action_codes = [c.action_code for c in main_phase_actions]
+    action_codes = [a.action_code for a in main_phase_actions]
+    action_indices_min_max = get_action_indices_min_max(main_phase_actions)
     while True:
         print_main_phase(active_player, turn_counter, labels, warning)
-        command = await_command(Options(action_codes))
+        command = await_command(Options(action_codes, action_indices_min_max))
         match command.result:
             case Result.Nominal:
+                # TODO: add confirmation dialogue before pass turn if player still has Action Points
                 if command.code_repr == pass_turn_action_code.to_repr():
                     break
                 raise Exception(f'Nominal result but code repr not implemented: {command.code_repr}')
@@ -100,14 +102,15 @@ def resolve_main_phase():
                 if command.code_repr is None or not command.code_repr.isdigit():
                     raise Exception("Command code is None or is not a digit")
                 main_phase_actions[int(command.code_repr) - 1].subscriber(active_player)
+                warning = None
             case Result.OutOfRange:
-                warning = 'Index out of range'
-            case Result.Cancel:
-                raise Exception('Cannot cancel MainPhase')
+                warning = f"Index out of range: \'{command.code_repr}\'"
             case Result.Invalid:
                 warning = f"Invalid command: \'{command.code_repr}\'"
             case Result.Refresh:
                 warning = None
+            case _:
+                raise Exception(f'Result not implemented: {command.result}')
     advance_turn_phase()
 
 def advance_turn_phase():

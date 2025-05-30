@@ -1,7 +1,6 @@
 ﻿import sys, termios, tty
 from enum import IntEnum
 from source.ui.ui_manager import UI_SETTING, UISetting
-from source.gameplay.action_data import ActionCode
 
 global quit_event
 global open_log_event
@@ -13,25 +12,29 @@ class Result(IntEnum):
     Refresh = 3
     OutOfRange = 4
     Index = 5
+    Filter = 6
 
 class Options:
-    def __init__(self, action_codes):
+    def __init__(self, action_codes, indices_min_max = (0, 0)):
         self.action_codes = list()
         for i in range(0, len(action_codes)):
             self.action_codes.append(action_codes[i])
-        self.indices_max = 0
-        for action in action_codes:
-            if action is ActionCode.INDEX:
-                self.indices_max += 1
+        self.indices_min = indices_min_max[0]
+        self.indices_max = indices_min_max[1]
     def validate(self, raw_input):
         if raw_input.isdigit():
-            if 1 <= int(raw_input) <= self.indices_max:
+            if self.indices_min <= int(raw_input) <= self.indices_max:
+                if self.indices_max > 9 and not self.check_unambiguous(raw_input):
+                    return Command(Result.Filter, raw_input)
                 return Command(Result.Index, raw_input)
             return Command(Result.OutOfRange, raw_input)
         valid_code = next((c for c in self.action_codes if c == raw_input), None)
         if valid_code:
             return Command(Result.Nominal, valid_code)
         return Command(Result.Invalid, raw_input)
+    def check_unambiguous(self, input) -> bool:
+        indices_max_first_digit = int(str(self.indices_max)[0])
+        return int(input) > indices_max_first_digit
 
 class Command:
     def __init__(self, result, code_repr = None):
