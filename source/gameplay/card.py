@@ -1,5 +1,5 @@
 ﻿from random import shuffle
-from source.gameplay.action_logic import get_action_indices_min_max, set_index_label_symbols
+from source.gameplay.action_logic import get_action_indices_min_max, get_user_action_with_code, get_user_action_with_index, set_index_label_symbols
 from source.gameplay.entities import get_entity_kind_from_string, get_entity_from_kind, Creature, Building
 from source.gameplay.game_enums import CollectionType, Landscape, EntityType
 from source.system.asset_manager import get_database, import_decklist
@@ -87,18 +87,18 @@ def inspect_hand(player):
         command = await_command(Options(action_codes, indices_min_max))
         match command.result:
             case Result.Nominal:
-                warning = None; override = False
+                warning = None
                 if command.code_repr == ActionCode.ESCAPE.to_repr():
                     if override:
-                        continue
-                    break
+                        override = False; continue
+                    override = False; break
                 elif command.code_repr == ActionCode.RETURN.to_repr():
-                    inspect_hand_actions[0].subscriber()
+                    get_user_action_with_code(command.code_repr, inspect_hand_actions).subscriber()
                 else:
                     raise Exception(f'Command result is Nominal but code_repr is not implemented')
             case Result.Index:
                 warning = None; override = False
-                get_user_action_with_code(command.code_repr, inspect_hand_actions).subscriber()
+                get_user_action_with_index(command.code_repr, inspect_hand_actions).subscriber()
             case Result.OutOfRange:
                 warning = f"Index out of range: \'{command.code_repr}\'"
             case Result.Invalid:
@@ -116,7 +116,7 @@ def get_default_inspect_hand_actions(player) -> list:
         card_action = UserAction(ActionLabel(card.entity.name), ActionCode.INDEX, inspect_card)
         inspect_hand_actions.append(card_action)
         inspect_hand_actions.append(UserAction(ActionLabel('test'), ActionCode.INDEX, inspect_card))
-    inspect_hand_actions.append(UserAction(ActionLabel('Back', ActionCode.ESCAPE.to_symbol()), ActionCode.ESCAPE.to_repr()))
+    inspect_hand_actions.append(UserAction(ActionLabel('Back', ActionCode.ESCAPE.to_symbol()), ActionCode.ESCAPE))
     set_index_label_symbols(inspect_hand_actions)
     return inspect_hand_actions
 
@@ -126,19 +126,13 @@ def update_inspect_hand_actions_for_ambiguous_indices(inspect_hand_actions, inpu
         if action.action_code != ActionCode.INDEX:
             continue
         if input == int(action.label.symbol):
-            override_actions.append(UserAction(ActionLabel(action.label.text, ActionCode.RETURN.to_symbol()), ActionCode.RETURN.to_repr(), inspect_card))
+            override_actions.append(UserAction(ActionLabel(action.label.text, ActionCode.RETURN.to_symbol()), ActionCode.RETURN, inspect_card))
         action_first_digit = int(str(action.label.symbol)[0])
         if input == action_first_digit:
             override_actions.append(UserAction(ActionLabel(action.label.text), ActionCode.INDEX, inspect_card))
-    override_actions.append(UserAction(ActionLabel('Cancel', ActionCode.ESCAPE.to_symbol()), ActionCode.ESCAPE.to_repr()))
+    override_actions.append(UserAction(ActionLabel('Cancel', ActionCode.ESCAPE.to_symbol()), ActionCode.ESCAPE))
     set_index_label_symbols(override_actions, offset = 0)
     return override_actions
-
-def get_user_action_with_code(code, actions) -> UserAction:
-    for action in actions:
-        if action.label.symbol == code:
-            return action
-    raise Exception(f'Could not find action with code \'{code}\'')
 
 def inspect_card():
     #card = Choice(active_player.hand.cards).resolve(active_player)

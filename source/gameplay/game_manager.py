@@ -47,12 +47,11 @@ def subscribe_players_global_abilities():
 
 def create_main_phase_user_actions():
     global main_phase_actions
-    pass_code = pass_turn_action_code
     main_phase_actions = list()
     main_phase_actions.append(UserAction(ActionLabel(HAND_LABEL_TEXT), ActionCode.INDEX, inspect_hand))
     main_phase_actions.append(UserAction(ActionLabel('Lanes'), ActionCode.INDEX, inspect_lanes))
     main_phase_actions.append(UserAction(ActionLabel(DISCARD_PILE_LABEL_TEXT), ActionCode.INDEX, inspect_discard_pile))
-    main_phase_actions.append(UserAction(ActionLabel('Pass Turn', pass_code.to_symbol()), pass_code.to_repr()))
+    main_phase_actions.append(UserAction(ActionLabel('Pass Turn', pass_turn_action_code.to_symbol()), pass_turn_action_code))
     set_index_label_symbols(main_phase_actions)
 
 def create_combat_phase_user_actions():

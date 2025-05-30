@@ -22,7 +22,7 @@ class ActionCode(IntEnum):
     def to_repr(self):
         match self:
             case ActionCode.INDEX:
-                raise Exception('cannot get code_str of indexed actions')
+                return None
             case ActionCode.ESCAPE:
                 return '\\x1b'
             case ActionCode.SPACE:

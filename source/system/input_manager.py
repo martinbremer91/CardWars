@@ -28,9 +28,9 @@ class Options:
                     return Command(Result.Filter, raw_input)
                 return Command(Result.Index, raw_input)
             return Command(Result.OutOfRange, raw_input)
-        valid_code = next((c for c in self.action_codes if c == raw_input), None)
+        valid_code = next((c for c in self.action_codes if c.to_repr() == raw_input), None)
         if valid_code:
-            return Command(Result.Nominal, valid_code)
+            return Command(Result.Nominal, valid_code.to_repr())
         return Command(Result.Invalid, raw_input)
     def check_unambiguous(self, input) -> bool:
         indices_max_first_digit = int(str(self.indices_max)[0])

@@ -1,6 +1,6 @@
 from source.system.input_manager import Command, Options, Result, await_command
 from source.ui.ui_manager import print_confirmation_dialog, print_log
-from source.gameplay.action_data import ActionCode
+from source.gameplay.action_data import ActionCode, UserAction
 
 global quit_action
 
@@ -34,9 +34,9 @@ def handle_log_action():
 def await_confirmation(message):
     warning = None
     action_codes = [ 
-        ActionCode.ESCAPE.to_repr(), 
-        ActionCode.Y.to_repr(), 
-        ActionCode.N.to_repr(), ]
+        ActionCode.ESCAPE, 
+        ActionCode.Y, 
+        ActionCode.N, ]
     while True:
         print_confirmation_dialog(message, warning)
         command = await_command(Options(action_codes), False)
@@ -69,3 +69,14 @@ def get_action_indices_min_max(actions) -> tuple[int, int]:
         max = index if index > max else max
     return (min, max)
 
+def get_user_action_with_index(index, actions) -> UserAction:
+    for action in actions:
+        if action.label.symbol == index:
+            return action
+    raise Exception(f'Could not find action with index \'{index}\'')
+
+def get_user_action_with_code(code, actions) -> UserAction:
+    for action in actions:
+        if action.action_code.to_repr() == code:
+            return action
+    raise Exception(f'Could not find action with code \'{code}\'')
