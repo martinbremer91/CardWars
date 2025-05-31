@@ -1,5 +1,5 @@
 from source.constants import DISCARD_PILE_LABEL_TEXT, HAND_LABEL_TEXT
-from source.gameplay.action_logic import get_action_indices_min_max, set_index_label_symbols
+from source.gameplay.action_logic import get_action_indices_min_max, get_user_action_with_index, set_index_label_symbols
 from source.gameplay.player import Player
 from source.gameplay.card import set_up_decks, inspect_hand, inspect_lanes, inspect_discard_pile
 from source.gameplay.target import Choice
@@ -100,7 +100,7 @@ def resolve_main_phase():
             case Result.Index:
                 if command.code_repr is None or not command.code_repr.isdigit():
                     raise Exception("Command code is None or is not a digit")
-                main_phase_actions[int(command.code_repr) - 1].subscriber(active_player)
+                get_user_action_with_index(command.code_repr, main_phase_actions).subscriber(active_player)
                 warning = None
             case Result.OutOfRange:
                 warning = f"Index out of range: \'{command.code_repr}\'"

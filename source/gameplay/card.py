@@ -6,7 +6,7 @@ from source.system.asset_manager import get_database, import_decklist
 from source.gameplay.effect import SpendActionPoints
 from source.gameplay.target import Choice
 from source.system.input_manager import await_command, Result, Options
-from source.ui.ui_manager import print_inspect_hand
+from source.ui.ui_manager import print_inspect_hand, print_inspect_card
 from source.gameplay.action_data import ActionCode, UserAction, ActionLabel
 
 class Collection:
@@ -35,7 +35,7 @@ class Card:
         self.entity.assign_card(self)
 
     def __str__(self):
-        return self.entity.name
+        return self.entity.name.value
 
     def put_into_play(self, lane):
         move_between_collections(self.player, self, CollectionType.In_Play)
@@ -93,12 +93,15 @@ def inspect_hand(player):
                         override = False; continue
                     override = False; break
                 elif command.code_repr == ActionCode.RETURN.to_repr():
-                    get_user_action_with_code(command.code_repr, inspect_hand_actions).subscriber()
+                    override = False; warning = None
+                    selected_user_action = get_user_action_with_code(command.code_repr, inspect_hand_actions)
+                    selected_user_action.subscriber(player, selected_user_action.label.text)
                 else:
                     raise Exception(f'Command result is Nominal but code_repr is not implemented')
             case Result.Index:
                 warning = None; override = False
-                get_user_action_with_index(command.code_repr, inspect_hand_actions).subscriber()
+                selected_user_action = get_user_action_with_index(command.code_repr, inspect_hand_actions)
+                selected_user_action.subscriber(player, selected_user_action.label.text)
             case Result.OutOfRange:
                 warning = f"Index out of range: \'{command.code_repr}\'"
             case Result.Invalid:
@@ -113,9 +116,8 @@ def inspect_hand(player):
 def get_default_inspect_hand_actions(player) -> list:
     inspect_hand_actions = list()
     for card in player.hand.cards:
-        card_action = UserAction(ActionLabel(card.entity.name), ActionCode.INDEX, inspect_card)
+        card_action = UserAction(ActionLabel(card.entity.name.value), ActionCode.INDEX, inspect_card)
         inspect_hand_actions.append(card_action)
-        inspect_hand_actions.append(UserAction(ActionLabel('test'), ActionCode.INDEX, inspect_card))
     inspect_hand_actions.append(UserAction(ActionLabel('Back', ActionCode.ESCAPE.to_symbol()), ActionCode.ESCAPE))
     set_index_label_symbols(inspect_hand_actions)
     return inspect_hand_actions
@@ -134,15 +136,22 @@ def update_inspect_hand_actions_for_ambiguous_indices(inspect_hand_actions, inpu
     set_index_label_symbols(override_actions, offset = 0)
     return override_actions
 
-def inspect_card():
+def inspect_card(player, card_name):
     #card = Choice(active_player.hand.cards).resolve(active_player)
     #if card is None:
     #    break
     #try_play_card(active_player, card)
     #if active_player.action_points == 0:
     #    break
-    print('test')
-    exit()
+    card = next((c for c in player.hand.cards if c.entity.name.value == card_name), None)
+    warning = None
+    inspect_card_actions = list()
+    inspect_card_actions.append(UserAction(ActionLabel('Back', ActionCode.ESCAPE.to_symbol()), ActionCode.ESCAPE))
+    labels = [a.label for a in inspect_card_actions]
+    action_codes = [c.action_code for c in inspect_card_actions]
+    print_inspect_card(card, player, labels, warning)
+    indices_min_max = get_action_indices_min_max(inspect_card_actions)
+    command = await_command(Options(action_codes, indices_min_max))
 
 def inspect_lanes(player):
     print("inspect lanes")

@@ -30,13 +30,25 @@ GAMEPLAY
 - ~~implement logging system in game_manager (remember to log.init())~~
 - ~~implement await_input~~
 
-- evaulate: remove Result.Cancel? might be able to handle all cases with Refresh instead?
+- refactor action handling (main phase, inspect hand, inspect card -> lot of boilerplate)
 - inspect Hand -> Inspect Card (with action labels for abilities, floop, play...)
-    - if index goes above 9, digits are processed as they are pressed and list gets filtered
-	- e.g. if index goes to 13, pressing 3 selects option with index 3, but pressing 1
-	reprints list with only options 1, 10, 11, 12, and 13 (press RET for 1, 0 for 10, etc)
 - implement inspect lanes (with TAB to toggle between players)
-- implement proper main phase (with choices of what to do, incl. flooping)
 - implement floop
 - network message format and processing (local and peer)
 - implement check_card_specific_requirements
+
+
+#################
+
+print card:
+
+[name] (owner if different from player) - [current type (actual type, if different)]
+Cost: [cost] (current AP: [AP])
+----------------------------------------------------
+[text]
+----------------------------------------------------
+ATK: [atk]				  DEF: [def]
+
+===================================================
+[available options, e.g. play or floop]
+[back]

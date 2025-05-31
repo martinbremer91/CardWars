@@ -14,17 +14,24 @@ def print_main_phase(player, turn_counter, action_labels, warning):
         case GUI:
             ...
 
-def print_inspect_hand(player, actions_labels, warning):
+def print_inspect_hand(player, action_labels, warning):
     match UI_SETTING:
         case UISetting.CONSOLE:
-            ui_console.print_inspect_hand(player, actions_labels, warning)
+            ui_console.print_inspect_hand(player, action_labels, warning)
         case UISetting.GUI:
             ...
 
-def print_inspect_lanes(player, actions_labels, warning):
+def print_inspect_card(card, player, action_labels, warning):
     match UI_SETTING:
         case UISetting.CONSOLE:
-            ui_console.print_inspect_lanes(player, actions_labels, warning)
+            ui_console.print_inspect_card(card, player, action_labels, warning)
+        case UISetting.GUI:
+            ...
+
+def print_inspect_lanes(player, action_labels, warning):
+    match UI_SETTING:
+        case UISetting.CONSOLE:
+            ui_console.print_inspect_lanes(player, action_labels, warning)
         case UISetting.GUI:
             ...
 

@@ -34,10 +34,10 @@ def clear():
     os.system('clear')
 
 def print_divider():
-    print("========================================\n")
+    print("=========================================================\n")
 
 def print_subdivider():
-    print("----------------------------------------\n")
+    print("---------------------------------------------------------\n")
 
 def print_warning(message):
     if not message:
@@ -62,6 +62,18 @@ def print_main_phase(player, turn_counter, action_labels, warning):
 def print_inspect_hand(player, action_labels, warning):
     clear_and_warning(warning)
     print(f"{player} HAND ({len(player.hand.cards)})")
+    print_divider()
+    print_action_labels(action_labels, player)
+
+def print_inspect_card(card, player, action_labels, warning):
+    clear_and_warning(warning)
+    name = card.entity.name if card.player == player else card.entity.name + f" ({card.player})"
+    print(f"{name} - [type]")
+    print(f"Cost: [cost] (current AP: [AP])")
+    print_subdivider()
+    print("ipso lorem") # with line breaks at a specific width at whitespace. Have a look at str.<functions>
+    print_subdivider()
+    print(f"ATK / DEF\n") # with DEF block indented all the way to the right
     print_divider()
     print_action_labels(action_labels, player)
 
