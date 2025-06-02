@@ -33,11 +33,16 @@ def print_h(message):
 def clear():
     os.system('clear')
 
+divider = "======================================================================="
+
+def get_print_width():
+    return len(divider)
+
 def print_divider():
-    print("=========================================================\n")
+    print(divider)
 
 def print_subdivider():
-    print("---------------------------------------------------------\n")
+    print(divider.replace('=', '-'))
 
 def print_warning(message):
     if not message:
@@ -68,12 +73,18 @@ def print_inspect_hand(player, action_labels, warning):
 def print_inspect_card(card, player, action_labels, warning):
     clear_and_warning(warning)
     name = card.entity.name if card.player == player else card.entity.name + f" ({card.player})"
-    print(f"{name} - [type]")
-    print(f"Cost: [cost] (current AP: [AP])")
+    print(f"{name} - {card.entity.land.value} {card.entity.entity_type.value}")
+    print(f"Cost: {card.entity.cost.value} (current AP: {player.action_points.value})")
     print_subdivider()
-    print("ipso lorem") # with line breaks at a specific width at whitespace. Have a look at str.<functions>
-    print_subdivider()
-    print(f"ATK / DEF\n") # with DEF block indented all the way to the right
+    ability_str_lines = card.entity.ability_text.splitlines()
+    for line in ability_str_lines:
+        print(line.center(get_print_width()))
+    if hasattr(card.entity, 'defense'):
+        print_subdivider()
+        atk_str = f"ATK {card.entity.attack.value}"
+        def_str = f"DEF {card.entity.defense.value}"
+        def_max_width = get_print_width() - 10
+        print(f"{atk_str:<10}{def_str:>{def_max_width}}")
     print_divider()
     print_action_labels(action_labels, player)
 
