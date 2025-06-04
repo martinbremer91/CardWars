@@ -76,9 +76,10 @@ def print_inspect_card(card, player, action_labels, warning):
     print(f"{name} - {card.entity.land.value} {card.entity.entity_type.value}")
     print(f"Cost: {card.entity.cost.value} (current AP: {player.action_points.value})")
     print_subdivider()
-    ability_str_lines = card.entity.ability_text.splitlines()
+    print_width = get_print_width()
+    ability_str_lines = break_up_string_into_lines(card.entity.ability_text, print_width).splitlines()
     for line in ability_str_lines:
-        print(line.center(get_print_width()))
+        print(line.center(print_width))
     if hasattr(card.entity, 'defense'):
         print_subdivider()
         atk_str = f"ATK {card.entity.attack.value}"
@@ -87,6 +88,27 @@ def print_inspect_card(card, player, action_labels, warning):
         print(f"{atk_str:<10}{def_str:>{def_max_width}}")
     print_divider()
     print_action_labels(action_labels, player)
+
+def break_up_string_into_lines(text, line_length) -> str:
+    if len(text) <= line_length:
+        return text
+    current_index = 0
+    break_indices = list()
+    finished = False
+    while not finished:
+        range_end = min(current_index + line_length - 1, len(text))
+        current_range = range(current_index, range_end)
+        for i in current_range:
+            if i == len(text) - 1:
+                finished = True
+                break
+            if text[i].isspace():
+                current_index  = i
+        if not break_indices or len(text[break_indices[-1]:]) >= line_length:
+            break_indices.append(current_index)
+    for index in break_indices:
+        text = text[:index] + '\n' + text[index + 1:]
+    return text
 
 def print_inspect_lanes(player, action_labels, warning):
     clear_and_warning(warning)

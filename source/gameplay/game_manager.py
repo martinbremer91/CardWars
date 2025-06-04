@@ -66,8 +66,8 @@ def start_play():
     start_turn()
 
 def draw_first_hands():
-    DrawCards(None, player_one, 5).resolve()
-    DrawCards(None, player_two, 5).resolve()
+    DrawCards(None, player_one, 16).resolve()
+    DrawCards(None, player_two, 16).resolve()
 
 def start_turn():
     global active_player

@@ -30,6 +30,7 @@ GAMEPLAY
 - ~~implement logging system in game_manager (remember to log.init())~~
 - ~~implement await_input~~
 
+- bug: press '?' and then 'x'
 - refactor action handling (main phase, inspect hand, inspect card -> lot of boilerplate)
 - inspect Hand -> Inspect Card (with action labels for abilities, floop, play...)
 - implement inspect lanes (with TAB to toggle between players)
