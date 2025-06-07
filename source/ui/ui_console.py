@@ -70,7 +70,7 @@ def print_inspect_hand(player, action_labels, warning):
     print_divider()
     print_action_labels(action_labels, player)
 
-def print_inspect_card(card, player, action_labels, warning):
+def print_inspect_card(player, card, action_labels, warning):
     clear_and_warning(warning)
     name = card.entity.name if card.player == player else card.entity.name + f" ({card.player})"
     print(f"{name} - {card.entity.land.value} {card.entity.entity_type.value}")

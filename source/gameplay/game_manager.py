@@ -1,15 +1,13 @@
-from source.constants import DISCARD_PILE_LABEL_TEXT, HAND_LABEL_TEXT
-from source.gameplay.action_logic import get_action_indices_min_max, get_user_action_with_index, set_index_label_symbols
+from source.constants import DISCARD_PILE_LABEL_TEXT, LANES_LABEL_TEXT, HAND_LABEL_TEXT
+from source.gameplay.action_logic import ActionRegistry, resolve_user_action, set_index_label_symbols
 from source.gameplay.player import Player
-from source.gameplay.card import set_up_decks, inspect_hand, inspect_lanes, inspect_discard_pile
+from source.gameplay.card import init as init_card_module
 from source.gameplay.target import Choice
 from source.gameplay.effect import DrawCards, GainActionPoints
 from source.gameplay.game_enums import TurnPhase
 from source.gameplay.lane import init_lanes
 from source.gameplay.combat import get_active_combat_lanes, resolve_attack  
-from source.system.input_manager import await_command, Result, Options
-from source.ui.ui_manager import print_main_phase
-from source.gameplay.action_data import UserAction, ActionLabel, ActionCode
+from source.gameplay.action_data import ActionContext, ActionType, UserAction, ActionLabel, ActionCode
 
 active_player : Player
 player_one : Player
@@ -48,11 +46,12 @@ def subscribe_players_global_abilities():
 def create_main_phase_user_actions():
     global main_phase_actions
     main_phase_actions = list()
-    main_phase_actions.append(UserAction(ActionLabel(HAND_LABEL_TEXT), ActionCode.INDEX, inspect_hand))
-    main_phase_actions.append(UserAction(ActionLabel('Lanes'), ActionCode.INDEX, inspect_lanes))
-    main_phase_actions.append(UserAction(ActionLabel(DISCARD_PILE_LABEL_TEXT), ActionCode.INDEX, inspect_discard_pile))
+    main_phase_actions.append(UserAction(ActionLabel(HAND_LABEL_TEXT), ActionCode.INDEX, ActionType.INSPECT_HAND))
+    main_phase_actions.append(UserAction(ActionLabel(LANES_LABEL_TEXT), ActionCode.INDEX, ActionType.INSPECT_LANES))
+    main_phase_actions.append(UserAction(ActionLabel(DISCARD_PILE_LABEL_TEXT), ActionCode.INDEX, ActionType.INSPECT_DISCARD_PILE))
     main_phase_actions.append(UserAction(ActionLabel('Pass Turn', pass_turn_action_code.to_symbol()), pass_turn_action_code))
     set_index_label_symbols(main_phase_actions)
+    ActionRegistry.get().main_phase_action = resolve_main_phase
 
 def create_combat_phase_user_actions():
     global combat_phase_actions
@@ -61,7 +60,7 @@ def create_combat_phase_user_actions():
 def start_play():
     global turn_phase
     turn_phase = TurnPhase.P1_Main
-    set_up_decks(player_one, player_two)
+    init_card_module(player_one, player_two)
     draw_first_hands()
     start_turn()
 
@@ -84,32 +83,8 @@ def start_turn():
     resolve_main_phase()
 
 def resolve_main_phase():
-    warning = None
-    labels = [a.label for a in main_phase_actions]
-    action_codes = [a.action_code for a in main_phase_actions]
-    action_indices_min_max = get_action_indices_min_max(main_phase_actions)
-    while True:
-        print_main_phase(active_player, turn_counter, labels, warning)
-        command = await_command(Options(action_codes, action_indices_min_max))
-        match command.result:
-            case Result.Nominal:
-                # TODO: add confirmation dialogue before pass turn if player still has Action Points
-                if command.code_repr == pass_turn_action_code.to_repr():
-                    break
-                raise Exception(f'Nominal result but code repr not implemented: {command.code_repr}')
-            case Result.Index:
-                if command.code_repr is None or not command.code_repr.isdigit():
-                    raise Exception("Command code is None or is not a digit")
-                get_user_action_with_index(command.code_repr, main_phase_actions).subscriber(active_player)
-                warning = None
-            case Result.OutOfRange:
-                warning = f"Index out of range: \'{command.code_repr}\'"
-            case Result.Invalid:
-                warning = f"Invalid command: \'{command.code_repr}\'"
-            case Result.Refresh:
-                warning = None
-            case _:
-                raise Exception(f'Result not implemented: {command.result}')
+    ctx = ActionContext(ActionType.MAIN_PHASE, active_player, turn_counter)
+    resolve_user_action(ctx, None, main_phase_actions)
     advance_turn_phase()
 
 def advance_turn_phase():

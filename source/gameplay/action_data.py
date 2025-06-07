@@ -1,10 +1,10 @@
 from enum import IntEnum
 
 class UserAction:
-    def __init__(self, label, action_code, subscriber = None):
+    def __init__(self, label, action_code, subscriber_action_type = None):
         self.label = label
         self.action_code = action_code
-        self.subscriber = subscriber
+        self.subscriber_action_type = subscriber_action_type
 
 class ActionLabel:
     def __init__(self, text, symbol = None):
@@ -55,3 +55,16 @@ class ActionCode(IntEnum):
                 return 'N'
             case _:
                 raise Exception(f'Action code not implemented {self}')
+
+class ActionContext:
+    def __init__(self, type, player, data = None):
+        self.type = type
+        self.player = player
+        self.data = data
+
+class ActionType(IntEnum):
+    MAIN_PHASE = 0
+    INSPECT_HAND = 1
+    INSPECT_CARD = 2
+    INSPECT_LANES = 3
+    INSPECT_DISCARD_PILE = 4
