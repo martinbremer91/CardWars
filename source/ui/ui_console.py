@@ -112,6 +112,17 @@ def break_up_string_into_lines(text, line_length) -> str:
 
 def print_inspect_lanes(player, action_labels, warning):
     clear_and_warning(warning)
+    print(get_print_width())
+    '''
+    player 1        		       | player 2
+    ---------------------------------------------------------------
+    11 <creature>	 12 <building> | 13 <creature>	 14 <building>
+    21 <creature>	 22 <building> | 23 <creature>	 24 <building>
+    31 <creature>	 32 <building> | 33 <creature>	 34 <building>
+    41 <creature>	 42 <building> | 43 <creature>	 44 <building>
+    ==============================================================
+    [esc] -> back
+    '''
 
 def print_inspect_discard_pile(player, action_labels, warning):
     clear_and_warning(warning)

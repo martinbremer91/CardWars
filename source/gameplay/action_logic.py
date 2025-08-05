@@ -15,6 +15,7 @@ class ActionRegistry:
     inspect_card_action : Callable
     inspect_lanes_action : Callable
     inspect_discard_pile_action : Callable
+    try_play_card : Callable
     @staticmethod
     def get():
         return action_registry
@@ -36,24 +37,15 @@ def resolve_user_action(context, refresh_actions, actions = None, refresh = True
         command = await_command(Options(action_codes, indices_min_max))
         match command.result:
             case Result.Nominal:
-                if command.code_repr == ActionCode.ESCAPE.to_repr() or ActionCode.SPACE.to_repr():
+                if command.code_repr == ActionCode.ESCAPE.to_repr() or command.code_repr == ActionCode.SPACE.to_repr():
                     break
-                elif command.code_repr == ActionCode.RETURN.to_repr():
-                    selected_user_action = get_user_action_with_code(command.code_repr, actions)
-                    if selected_user_action.subscriber_action_type is not None:
-                        selected_action_ctx = ActionContext(selected_user_action.subscriber_action_type, context.player, selected_user_action)
-                        process_selected_action(selected_user_action, selected_action_ctx)
-                        if not refresh:
-                            break
-                else:
-                    raise Exception(f'Command result is Nominal but code_repr is not implemented')
+                process_selected_action(command, actions, context)
+                if not refresh:
+                    break
             case Result.Index:
-                selected_user_action = get_user_action_with_index(command.code_repr, actions)
-                if selected_user_action.subscriber_action_type is not None:
-                    selected_action_ctx = ActionContext(selected_user_action.subscriber_action_type, context.player, selected_user_action)
-                    process_selected_action(selected_user_action, selected_action_ctx)
-                    if not refresh:
-                        break
+                process_selected_action(command, actions, context)
+                if not refresh:
+                    break
             case Result.OutOfRange:
                 warning = f'Index out of range: \'{command.code_repr}\''
             case Result.Invalid:
@@ -65,7 +57,13 @@ def resolve_user_action(context, refresh_actions, actions = None, refresh = True
                 filtered_actions = get_filtered_actions(actions, command.code_repr)
                 resolve_user_action(context, None, filtered_actions, False)
 
-def process_selected_action(action, context):
+def process_selected_action(command, actions, context):
+    selected_user_action = get_user_action_from_code_repr(command.code_repr, actions)
+    if selected_user_action.subscriber_action_type is not None:
+        selected_action_ctx = ActionContext(selected_user_action.subscriber_action_type, context.player, selected_user_action)
+        resolve_selected_action(selected_user_action, selected_action_ctx, context)
+
+def resolve_selected_action(action, context, upstream_context):
     match action.subscriber_action_type:
         case ActionType.MAIN_PHASE:
             action_registry.main_phase_action()
@@ -73,6 +71,10 @@ def process_selected_action(action, context):
             action_registry.inspect_hand_action(context)
         case ActionType.INSPECT_CARD:
             action_registry.inspect_card_action(context)
+        case ActionType.PLAY_CARD:
+            action_registry.try_play_card(context, upstream_context.data)
+        case ActionType.INSPECT_LANES:
+            action_registry.inspect_lanes_action(context, upstream_context)
 
 def get_filtered_actions(actions, input) -> list:
     input_int = int(input)
@@ -154,14 +156,13 @@ def get_action_indices_min_max(actions) -> tuple[int, int]:
         max = index if index > max else max
     return (min, max)
 
-def get_user_action_with_index(index, actions) -> UserAction:
-    for action in actions:
-        if action.label.symbol == index:
-            return action
-    raise Exception(f'Could not find action with index \'{index}\'')
-
-def get_user_action_with_code(code, actions) -> UserAction:
-    for action in actions:
-        if action.action_code.to_repr() == code:
-            return action
-    raise Exception(f'Could not find action with code \'{code}\'')
+def get_user_action_from_code_repr(code_repr, actions) -> UserAction:
+    if str.isdigit(code_repr):
+        for action in actions:
+            if action.label.symbol == code_repr:
+                return action
+    else:
+        for action in actions:
+            if action.action_code.to_repr() == code_repr:
+                return action
+    raise Exception(f'Could not find action with code_repr \'{code_repr}\'')

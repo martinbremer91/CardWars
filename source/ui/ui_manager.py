@@ -1,12 +1,18 @@
 from enum import IntEnum
 from source.gameplay.action_data import ActionType
 import source.ui.ui_console as ui_console
+import source.ui.ui_gui as ui_gui
 
 class UISetting(IntEnum):
     CONSOLE = 0
     GUI = 1
 
-UI_SETTING = UISetting.CONSOLE
+UI_SETTING = UISetting.GUI
+
+def init_gui(quit_func):
+    if UI_SETTING is UISetting.CONSOLE:
+        return
+    ui_gui.init(quit_func)
 
 def print_action(context, action_labels, warning):
     match context.type:
@@ -16,6 +22,8 @@ def print_action(context, action_labels, warning):
             print_inspect_hand(context.player, action_labels, warning)
         case ActionType.INSPECT_CARD:
             print_inspect_card(context.player, context.data, action_labels, warning)
+        case ActionType.INSPECT_LANES:
+            print_inspect_lanes(context.player, action_labels, warning)
 
 def print_main_phase(player, turn_counter, action_labels, warning):
     match UI_SETTING:

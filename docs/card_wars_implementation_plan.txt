@@ -33,9 +33,27 @@ GAMEPLAY
 - ~~bug: hitting esc on inspect card brings back to index dissambiguation list~~
 - ~~fix spc to pass turn~~
 - ~~bug: press '?' and then 'x' or 'esc'~~
+- ~~inspect card (with action labels for abilities)~~
 
-- inspect Hand -> Inspect Card (with action labels for abilities, floop, play...)
 - implement inspect lanes (with TAB to toggle between players)
+- implement inspect_discard and inspect_deck (inspect_collection? incl. inspect_hand)
+- implement basic logging (consider action_logic.process_user_action as log dispatcher)
+- figure out user-action stack popping
+- properly re-implement try_play_card (integrate with new action and ui logic)
+    - probably depends on card type
+    - will probably need to pop the user-action stack to return to main phase
+    - for 'permanents' should probably show it in inspect lanes ui
 - implement floop
 - network message format and processing (local and peer)
 - implement check_card_specific_requirements
+
+INSPECT LANES
+
+player 1		       | player 2
+---------------------------------------------------------------
+11 <creature>	 12 <building> | 13 <creature>	 14 <building>
+21 <creature>	 22 <building> | 23 <creature>	 24 <building>
+31 <creature>	 32 <building> | 33 <creature>	 34 <building>
+41 <creature>	 42 <building> | 43 <creature>	 44 <building>
+==============================================================
+[esc] -> back

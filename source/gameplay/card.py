@@ -1,20 +1,17 @@
 ﻿from random import shuffle
-from typing import assert_type
-from source.gameplay.action_logic import ActionRegistry, get_action_indices_min_max, resolve_user_action, set_index_label_symbols
+from source.gameplay.action_logic import ActionRegistry, resolve_user_action, set_index_label_symbols
 from source.gameplay.entities import get_entity_kind_from_string, get_entity_from_kind, Creature, Building
 from source.gameplay.game_enums import CollectionType, Landscape, EntityType
 from source.system.asset_manager import get_database, import_decklist
 from source.gameplay.effect import SpendActionPoints
 from source.gameplay.target import Choice
-from source.system.input_manager import await_command, Options
-from source.ui.ui_manager import print_inspect_card
 from source.gameplay.action_data import ActionCode, ActionContext, ActionType, UserAction, ActionLabel
 
 class Collection:
-    def __init__(self, player):
+    def __init__(self, player, collection_type):
         self.cards = list()
         self.player = player
-
+        self.collection_type = collection_type
     def append(self, card):
         if not isinstance(card, Card):
             raise Exception("Cannot append collection with invalid type", type(card))
@@ -34,12 +31,10 @@ class Card:
         self.collection.append(self)
         self.lane = None
         self.entity.assign_card(self)
-
     def __str__(self):
         return self.entity.name.value
-
     def put_into_play(self, lane):
-        move_between_collections(self.player, self, CollectionType.In_Play)
+        move_between_collections(self.player, self, CollectionType.InPlay)
         self.lane = lane
         if isinstance(self.entity, Creature | Building):
             lane.add_entity(self.entity)
@@ -69,8 +64,8 @@ def init(player_one, player_two):
     set_up_decks(player_one, player_two)
     ActionRegistry.get().inspect_hand_action = inspect_hand
     ActionRegistry.get().inspect_card_action = inspect_card
-    ActionRegistry.get().inspect_lanes_action = inspect_lanes
     ActionRegistry.get().inspect_discard_pile_action = inspect_discard_pile
+    ActionRegistry.get().try_play_card = try_play_card
 
 def set_up_decks(player_one, player_two):
     player_one.deck = get_deck_from_decklists('Test', player_one)
@@ -126,7 +121,8 @@ def check_card_lane_availability(player, entity, lanes) -> bool:
 def check_card_specific_requirements() -> bool:
     return True
 
-def try_play_card(player, card):
+def try_play_card(context, card):
+    player = context.player
     cost = card.entity.cost
     if not check_card_landscape_requirement(player, card):
         print(f"{player.name} failed land requirement")
@@ -182,13 +178,15 @@ def inspect_card(context):
     resolve_user_action(context, get_inspect_card_actions)
 
 def get_inspect_card_actions(context) -> list:
+    card = context.data
     inspect_card_actions = list()
+    match card.collection.collection_type:
+        case CollectionType.Hand:
+            play_action = UserAction(ActionLabel('Play'), ActionCode.INDEX, ActionType.PLAY_CARD)
+            inspect_card_actions.append(play_action)
     inspect_card_actions.append(UserAction(ActionLabel('Back', ActionCode.ESCAPE.to_symbol()), ActionCode.ESCAPE))
+    set_index_label_symbols(inspect_card_actions)
     return inspect_card_actions
-
-def inspect_lanes(context):
-    print("inspect lanes")
-    exit()
 
 def inspect_discard_pile(context):
     print("inspect discard pile")

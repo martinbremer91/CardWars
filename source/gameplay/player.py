@@ -1,4 +1,4 @@
-﻿from source.gameplay.game_enums import CollectionType, Landscape
+﻿from source.gameplay.game_enums import CollectionType
 from source.gameplay.card import Collection
 from source.gameplay.trigger import Trigger
 from source.gameplay.stat import Stat
@@ -11,10 +11,10 @@ class Player:
         self.defense = Stat(25)
         self.action_points = Stat(0)
         self.lanes = list()
-        self.deck = Collection(self)
-        self.hand = Collection(self)
-        self.cards_in_play = Collection(self)
-        self.discard = Collection(self)
+        self.deck = Collection(self, CollectionType.Deck)
+        self.hand = Collection(self, CollectionType.Hand)
+        self.cards_in_play = Collection(self, CollectionType.InPlay)
+        self.discard = Collection(self, CollectionType.Discard)
         self.start_of_turn = Trigger()
         self.end_of_turn = Trigger()
         self.end_of_game = Trigger()
@@ -22,7 +22,6 @@ class Player:
         self.end_of_turn.subscribe(self.invoke_active_entities_end_of_turn)
     def __str__(self):
         return self.name
-
     def assign_opponent(self, opponent):
         self.opponent = opponent
     def get_collection(self, collection_type) -> Collection:
@@ -31,7 +30,7 @@ class Player:
                 return self.deck
             case CollectionType.Hand:
                 return self.hand
-            case CollectionType.In_Play:
+            case CollectionType.InPlay:
                 return self.cards_in_play
             case CollectionType.Discard:
                 return self.discard

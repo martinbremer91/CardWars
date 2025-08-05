@@ -13,7 +13,7 @@ class TurnPhase(CustomEnum):
 class CollectionType(CustomEnum):
     Deck = 0
     Hand = 1
-    In_Play = 2
+    InPlay = 2
     Discard = 3
 
 class EntityType(CustomEnum):

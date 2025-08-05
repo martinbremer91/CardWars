@@ -68,3 +68,4 @@ class ActionType(IntEnum):
     INSPECT_CARD = 2
     INSPECT_LANES = 3
     INSPECT_DISCARD_PILE = 4
+    PLAY_CARD = 5
